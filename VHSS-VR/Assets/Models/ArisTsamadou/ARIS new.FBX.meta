@@ -1,0 +1,379 @@
+fileFormatVersion: 2
+guid: 021a0f1646d344747b03842f12f056f7
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable:
+  - first:
+      74: 1827226128182048838
+    second: Take 001
+  externalObjects:
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: AGKIRA VHSS 01
+    second: {fileID: 2800000, guid: bac139f62b2322946b0bd8ec1e34f59f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: BARKA FOR MAPPING 2
+    second: {fileID: 2800000, guid: 29088da03d828d542be9ec4b8e270940, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: METAL ALISIDES VHSS 01
+    second: {fileID: 2800000, guid: fcd25bff94ed99347a306e8817e9d8a6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: METAL ALISIDES VHSS 03333
+    second: {fileID: 2800000, guid: a6b3adf919e83b648b594595372d1627, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: METAL KAROULI VHSS 01
+    second: {fileID: 2800000, guid: b15db6b0459f70248bc7db5f53155004, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: METAL RUSTED VHSS 01
+    second: {fileID: 2800000, guid: c6bd612bd34abd0448ad138181cab2f9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: METAL RUSTED VHSS 02
+    second: {fileID: 2800000, guid: bf2be5fce12337348bd406c7500ea5a1, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: METAL RUSTED VHSS 03
+    second: {fileID: 2800000, guid: 1d8259470d222c2469d717ff720dca34, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: METAL RUSTED VHSS 04
+    second: {fileID: 2800000, guid: 81d5091c8678c0c4cbdbe79e4bdf89b4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PANIA VHSS BB 01
+    second: {fileID: 2800000, guid: 2cf15c7a9ac2f3c4b9ee398bb7ba6c6e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PANIA VHSS BB 02
+    second: {fileID: 2800000, guid: 40f05a950a0ea2a4eb1e5ccd20ea49e5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: PANIA VHSS cc 02
+    second: {fileID: 2800000, guid: d1139145f560eb94cb7615d39bdcbfd6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: ROPE VHSS 04
+    second: {fileID: 2800000, guid: aa51e551701cad54d92c4ab2d1e851d4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: SHPSIDE3
+    second: {fileID: 2800000, guid: 3e86e98bc723eb94090ea6d1837fbbd5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FINAL 001
+    second: {fileID: 2800000, guid: 0b64348e15b03e44cbda358fa373b716, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FINAL 002
+    second: {fileID: 2800000, guid: 6086cc23e04687f4d9cf935fd5d9fb02, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FINAL 003
+    second: {fileID: 2800000, guid: 33ad6696de455f24685d04aebd0494ed, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 100
+    second: {fileID: 2800000, guid: 93fc93eaf9f6f9b4c86c71faebff6c43, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 103
+    second: {fileID: 2800000, guid: d3b2075813dfaba4e80862e1d390e14c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 104
+    second: {fileID: 2800000, guid: 36bf74c2997fc4545a5e59c104e7257d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 105
+    second: {fileID: 2800000, guid: 66599276adaf4c04c81e2706e7b694aa, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 107
+    second: {fileID: 2800000, guid: 33a726c2fdd62644bb26ee893475ac4b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 108
+    second: {fileID: 2800000, guid: 6ad1e7a7e0f15bb4292ca50b17006e6a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 109
+    second: {fileID: 2800000, guid: 82b49acf4bce213498dc7f693c3965cd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 110
+    second: {fileID: 2800000, guid: 76cbcd89d94024942a183fa5848c334a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 111
+    second: {fileID: 2800000, guid: 5a28e1a748352764fbe4c7cc32eab07a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 12
+    second: {fileID: 2800000, guid: 05abf547c06c0ff49a10648d6a817ccf, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 13
+    second: {fileID: 2800000, guid: f7a60c72340d02b4e816c08e2489c4b0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 16
+    second: {fileID: 2800000, guid: d6939e17ece782248b985be5061abee2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 18
+    second: {fileID: 2800000, guid: 3e56c4ac7bd81fe42b9cfb7b48a64e31, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 20
+    second: {fileID: 2800000, guid: 70750c2a228bfdb40aa9e617ab18d665, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 21
+    second: {fileID: 2800000, guid: 9b05e3d519c6de34b83f8d3ce85389b9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 22
+    second: {fileID: 2800000, guid: 9676881a1ae0b384692d187bfcf0a02d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 223
+    second: {fileID: 2800000, guid: 70462bde95dd42144b8959536a6c379a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 223 vertical
+    second: {fileID: 2800000, guid: 77532851d477ff5428ea1e1709fcbb1a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 224
+    second: {fileID: 2800000, guid: 2d5f4a9cf5b03ac46ab1be7cb7bb451f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 225
+    second: {fileID: 2800000, guid: 09f479627a8a20e4097252913e129474, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 229
+    second: {fileID: 2800000, guid: 3de39b013e13ae54686b4099001a2ff4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 22B
+    second: {fileID: 2800000, guid: 0d4e16494b428cb43bac7752792c53f8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 22C
+    second: {fileID: 2800000, guid: 5e45fdc2d5ad5f342be97860e9db9b5f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 23
+    second: {fileID: 2800000, guid: df63c4f05a5fc434baab9e77cb3a93c7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 24
+    second: {fileID: 2800000, guid: 53369e67c660f6d4eac7b2b8ecff5969, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 25
+    second: {fileID: 2800000, guid: 17eb30b2e26c6174c9f2ffb864d90e34, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 26
+    second: {fileID: 2800000, guid: 120d2606d57551a47ba517a724125b89, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 29
+    second: {fileID: 2800000, guid: 1d62aaed2d1e6434abb93f0a9d82ca6f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 30
+    second: {fileID: 2800000, guid: d378b5e74af5e6540b1ac744f377a2ca, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 31
+    second: {fileID: 2800000, guid: 7f41812f9e69d7d4082fdf2bc2c3fc4f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 32
+    second: {fileID: 2800000, guid: f22d02046d6ebc647ad08e20779ba201, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 33
+    second: {fileID: 2800000, guid: 698d4244e12867440b87ac169709da8f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 35
+    second: {fileID: 2800000, guid: 5783644abf1149344947299edc8fff91, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 36
+    second: {fileID: 2800000, guid: a4f1243e1b8444945b9d145c4c42bdb0, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: WOOD FOR SHIP VHSS 37
+    second: {fileID: 2800000, guid: 1376a12dab6815240929fa9e3c5c5b23, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: cannon vhss 03
+    second: {fileID: 2800000, guid: a9502bf0914e60e42b27cbd12ef606c5, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: wood curved 01
+    second: {fileID: 2800000, guid: 619ab94929309b34e93106487d663949, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
