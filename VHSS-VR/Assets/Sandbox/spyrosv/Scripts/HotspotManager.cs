@@ -27,7 +27,7 @@ public class HotspotManager : MonoBehaviour {
     public Animator playerAnimator { get; private set; }
     public AudioSource source;
 
-    [Tooltip("entrance=0, worker, bowsails, wheel, stern")]
+    [Tooltip("entrance=0,TestRope, worker, bowsails, wheel")]
     public int currentHotspot = 0;
 
     [Tooltip("firstAnimation=0, audioIntro, explore, interact, navigate")]
