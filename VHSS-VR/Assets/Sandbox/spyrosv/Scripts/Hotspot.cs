@@ -21,25 +21,25 @@ public abstract class Hotspot : MonoBehaviour {
    
     public void Update() { 
         switch(currentState) {
-            case State.firstAnimation:
+            case State.firstAnimation: //AGG&LOUTSAS modding ----- To animation me ton glaro na se ksipnaei
                 if(hotspotManager.playerAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime > 1) {
                     hotspotManager.playerAnimator.enabled = false;
                     hotspotManager.StatusFinished();
                 }
                 break;
-            case State.audioIntro:
+            case State.audioIntro: //A&L ------ To analogo audiobite
                 if (hotspotManager.source.isPlaying == false) {
                     hotspotManager.StatusFinished();
                 }
                 break;
-            case State.explore:
+            case State.explore: //A&L ------- Oso ginetai na einai active
                 exploreTimeout -= Time.deltaTime;
                 if (exploreTimeout < 0) {
                     StopExploration();
                     hotspotManager.StatusFinished();
                     break;
                 }
-                if (InfoElement.elementsOpen== elements.Length) {
+                if (InfoElement.elementsOpen== elements.Length) { 
                     lastItemOpenedTimeout -= Time.deltaTime;
                     if (lastItemOpenedTimeout < 0) {
                         StopExploration();
