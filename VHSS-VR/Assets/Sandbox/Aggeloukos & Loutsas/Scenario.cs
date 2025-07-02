@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Scenario : MonoBehaviour
 {
+    public bool Timer; //Togles timer function  
     public float NextSceneTimer = 3;//The time it takes for a scene to auto-skip
     public float TimeUntillNextScene;//The time left for the current scene
     public GameObject Player;
@@ -106,17 +107,19 @@ public class Scenario : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TimeUntillNextScene -= Time.deltaTime;
-        if (TimeUntillNextScene <= 0) {
-            if (i >= 6) {
-                i = 0;
-                Debug.Log("reset"); //Change this to exit in final build
+        if (Timer) {
+            TimeUntillNextScene -= Time.deltaTime;
+            if (TimeUntillNextScene <= 0) {
+                if (i >= 6) {
+                    i = 0;
+                    Debug.Log("reset"); //Change this to exit in final build
+                }
+                else {
+                    EnterScene(i);
+                    i++;
+                }
+                Debug.Log("<color=red>Timeout</color>");
             }
-            else { 
-                EnterScene(i);
-                i++;
-            }  
-            Debug.Log("<color=red>Timeout</color>");
         }
 
     }
