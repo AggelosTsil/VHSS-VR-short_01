@@ -12,6 +12,7 @@ public class Scenario : MonoBehaviour
     public int i = 0;//Good ol' reliable
     public AudioSource SeagullSpeaking; //The source from where you hear the seagul speak
     public AudioClip[] Seagull_Dialogues; //The different things the seagull says
+    public bool Dialogue;//Shuts up the seagull
     //<<Activity Scripts>>
     public GameObject ExploreActivity;
     public GameObject WorkerActivity;
@@ -26,7 +27,7 @@ public class Scenario : MonoBehaviour
    
 
 
-     public void EnterScene(int i) { //Initiallises next scene <<NOTE ADD i++>>
+     public void EnterScene(int i, bool Dialogue) { //Initiallises next scene <<NOTE ADD i++>>
         Debug.Log("<color=yellow>Entered Scene </color>" + Flags[i]);
         TimeUntillNextScene = NextSceneTimer; //Initiallises/resets timer
         if (i <= 3) {
@@ -37,7 +38,9 @@ public class Scenario : MonoBehaviour
         }
         Player.transform.position = Flags[i].transform.position; //Teleports player to hotspot
         SeagullSpeaking.clip = Seagull_Dialogues[i]; //Sets correct dialogue for seagull
-        SeagullSpeaking.Play(0); //Seagull starts yapping
+        if (Dialogue) {
+            SeagullSpeaking.Play(0); //Seagull starts yapping
+        }
         SceneActivity(i);
         
     }
@@ -99,7 +102,7 @@ public class Scenario : MonoBehaviour
     //<<End of activities>>
     void Start()
     {
-        EnterScene(i);
+        EnterScene(i,Dialogue);
         i++;
     }
    
@@ -115,7 +118,7 @@ public class Scenario : MonoBehaviour
                     Debug.Log("reset"); //Change this to exit in final build
                 }
                 else {
-                    EnterScene(i);
+                    EnterScene(i,Dialogue);
                     i++;
                 }
                 Debug.Log("<color=red>Timeout</color>");
