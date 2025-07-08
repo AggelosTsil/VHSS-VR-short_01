@@ -23,10 +23,6 @@ public class Scenario : MonoBehaviour
 
     //<<End of Activity Scripts>>
     
-
-   
-
-
      public void EnterScene(int i, bool Dialogue) { //Initiallises next scene <<NOTE ADD i++>>
         Debug.Log("<color=yellow>Entered Scene </color>" + Flags[i]);
         TimeUntillNextScene = NextSceneTimer; //Initiallises/resets timer
@@ -37,8 +33,8 @@ public class Scenario : MonoBehaviour
             Player.transform.rotation = new(0, 90, 0, 0);
         }
         Player.transform.position = Flags[i].transform.position; //Teleports player to hotspot
-        SeagullSpeaking.clip = Seagull_Dialogues[i]; //Sets correct dialogue for seagull
         if (Dialogue) {
+            SeagullSpeaking.clip = Seagull_Dialogues[i]; //Sets correct dialogue for seagull
             SeagullSpeaking.Play(0); //Seagull starts yapping
         }
         SceneActivity(i);
@@ -75,27 +71,27 @@ public class Scenario : MonoBehaviour
     }
 
     //<<All activities, these functions activate objects that contain scripts and are managed by SceneActivity, if you want to change activity code change it from the scripts inside those objects>>
-    public void Explore(bool active) {
+    private void Explore(bool active) {
         ExploreActivity.SetActive(active);
         Debug.Log("<color=green>Explore active</color> <b><size= 15>" + active + "</size></b>");
     }
-    public void Worker(bool active) {
+    private void Worker(bool active) {
         WorkerActivity.SetActive(active);
         Debug.Log("<color=green>Worker active</color> <b><size= 15>" + active + "</size></b>");
     }
-    public void Wheel(bool active) {
+    private void Wheel(bool active) {
         WheelActivity.SetActive(active);
         Debug.Log("<color=green>Wheel active</color> <b><size= 15>" + active + "</size></b>");
     }
-    public void Climb(bool active) {
+    private void Climb(bool active) {
         ClimbingActivity.SetActive(active);
         Debug.Log("<color=green>Climbing active</color> <b><size= 15>" + active + "</size></b>");
     }
-    public void SpotShips(bool active) {
+    private void SpotShips(bool active) {
         SpottingActivity.SetActive(active);
         Debug.Log("<color=green>Spotting active</color> <b><size= 15>" + active + "</size></b>");
     }
-    public void Ending(bool active) {
+    private void Ending(bool active) {
         EndindActivity.SetActive(active);
         Debug.Log("<color=green>Ending active</color> <b><size= 15>" + active + "</size></b>");
     }

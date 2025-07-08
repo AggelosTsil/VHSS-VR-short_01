@@ -54,14 +54,14 @@ public class NewClimbing : MonoBehaviour
         HangingCheckTimer = HangingCheck;
     }
 
-     void Fall(Vector3 FailPoint) {
+    public void Fall(Vector3 FailPoint) {
         //Vector3 FallingPoint = Player.position - FailPoint;
         //Player.Translate(FailPoint);
         Debug.Log("Falling to " + FailPoint + "from" + Player.position);
         Player.position = Vector3.Lerp(Player.position, FailPoint, Time.deltaTime * FallSensitivity);
     }
 
-    void GrabMove(bool Hand) { //true is right and false is left
+    public void GrabMove(bool Hand) { //true is right and false is left
         if (Hand) {
             TravelPoint.Set(-CurrentRHPosition.x + PreviousRHPosition.x, -CurrentRHPosition.y + PreviousRHPosition.y, -CurrentRHPosition.z + PreviousRHPosition.z);
         }
