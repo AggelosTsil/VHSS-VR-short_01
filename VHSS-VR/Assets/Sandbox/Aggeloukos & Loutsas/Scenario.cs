@@ -30,7 +30,7 @@ public class Scenario : MonoBehaviour
             Player.transform.rotation = new(0, 0, 0, 0); //Rotational changes are purely to fit the locations. change as neccesary 
         }
         else {
-            Player.transform.rotation = new(0, 90, 0, 0);
+            Player.transform.rotation = new(0, 0, 0, 0);
         }
         Player.transform.position = Flags[i].transform.position; //Teleports player to hotspot
         if (Dialogue) {
@@ -43,29 +43,29 @@ public class Scenario : MonoBehaviour
 
     public void SceneActivity(int i) { //Activates scripts related to each scene
         switch (i) {
-            case 0: 
-                Explore(true);
-                Ending(false);
+            case 0:
+                EnableActivity(ExploreActivity, true);
+                EnableActivity(EndindActivity, false);
                 break;
-            case 1: 
-                Worker(true);
-                Explore(false);
+            case 1:
+                EnableActivity(WorkerActivity, true);
+                EnableActivity(ExploreActivity, false);
                 break;
-            case 2: 
-                Wheel(true);
-                Worker(false);
+            case 2:
+                EnableActivity(WheelActivity, true);
+                EnableActivity(WorkerActivity, false);
                 break;
-            case 3: 
-                Climb(true);
-                Wheel(false);
+            case 3:
+                EnableActivity(ClimbingActivity, true);
+                EnableActivity(WheelActivity, false);
                 break;
-            case 4: 
-                SpotShips(true);
-                Climb(false);
+            case 4:
+                EnableActivity(SpottingActivity, true);
+                EnableActivity(ClimbingActivity, false);
                 break;
-            case 5: 
-                Ending(true);
-                SpotShips(false);
+            case 5:
+                EnableActivity(EndindActivity, true);
+                EnableActivity(SpottingActivity, false);
                 break;
         }
     }
@@ -74,6 +74,11 @@ public class Scenario : MonoBehaviour
     private void Explore(bool active) {
         ExploreActivity.SetActive(active);
         Debug.Log("<color=green>Explore active</color> <b><size= 15>" + active + "</size></b>");
+    }
+
+    public void EnableActivity(GameObject ActivityObject, bool active) {
+        ActivityObject.SetActive(active);
+        Debug.Log("<color=green>"+ ActivityObject.name + " active</color> <b>" + active + "</b>");
     }
     private void Worker(bool active) {
         WorkerActivity.SetActive(active);

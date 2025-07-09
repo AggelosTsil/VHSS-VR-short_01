@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class NewClimbing : MonoBehaviour
-{
+public class NewClimbing : MonoBehaviour {
     //<<Actions>>
     public InputAction GrabRight;
     public InputAction GrabLeft;
     public InputActionReference RPositionAction;
     public InputActionReference LPositionAction;
- 
+
     //<<Right hand position>>
     private Vector3 CurrentRHPosition;
     private Vector3 PreviousRHPosition;
@@ -58,7 +57,7 @@ public class NewClimbing : MonoBehaviour
         //Vector3 FallingPoint = Player.position - FailPoint;
         //Player.Translate(FailPoint);
         Debug.Log("Falling to " + FailPoint + "from" + Player.position);
-        Player.position = Vector3.Lerp(Player.position, FailPoint, Time.deltaTime * FallSensitivity);
+        Player.position = FailPoint;
     }
 
     public void GrabMove(bool Hand) { //true is right and false is left
@@ -72,8 +71,7 @@ public class NewClimbing : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         //<<Get position values>>
         PreviousRHPosition = CurrentRHPosition;
         PreviousLHPosition = CurrentLHPosition;
@@ -89,18 +87,21 @@ public class NewClimbing : MonoBehaviour
                 //both hands grabbing
                 Debug.Log("<color=green>BOTH HANDS GRABBING</color>");
 
-            }else {
+            }
+            else {
                 //RIGHT hand grabbing
                 GrabMove(true);
                 Debug.Log("<color=yellow>Right hand</color>");
             }
 
-        }else if (GrabLeft.IsPressed()) {
+        }
+        else if (GrabLeft.IsPressed()) {
             //LEFT hand grabbing
             GrabMove(false); //dont be confused, GrabMove is active! false is to activate left hand
             Debug.Log("<color=blue>Left hand</color>");
 
-        }else if (HangingCheckTimer <= 0) {
+        }
+        else if (HangingCheckTimer <= 0) {
             //Caught lacking! 
             Debug.Log("<color=red>No hands grabbing, falling down :c</color>");
             Fall(FailPoint);
