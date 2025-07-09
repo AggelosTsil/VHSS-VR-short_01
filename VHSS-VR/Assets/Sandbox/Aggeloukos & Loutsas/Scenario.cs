@@ -20,6 +20,7 @@ public class Scenario : MonoBehaviour
     public GameObject ClimbingActivity;
     public GameObject SpottingActivity;
     public GameObject EndindActivity;
+    public Animator Blurs;
 
     //<<End of Activity Scripts>>
     
@@ -65,6 +66,7 @@ public class Scenario : MonoBehaviour
                 break;
             case 5:
                 EnableActivity(EndindActivity, true);
+                Blurs.SetBool("End", true);
                 EnableActivity(SpottingActivity, false);
                 break;
         }
@@ -105,6 +107,7 @@ public class Scenario : MonoBehaviour
     {
         EnterScene(i,Dialogue);
         i++;
+        Blurs.SetBool("End", false);
     }
    
 

@@ -14,6 +14,7 @@ public class Toggle_Spyglass : MonoBehaviour
     {
         ToggleSpyglass.Enable();
         Spyglass.SetActive(Visible);
+        GetSound.time = 0.15f;
     }
 
     private void OnDisable() {
@@ -27,6 +28,7 @@ public class Toggle_Spyglass : MonoBehaviour
             Visible = !Visible;
             Spyglass.SetActive(Visible);
             if (Visible) {
+                
                 GetSound.Play(); //plays the "Get" sound
             }
         }
