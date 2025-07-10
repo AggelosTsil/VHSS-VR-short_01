@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2407844564083719975}
   - component: {fileID: 4015746449970539728}
   - component: {fileID: 3184795566870629935}
+  - component: {fileID: 6794134291930538920}
   m_Layer: 0
   m_Name: ROPE Climbable 20
   m_TagString: Untagged
@@ -83,6 +84,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6794134291930538920
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125805264684753476}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -194614830047228873, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &293333215771738632
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +109,7 @@ GameObject:
   - component: {fileID: 7091175967164203745}
   - component: {fileID: 7458312167383655287}
   - component: {fileID: 5949419925006819185}
+  - component: {fileID: 5424825877868787150}
   m_Layer: 0
   m_Name: ROPE Climbable 7
   m_TagString: Untagged
@@ -166,6 +182,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5424825877868787150
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293333215771738632}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6331553872562749944, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &345511434541887114
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,6 +207,7 @@ GameObject:
   - component: {fileID: 3733961629277011216}
   - component: {fileID: 6608368272683696200}
   - component: {fileID: 1017986851940716262}
+  - component: {fileID: 5077783525889231934}
   m_Layer: 0
   m_Name: ROPE Climbable 1
   m_TagString: Untagged
@@ -249,6 +280,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5077783525889231934
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345511434541887114}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6619625258589002000, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &618194524599267438
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,6 +305,7 @@ GameObject:
   - component: {fileID: 8332809366618826419}
   - component: {fileID: 6573638669479083190}
   - component: {fileID: 8143621219797716678}
+  - component: {fileID: 3852822659372894991}
   m_Layer: 0
   m_Name: ROPE Climbable 27
   m_TagString: Untagged
@@ -332,6 +378,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3852822659372894991
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618194524599267438}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8992444176450035425, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &797918722171911870
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,6 +403,7 @@ GameObject:
   - component: {fileID: 5271550174247928401}
   - component: {fileID: 2530863071284233138}
   - component: {fileID: 1648540996568407364}
+  - component: {fileID: 1172126273957174368}
   m_Layer: 0
   m_Name: ROPE Climbable 21
   m_TagString: Untagged
@@ -415,6 +476,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1172126273957174368
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797918722171911870}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1941033854108632902, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &983677229115682152
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,6 +501,7 @@ GameObject:
   - component: {fileID: 1463823904151051380}
   - component: {fileID: 3285101977970397848}
   - component: {fileID: 5118083940369178325}
+  - component: {fileID: 2848196038872287597}
   m_Layer: 0
   m_Name: ROPE Ladder Portside
   m_TagString: Untagged
@@ -508,6 +584,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2848196038872287597
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983677229115682152}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6350950130934905583, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &1329987225261327522
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,6 +609,7 @@ GameObject:
   - component: {fileID: 2308022411046365421}
   - component: {fileID: 980841470708660862}
   - component: {fileID: 3287098218723900209}
+  - component: {fileID: 6363895726605374328}
   m_Layer: 0
   m_Name: ROPE Climbable 14
   m_TagString: Untagged
@@ -591,6 +682,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6363895726605374328
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1329987225261327522}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4285366018734479412, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &1392281502468286607
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,6 +707,7 @@ GameObject:
   - component: {fileID: 6502667383968626582}
   - component: {fileID: 1286331631498796991}
   - component: {fileID: 8413930594440653337}
+  - component: {fileID: 5028943857546580340}
   m_Layer: 0
   m_Name: ROPE Climbable 29
   m_TagString: Untagged
@@ -674,6 +780,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5028943857546580340
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392281502468286607}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7257139628120094347, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &1578022779206411118
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,6 +805,7 @@ GameObject:
   - component: {fileID: 1494733587118159705}
   - component: {fileID: 5690774631535829638}
   - component: {fileID: 2188791521515718020}
+  - component: {fileID: 6954034935805957168}
   m_Layer: 0
   m_Name: ROPE Climbable 38
   m_TagString: Untagged
@@ -757,6 +878,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6954034935805957168
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578022779206411118}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4611168752267692166, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &1667167049197178841
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,6 +903,7 @@ GameObject:
   - component: {fileID: 199325603611119181}
   - component: {fileID: 8934025656113119993}
   - component: {fileID: 7796616435326386492}
+  - component: {fileID: 1264266650847263073}
   m_Layer: 0
   m_Name: ROPE Climbable 3
   m_TagString: Untagged
@@ -840,6 +976,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1264266650847263073
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667167049197178841}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6822571823720066474, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &1940592790765704445
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,6 +1001,7 @@ GameObject:
   - component: {fileID: 1338774264457026933}
   - component: {fileID: 717285947499528081}
   - component: {fileID: 6216449972265626786}
+  - component: {fileID: 457939615139455495}
   m_Layer: 0
   m_Name: ROPE Climbable 39
   m_TagString: Untagged
@@ -923,6 +1074,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &457939615139455495
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940592790765704445}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3319761727235550018, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &2347766745490145745
 GameObject:
   m_ObjectHideFlags: 0
@@ -934,6 +1099,7 @@ GameObject:
   - component: {fileID: 1428151772408281887}
   - component: {fileID: 7581670486629809928}
   - component: {fileID: 4745648404226795706}
+  - component: {fileID: 7937565595476878552}
   m_Layer: 0
   m_Name: ROPE Climbable 32
   m_TagString: Untagged
@@ -1006,6 +1172,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7937565595476878552
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2347766745490145745}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2330377496878293738, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &2878935548916843090
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,6 +1197,7 @@ GameObject:
   - component: {fileID: 8589899238549098166}
   - component: {fileID: 582077781202462977}
   - component: {fileID: 6118817929480542491}
+  - component: {fileID: 8709210974022638299}
   m_Layer: 0
   m_Name: ROPE Climbable 34
   m_TagString: Untagged
@@ -1089,6 +1270,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8709210974022638299
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2878935548916843090}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3790573232995184561, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &3105791627827797276
 GameObject:
   m_ObjectHideFlags: 0
@@ -1100,6 +1295,7 @@ GameObject:
   - component: {fileID: 7892641059821519435}
   - component: {fileID: 173705326876012008}
   - component: {fileID: 2863759018274136308}
+  - component: {fileID: 2485419119912347471}
   m_Layer: 0
   m_Name: ROPE Climbable 31
   m_TagString: Untagged
@@ -1172,6 +1368,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2485419119912347471
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3105791627827797276}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4533764040759615509, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &3112276823981981234
 GameObject:
   m_ObjectHideFlags: 0
@@ -1183,6 +1393,7 @@ GameObject:
   - component: {fileID: 8802223141942841153}
   - component: {fileID: 5819972825374423014}
   - component: {fileID: 1739342333528730589}
+  - component: {fileID: 8742156477344202430}
   m_Layer: 0
   m_Name: ROPE Climbable 42
   m_TagString: Untagged
@@ -1255,6 +1466,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8742156477344202430
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3112276823981981234}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2865846512572625661, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &4016331574101996595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1266,6 +1491,7 @@ GameObject:
   - component: {fileID: 1515366466374089799}
   - component: {fileID: 8446721832567150440}
   - component: {fileID: 5915751520696374745}
+  - component: {fileID: 6210051081080018140}
   m_Layer: 0
   m_Name: ROPE Climbable 35
   m_TagString: Untagged
@@ -1338,6 +1564,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6210051081080018140
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4016331574101996595}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4695455128794418996, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &4096024499097594183
 GameObject:
   m_ObjectHideFlags: 0
@@ -1349,6 +1589,7 @@ GameObject:
   - component: {fileID: 8478828638204357357}
   - component: {fileID: 2759035360610173527}
   - component: {fileID: 5737476701602448572}
+  - component: {fileID: 8932087520402504171}
   m_Layer: 0
   m_Name: ROPE Climbable 19
   m_TagString: Untagged
@@ -1421,6 +1662,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8932087520402504171
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4096024499097594183}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8665951925488095293, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &4190820003151375576
 GameObject:
   m_ObjectHideFlags: 0
@@ -1432,6 +1687,7 @@ GameObject:
   - component: {fileID: 4756532653456508278}
   - component: {fileID: 749396917882263817}
   - component: {fileID: 7599075127190935721}
+  - component: {fileID: 2417682280857936116}
   m_Layer: 0
   m_Name: ROPE Climbable 23
   m_TagString: Untagged
@@ -1504,6 +1760,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2417682280857936116
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4190820003151375576}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3939841662864392469, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &4431575259233076781
 GameObject:
   m_ObjectHideFlags: 0
@@ -1513,6 +1783,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4431575259233076770}
+  - component: {fileID: 4750818260830343955}
   m_Layer: 0
   m_Name: Step (9)
   m_TagString: Untagged
@@ -1535,6 +1806,20 @@ Transform:
   m_Father: {fileID: 1463823904151051380}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &4750818260830343955
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431575259233076781}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4431575259253434298
 GameObject:
   m_ObjectHideFlags: 0
@@ -1544,6 +1829,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4431575259253434299}
+  - component: {fileID: 127916554933335913}
   m_Layer: 0
   m_Name: Step
   m_TagString: Untagged
@@ -1566,6 +1852,20 @@ Transform:
   m_Father: {fileID: 3376297850279834646}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &127916554933335913
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431575259253434298}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4431575259359930137
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,6 +1875,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4431575259359930142}
+  - component: {fileID: 1046701425680962029}
   m_Layer: 0
   m_Name: Step (4)
   m_TagString: Untagged
@@ -1597,6 +1898,20 @@ Transform:
   m_Father: {fileID: 3376297850279834646}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &1046701425680962029
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431575259359930137}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4431575259431999677
 GameObject:
   m_ObjectHideFlags: 0
@@ -1606,6 +1921,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4431575259431999666}
+  - component: {fileID: 4964416895505847760}
   m_Layer: 0
   m_Name: Step (10)
   m_TagString: Untagged
@@ -1628,6 +1944,20 @@ Transform:
   m_Father: {fileID: 3376297850279834646}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &4964416895505847760
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431575259431999677}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4431575259463646709
 GameObject:
   m_ObjectHideFlags: 0
@@ -1637,6 +1967,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4431575259463646698}
+  - component: {fileID: 4220891231406792221}
   m_Layer: 0
   m_Name: Step (1)
   m_TagString: Untagged
@@ -1659,6 +1990,20 @@ Transform:
   m_Father: {fileID: 1463823904151051380}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &4220891231406792221
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431575259463646709}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4431575259576076817
 GameObject:
   m_ObjectHideFlags: 0
@@ -1668,6 +2013,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4431575259576076822}
+  - component: {fileID: 3742019172513693028}
   m_Layer: 0
   m_Name: Step (12)
   m_TagString: Untagged
@@ -1690,6 +2036,20 @@ Transform:
   m_Father: {fileID: 3376297850279834646}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &3742019172513693028
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431575259576076817}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4431575259697305441
 GameObject:
   m_ObjectHideFlags: 0
@@ -1699,6 +2059,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4431575259697305446}
+  - component: {fileID: 2458530162195866151}
   m_Layer: 0
   m_Name: Step (2)
   m_TagString: Untagged
@@ -1721,6 +2082,20 @@ Transform:
   m_Father: {fileID: 1463823904151051380}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &2458530162195866151
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431575259697305441}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4431575259779261861
 GameObject:
   m_ObjectHideFlags: 0
@@ -1730,6 +2105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4431575259779261850}
+  - component: {fileID: 3185088833681073935}
   m_Layer: 0
   m_Name: Step (7)
   m_TagString: Untagged
@@ -1752,6 +2128,20 @@ Transform:
   m_Father: {fileID: 3376297850279834646}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &3185088833681073935
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431575259779261861}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4431575259941740142
 GameObject:
   m_ObjectHideFlags: 0
@@ -1976,6 +2366,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4431575260269131128}
+  - component: {fileID: 6558949324022129992}
   m_Layer: 0
   m_Name: Step (5)
   m_TagString: Untagged
@@ -1998,6 +2389,20 @@ Transform:
   m_Father: {fileID: 1463823904151051380}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &6558949324022129992
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431575260269131131}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4431575260368613777
 GameObject:
   m_ObjectHideFlags: 0
@@ -2007,6 +2412,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4431575260368613782}
+  - component: {fileID: 1788049198822135439}
   m_Layer: 0
   m_Name: Step (9)
   m_TagString: Untagged
@@ -2029,6 +2435,20 @@ Transform:
   m_Father: {fileID: 3376297850279834646}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &1788049198822135439
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431575260368613777}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4431575260401363162
 GameObject:
   m_ObjectHideFlags: 0
@@ -2038,6 +2458,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4431575260401363163}
+  - component: {fileID: 3178070247425363065}
   m_Layer: 0
   m_Name: Step (8)
   m_TagString: Untagged
@@ -2060,6 +2481,20 @@ Transform:
   m_Father: {fileID: 1463823904151051380}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &3178070247425363065
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431575260401363162}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4431575260476681843
 GameObject:
   m_ObjectHideFlags: 0
@@ -2069,6 +2504,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4431575260476681840}
+  - component: {fileID: 8605189317397166471}
   m_Layer: 0
   m_Name: Step (10)
   m_TagString: Untagged
@@ -2091,6 +2527,20 @@ Transform:
   m_Father: {fileID: 1463823904151051380}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &8605189317397166471
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431575260476681843}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4431575260539494384
 GameObject:
   m_ObjectHideFlags: 0
@@ -2100,6 +2550,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4431575260539494385}
+  - component: {fileID: 8411197070432271064}
   m_Layer: 0
   m_Name: Step (5)
   m_TagString: Untagged
@@ -2122,6 +2573,20 @@ Transform:
   m_Father: {fileID: 3376297850279834646}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &8411197070432271064
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431575260539494384}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4431575260571065100
 GameObject:
   m_ObjectHideFlags: 0
@@ -2131,6 +2596,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4431575260571065101}
+  - component: {fileID: 2315361191476023523}
   m_Layer: 0
   m_Name: Step (1)
   m_TagString: Untagged
@@ -2153,6 +2619,20 @@ Transform:
   m_Father: {fileID: 3376297850279834646}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &2315361191476023523
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431575260571065100}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4431575260659786126
 GameObject:
   m_ObjectHideFlags: 0
@@ -2162,6 +2642,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4431575260659786127}
+  - component: {fileID: 8457197092470803469}
   m_Layer: 0
   m_Name: Step (6)
   m_TagString: Untagged
@@ -2184,6 +2665,20 @@ Transform:
   m_Father: {fileID: 3376297850279834646}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &8457197092470803469
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431575260659786126}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4431575260729295574
 GameObject:
   m_ObjectHideFlags: 0
@@ -2193,6 +2688,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4431575260729295575}
+  - component: {fileID: 6862895234940285568}
   m_Layer: 0
   m_Name: Step (4)
   m_TagString: Untagged
@@ -2215,6 +2711,20 @@ Transform:
   m_Father: {fileID: 1463823904151051380}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &6862895234940285568
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431575260729295574}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4431575260784771739
 GameObject:
   m_ObjectHideFlags: 0
@@ -2224,6 +2734,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4431575260784771736}
+  - component: {fileID: 3623153053086528926}
   m_Layer: 0
   m_Name: Step (2)
   m_TagString: Untagged
@@ -2246,6 +2757,20 @@ Transform:
   m_Father: {fileID: 3376297850279834646}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &3623153053086528926
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431575260784771739}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4431575260914434806
 GameObject:
   m_ObjectHideFlags: 0
@@ -2255,6 +2780,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4431575260914434807}
+  - component: {fileID: 4395774196627766300}
   m_Layer: 0
   m_Name: Step (3)
   m_TagString: Untagged
@@ -2277,6 +2803,20 @@ Transform:
   m_Father: {fileID: 1463823904151051380}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &4395774196627766300
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431575260914434806}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4431575260956456921
 GameObject:
   m_ObjectHideFlags: 0
@@ -2286,6 +2826,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4431575260956456926}
+  - component: {fileID: 9086998925395193361}
   m_Layer: 0
   m_Name: Step (6)
   m_TagString: Untagged
@@ -2308,6 +2849,20 @@ Transform:
   m_Father: {fileID: 1463823904151051380}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &9086998925395193361
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431575260956456921}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4431575260990694636
 GameObject:
   m_ObjectHideFlags: 0
@@ -2317,6 +2872,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4431575260990694637}
+  - component: {fileID: 4518005853362607189}
   m_Layer: 0
   m_Name: Step (11)
   m_TagString: Untagged
@@ -2339,6 +2895,20 @@ Transform:
   m_Father: {fileID: 3376297850279834646}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &4518005853362607189
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431575260990694636}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4431575261013943415
 GameObject:
   m_ObjectHideFlags: 0
@@ -2348,6 +2918,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4431575261013943412}
+  - component: {fileID: 5049287323339512952}
   m_Layer: 0
   m_Name: Step (3)
   m_TagString: Untagged
@@ -2370,6 +2941,20 @@ Transform:
   m_Father: {fileID: 3376297850279834646}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &5049287323339512952
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431575261013943415}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4431575261098282126
 GameObject:
   m_ObjectHideFlags: 0
@@ -2379,6 +2964,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4431575261098282127}
+  - component: {fileID: 5037734926760822313}
   m_Layer: 0
   m_Name: Step (7)
   m_TagString: Untagged
@@ -2401,6 +2987,20 @@ Transform:
   m_Father: {fileID: 1463823904151051380}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &5037734926760822313
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431575261098282126}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4431575261209928960
 GameObject:
   m_ObjectHideFlags: 0
@@ -2410,6 +3010,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4431575261209928961}
+  - component: {fileID: 2821343680768056812}
   m_Layer: 0
   m_Name: Step (8)
   m_TagString: Untagged
@@ -2432,6 +3033,20 @@ Transform:
   m_Father: {fileID: 3376297850279834646}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &2821343680768056812
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431575261209928960}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &4846720855124180409
 GameObject:
   m_ObjectHideFlags: 0
@@ -2443,6 +3058,7 @@ GameObject:
   - component: {fileID: 2690701070737078781}
   - component: {fileID: 3787481631782839129}
   - component: {fileID: 3575455603189329013}
+  - component: {fileID: 3050331330962935899}
   m_Layer: 0
   m_Name: ROPE Climbable 8
   m_TagString: Untagged
@@ -2515,6 +3131,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3050331330962935899
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4846720855124180409}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7110556355444804880, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &4848679802097964453
 GameObject:
   m_ObjectHideFlags: 0
@@ -2526,6 +3156,7 @@ GameObject:
   - component: {fileID: 6117284770397113880}
   - component: {fileID: 954410009769182586}
   - component: {fileID: 2795401292906099411}
+  - component: {fileID: 1116810920191312290}
   m_Layer: 0
   m_Name: ROPE Climbable 10
   m_TagString: Untagged
@@ -2598,6 +3229,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1116810920191312290
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4848679802097964453}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5017741396640352425, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &4884520465717826019
 GameObject:
   m_ObjectHideFlags: 0
@@ -2609,6 +3254,7 @@ GameObject:
   - component: {fileID: 7756595582695246557}
   - component: {fileID: 7942265186227818569}
   - component: {fileID: 6384095607379411214}
+  - component: {fileID: 8666669131002678853}
   m_Layer: 0
   m_Name: ROPE Climbable 0
   m_TagString: Untagged
@@ -2681,6 +3327,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8666669131002678853
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4884520465717826019}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8417408378634268623, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &4927874364367850356
 GameObject:
   m_ObjectHideFlags: 0
@@ -2692,6 +3352,7 @@ GameObject:
   - component: {fileID: 2314073173393249991}
   - component: {fileID: 7599250305380806952}
   - component: {fileID: 2776164714741828291}
+  - component: {fileID: 5560110251994757896}
   m_Layer: 0
   m_Name: ROPE Climbable 4
   m_TagString: Untagged
@@ -2764,6 +3425,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5560110251994757896
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4927874364367850356}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6692116601729597240, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &4956908343379807815
 GameObject:
   m_ObjectHideFlags: 0
@@ -2775,6 +3450,7 @@ GameObject:
   - component: {fileID: 3376297850279834646}
   - component: {fileID: 3420896267504814277}
   - component: {fileID: 2180804850099362278}
+  - component: {fileID: 6108188137206676073}
   m_Layer: 0
   m_Name: ROPE Ladder Startboard
   m_TagString: Untagged
@@ -2860,6 +3536,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6108188137206676073
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4956908343379807815}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3260007021894851360, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &5260506203458836699
 GameObject:
   m_ObjectHideFlags: 0
@@ -2871,6 +3561,7 @@ GameObject:
   - component: {fileID: 2249800004128228766}
   - component: {fileID: 7759995049253539374}
   - component: {fileID: 3520495162792715379}
+  - component: {fileID: 7939427186870938851}
   m_Layer: 0
   m_Name: ROPE Climbable 33
   m_TagString: Untagged
@@ -2943,6 +3634,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7939427186870938851
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5260506203458836699}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4812418609431017104, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &6170930869942798993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2954,6 +3659,7 @@ GameObject:
   - component: {fileID: 918994997028471596}
   - component: {fileID: 3286654698280752500}
   - component: {fileID: 806943128143726436}
+  - component: {fileID: 1677209628435905497}
   m_Layer: 0
   m_Name: ROPE Climbable 25
   m_TagString: Untagged
@@ -3026,6 +3732,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1677209628435905497
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6170930869942798993}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3501197883031376197, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &6439961288278915786
 GameObject:
   m_ObjectHideFlags: 0
@@ -3037,6 +3757,7 @@ GameObject:
   - component: {fileID: 6162412363368464806}
   - component: {fileID: 6714617019258849790}
   - component: {fileID: 2740204428309158645}
+  - component: {fileID: 9124817292678946}
   m_Layer: 0
   m_Name: ROPE Climbable 5
   m_TagString: Untagged
@@ -3109,6 +3830,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &9124817292678946
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6439961288278915786}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1226366726773693666, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &6465374529810136210
 GameObject:
   m_ObjectHideFlags: 0
@@ -3120,6 +3855,7 @@ GameObject:
   - component: {fileID: 4458488843875982855}
   - component: {fileID: 8986532061728275807}
   - component: {fileID: 7970721840196485194}
+  - component: {fileID: 7203476514469116324}
   m_Layer: 0
   m_Name: ROPE Climbable 2
   m_TagString: Untagged
@@ -3192,6 +3928,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7203476514469116324
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6465374529810136210}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6400713608802520283, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &6624106929813008727
 GameObject:
   m_ObjectHideFlags: 0
@@ -3203,6 +3953,7 @@ GameObject:
   - component: {fileID: 974355659383992228}
   - component: {fileID: 8552920001555186394}
   - component: {fileID: 4944610896404985077}
+  - component: {fileID: 270144784662338292}
   m_Layer: 0
   m_Name: ROPE Climbable 26
   m_TagString: Untagged
@@ -3275,6 +4026,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &270144784662338292
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6624106929813008727}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1316407774429527852, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &6637292597577175888
 GameObject:
   m_ObjectHideFlags: 0
@@ -3286,6 +4051,7 @@ GameObject:
   - component: {fileID: 3404230665671633903}
   - component: {fileID: 8849421745275921404}
   - component: {fileID: 1137601051629808278}
+  - component: {fileID: 3010560706371355664}
   m_Layer: 0
   m_Name: ROPE Climbable  16
   m_TagString: Untagged
@@ -3358,6 +4124,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3010560706371355664
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6637292597577175888}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5563135685213112830, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &6795213907104331988
 GameObject:
   m_ObjectHideFlags: 0
@@ -3369,6 +4149,7 @@ GameObject:
   - component: {fileID: 7353833348492221243}
   - component: {fileID: 8789351879546425471}
   - component: {fileID: 1866184155033727773}
+  - component: {fileID: 1905167763762001122}
   m_Layer: 0
   m_Name: ROPE Climbable 30
   m_TagString: Untagged
@@ -3441,6 +4222,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1905167763762001122
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6795213907104331988}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1553457590943569119, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &6935059108259240196
 GameObject:
   m_ObjectHideFlags: 0
@@ -3452,6 +4247,7 @@ GameObject:
   - component: {fileID: 9178452541919068074}
   - component: {fileID: 3583117965906060990}
   - component: {fileID: 4642326171125729268}
+  - component: {fileID: 7538846775764372307}
   m_Layer: 0
   m_Name: ROPE Climbable 12
   m_TagString: Untagged
@@ -3524,6 +4320,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7538846775764372307
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6935059108259240196}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3090171571870749435, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &6935859634412254375
 GameObject:
   m_ObjectHideFlags: 0
@@ -3535,6 +4345,7 @@ GameObject:
   - component: {fileID: 4682171861749331868}
   - component: {fileID: 7330934510226317597}
   - component: {fileID: 6249525316715047463}
+  - component: {fileID: 3824864735929900016}
   m_Layer: 0
   m_Name: ROPE Climbable 40
   m_TagString: Untagged
@@ -3607,6 +4418,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3824864735929900016
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6935859634412254375}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2244499107607947062, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &7094733883153851683
 GameObject:
   m_ObjectHideFlags: 0
@@ -3618,6 +4443,7 @@ GameObject:
   - component: {fileID: 3593012965102729403}
   - component: {fileID: 228152997033073199}
   - component: {fileID: 3808251781754561301}
+  - component: {fileID: 2801939128604013522}
   m_Layer: 0
   m_Name: ROPE Climbable 13
   m_TagString: Untagged
@@ -3690,6 +4516,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2801939128604013522
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7094733883153851683}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3522184806096352192, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &7139013604905816837
 GameObject:
   m_ObjectHideFlags: 0
@@ -3701,6 +4541,7 @@ GameObject:
   - component: {fileID: 6335676899015313427}
   - component: {fileID: 4302559873151087279}
   - component: {fileID: 4282889306135385781}
+  - component: {fileID: 1516286520618900283}
   m_Layer: 0
   m_Name: ROPE Climbable 18
   m_TagString: Untagged
@@ -3773,6 +4614,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1516286520618900283
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7139013604905816837}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4992953240166860356, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &7185860543694995069
 GameObject:
   m_ObjectHideFlags: 0
@@ -3784,6 +4639,7 @@ GameObject:
   - component: {fileID: 234106270291246489}
   - component: {fileID: 167228310332055192}
   - component: {fileID: 981892714961374541}
+  - component: {fileID: 7295489311225335988}
   m_Layer: 0
   m_Name: ROPE Climbable 11
   m_TagString: Untagged
@@ -3856,6 +4712,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7295489311225335988
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7185860543694995069}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8294910622187169993, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &7227258904502427394
 GameObject:
   m_ObjectHideFlags: 0
@@ -3867,6 +4737,7 @@ GameObject:
   - component: {fileID: 4254199040649553155}
   - component: {fileID: 482215761864593732}
   - component: {fileID: 2641525782099418682}
+  - component: {fileID: 2566655891955324788}
   m_Layer: 0
   m_Name: ROPE Climbable 24
   m_TagString: Untagged
@@ -3939,6 +4810,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2566655891955324788
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7227258904502427394}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3370047922968394167, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &7411461335368882584
 GameObject:
   m_ObjectHideFlags: 0
@@ -3950,6 +4835,7 @@ GameObject:
   - component: {fileID: 4792182847551213935}
   - component: {fileID: 3624162650361452059}
   - component: {fileID: 8641154113644504613}
+  - component: {fileID: 2802972741122911351}
   m_Layer: 0
   m_Name: ROPE Climbable 44
   m_TagString: Untagged
@@ -4022,6 +4908,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2802972741122911351
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7411461335368882584}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8204797028903661201, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &7431860763770564123
 GameObject:
   m_ObjectHideFlags: 0
@@ -4033,6 +4933,7 @@ GameObject:
   - component: {fileID: 7939531825730575143}
   - component: {fileID: 2900279044064679723}
   - component: {fileID: 4283585783801804383}
+  - component: {fileID: 2241167404390018087}
   m_Layer: 0
   m_Name: ROPE Climbable 43
   m_TagString: Untagged
@@ -4105,6 +5006,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2241167404390018087
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7431860763770564123}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3570268979803615565, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &7600037838395006748
 GameObject:
   m_ObjectHideFlags: 0
@@ -4116,6 +5031,7 @@ GameObject:
   - component: {fileID: 3276178026483282858}
   - component: {fileID: 3976479445996639370}
   - component: {fileID: 2331883736936991516}
+  - component: {fileID: 1749846470325107605}
   m_Layer: 0
   m_Name: ROPE Climbable 6
   m_TagString: Untagged
@@ -4188,6 +5104,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1749846470325107605
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7600037838395006748}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5767204188396483031, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &7809450093063150672
 GameObject:
   m_ObjectHideFlags: 0
@@ -4199,6 +5129,7 @@ GameObject:
   - component: {fileID: 6391480665640515410}
   - component: {fileID: 7156904606174155972}
   - component: {fileID: 6735157973517840690}
+  - component: {fileID: 6713908384358071476}
   m_Layer: 0
   m_Name: ROPE Climbable 22
   m_TagString: Untagged
@@ -4271,6 +5202,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6713908384358071476
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7809450093063150672}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5605058588566707517, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &7969768196380177084
 GameObject:
   m_ObjectHideFlags: 0
@@ -4282,6 +5227,7 @@ GameObject:
   - component: {fileID: 1896689886237560276}
   - component: {fileID: 6894943675259737531}
   - component: {fileID: 2998092016825469820}
+  - component: {fileID: 1523919327954325534}
   m_Layer: 0
   m_Name: ROPE Climbable 17
   m_TagString: Untagged
@@ -4354,6 +5300,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1523919327954325534
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7969768196380177084}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4006518956753334047, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &7975568383423454711
 GameObject:
   m_ObjectHideFlags: 0
@@ -4365,6 +5325,7 @@ GameObject:
   - component: {fileID: 6188642689805567174}
   - component: {fileID: 6328891564506349029}
   - component: {fileID: 5536700447216166842}
+  - component: {fileID: 2216262362964276681}
   m_Layer: 0
   m_Name: ROPE Climbable 15
   m_TagString: Untagged
@@ -4437,6 +5398,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2216262362964276681
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7975568383423454711}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7943336313167758055, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &8089785596943611782
 GameObject:
   m_ObjectHideFlags: 0
@@ -4448,6 +5423,7 @@ GameObject:
   - component: {fileID: 6374150089923918320}
   - component: {fileID: 2146632837031382448}
   - component: {fileID: 3456561413053254159}
+  - component: {fileID: 748709019466026739}
   m_Layer: 0
   m_Name: ROPE Climbable 41
   m_TagString: Untagged
@@ -4520,6 +5496,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &748709019466026739
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8089785596943611782}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7235593015990714053, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &8217938109027084908
 GameObject:
   m_ObjectHideFlags: 0
@@ -4531,6 +5521,7 @@ GameObject:
   - component: {fileID: 5824054255547327617}
   - component: {fileID: 2170083618288046238}
   - component: {fileID: 8565083049006721723}
+  - component: {fileID: 5055536650714865296}
   m_Layer: 0
   m_Name: ROPE Climbable 36
   m_TagString: Untagged
@@ -4603,6 +5594,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5055536650714865296
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8217938109027084908}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8280919373122587335, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &8305533627141648739
 GameObject:
   m_ObjectHideFlags: 0
@@ -4614,6 +5619,7 @@ GameObject:
   - component: {fileID: 9074279140081714859}
   - component: {fileID: 2880399412276725092}
   - component: {fileID: 1541748180478882799}
+  - component: {fileID: 7491373917061071140}
   m_Layer: 0
   m_Name: ROPE Climbable 9
   m_TagString: Untagged
@@ -4686,6 +5692,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7491373917061071140
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8305533627141648739}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5663357247476548177, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &8459955173514445815
 GameObject:
   m_ObjectHideFlags: 0
@@ -4697,6 +5717,7 @@ GameObject:
   - component: {fileID: 1666866288459294828}
   - component: {fileID: 3053922859785775449}
   - component: {fileID: 6741357253496454843}
+  - component: {fileID: 4943615644036224135}
   m_Layer: 0
   m_Name: ROPE Climbable 37
   m_TagString: Untagged
@@ -4769,6 +5790,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4943615644036224135
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8459955173514445815}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2312840671597956303, guid: 021a0f1646d344747b03842f12f056f7, type: 3}
 --- !u!1 &8535344349780707513
 GameObject:
   m_ObjectHideFlags: 0
@@ -4780,6 +5815,7 @@ GameObject:
   - component: {fileID: 293138794718029808}
   - component: {fileID: 358858326100492214}
   - component: {fileID: 5446680211777351540}
+  - component: {fileID: 4308856897780866341}
   m_Layer: 0
   m_Name: ROPE Climbable 28
   m_TagString: Untagged
@@ -4852,3 +5888,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4308856897780866341
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8535344349780707513}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 411110171800054973, guid: 021a0f1646d344747b03842f12f056f7, type: 3}

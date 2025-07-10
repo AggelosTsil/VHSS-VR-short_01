@@ -11,7 +11,7 @@ public class Scenario : MonoBehaviour
     public float TimeSpot;
     public GameObject Player;
     public GameObject[] Flags;//Teleport hotspots
-    public int i = 0;//Good ol' reliable
+    public string FirstScene;
     public AudioSource SeagullSpeaking; //The source from where you hear the seagul speak
     public AudioClip[] Seagull_Dialogues; //The different things the seagull says
     public bool Dialogue;//Shuts up the seagull
@@ -36,10 +36,10 @@ public class Scenario : MonoBehaviour
             Player.transform.rotation = new(0, 0, 0, 0);
         }*/
         //Player.transform.position = Flags[i].transform.position; //Teleports player to hotspot
-        if (Dialogue) {
+       /* if (Dialogue) {
             SeagullSpeaking.clip = Seagull_Dialogues[i]; //Sets correct dialogue for seagull
             SeagullSpeaking.Play(0); //Seagull starts yapping
-        }
+        }*/
         SceneActivity(SceneName);
         
     }
@@ -82,7 +82,7 @@ public class Scenario : MonoBehaviour
     //<<End of activities>>
     void Start()
     {
-        EnterScene("Explore",Dialogue);
+        EnterScene(FirstScene,Dialogue);
         Blurs.SetBool("End", false);
     }
    
