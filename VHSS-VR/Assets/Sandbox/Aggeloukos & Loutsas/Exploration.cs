@@ -7,10 +7,12 @@ public class Exploration : MonoBehaviour
     public GameObject player;
     public Scenario Scenario;
     public GameObject ExploreArea;
+    public Teleport Teleport;
     // Start is called before the first frame update
     void Start()
     {
         player.transform.position = ExploreArea.transform.position;
+        Teleport.TeleportToPoint.Enable();
     }
 
     public void TeleportToHotSpot(GameObject Anchor) {

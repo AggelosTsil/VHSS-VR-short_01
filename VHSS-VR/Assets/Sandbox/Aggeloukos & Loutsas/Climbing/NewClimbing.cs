@@ -91,7 +91,7 @@ public class NewClimbing : MonoBehaviour {
         Scenario.TimeClimb -= Time.deltaTime;
 
         //<<Grabbing magic>>
-        if (GrabRight.IsPressed()) {
+       /* if (GrabRight.IsPressed()) {
             if (GrabRight.IsPressed() && GrabLeft.IsPressed()) {
                 //both hands grabbing
                 Debug.Log("<color=green>BOTH HANDS GRABBING</color>");
@@ -116,13 +116,14 @@ public class NewClimbing : MonoBehaviour {
             Fall(FailPoint);
             HangingCheckTimer = HangingCheck;
         }
-
+       */
         //<<Restarting Timer>>
         if (HangingCheckTimer <= 0) {
             HangingCheckTimer = HangingCheck;
             FailPoint = Player.position; //Marks current point as failpoint, meaning player will keep falling here if not holding on
             Debug.Log("FailPoint set to " + FailPoint);
         }
+
 
         //Time check
     

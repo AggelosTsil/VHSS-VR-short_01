@@ -7,6 +7,7 @@ public class HandGrabRope : MonoBehaviour
     bool Hand; //Which hand the object is True is right False is left
     // Start is called before the first frame update
     public NewClimbing NewClimbing;
+    public Collider col;
     void Start()
     {
         //<<If you want to hire us please ignore this>>
@@ -22,7 +23,8 @@ public class HandGrabRope : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision Collision) {
+    void OnTriggerStay(Collider other) {
+        Debug.Log("<bold>Collision</bold>");
         NewClimbing.GrabMove(Hand);
     }
         
