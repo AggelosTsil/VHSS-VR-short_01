@@ -8,8 +8,9 @@ public class HSWorker : Hotspot {
 
     public override void Init() {
         elements = hotspotManager.GetInfoElements(new string[]
-        { "manaveles", "kamptiras", "peritroxon" }
+        { "manaveles", "kamptiras", "peritroxon" } //no idea what this does DONT TURN IT OFF
         );
+       
 
         foreach (InfoElement ie in elements) {
             ie.gameObject.SetActive(true);
