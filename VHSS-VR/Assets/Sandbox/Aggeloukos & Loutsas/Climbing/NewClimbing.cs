@@ -53,6 +53,7 @@ public class NewClimbing : MonoBehaviour {
         HangingCheckTimer = HangingCheck;
     }
 
+
     public void Fall(Vector3 FailPoint) {
         //Vector3 FallingPoint = Player.position - FailPoint;
         //Player.Translate(FailPoint);
