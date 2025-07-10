@@ -31,6 +31,8 @@ public class NewClimbing : MonoBehaviour {
     public float HangingCheckTimer;//Current state of HangingCheck
     private Vector3 FailPoint;//The point where the player will drop if they are not hanging on
     public float FallSensitivity;
+    public Scenario Scenario;
+    public GameObject ClimbingArea;
 
     // Start is called before the first frame update
     private void Start() {
@@ -39,6 +41,11 @@ public class NewClimbing : MonoBehaviour {
     }
     void OnEnable() //Void OnEnable is a bit better blahblahblah-optimisation-blahblahblah
     {
+
+        Player.transform.position = ClimbingArea.transform.position;
+
+
+
         //<<Enabling grab actions>>  THIS WILL CHANGE TO ENABLE ONLY ON CONTACT WITH THE ROPES
         GrabRight.Enable();
         GrabLeft.Enable();
@@ -81,6 +88,7 @@ public class NewClimbing : MonoBehaviour {
 
         //<<Update Timer>>
         HangingCheckTimer -= Time.deltaTime;
+        Scenario.TimeClimb -= Time.deltaTime;
 
         //<<Grabbing magic>>
         if (GrabRight.IsPressed()) {
@@ -114,6 +122,15 @@ public class NewClimbing : MonoBehaviour {
             HangingCheckTimer = HangingCheck;
             FailPoint = Player.position; //Marks current point as failpoint, meaning player will keep falling here if not holding on
             Debug.Log("FailPoint set to " + FailPoint);
+        }
+
+        //Time check
+    
+        if (Scenario.Timer) {
+            if (Scenario.TimeClimb <= 0) {
+                Debug.Log("<color=red>Timeout</color>");
+                Scenario.EnterScene("Spotting", Scenario.Dialogue);
+            }
         }
 
 
