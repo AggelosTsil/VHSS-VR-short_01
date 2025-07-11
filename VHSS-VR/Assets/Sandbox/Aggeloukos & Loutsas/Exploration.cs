@@ -15,15 +15,9 @@ public class Exploration : MonoBehaviour
         Teleport.TeleportToPoint.Enable();
     }
 
-    public void TeleportToHotSpot(GameObject Anchor) {
-        if  (Anchor.tag == "Activity Area") {
-            if (Anchor.name == "Worker Area") {
-                Scenario.EnterScene("Worker", Scenario.Dialogue);
-            }
-            else {
-                Scenario.EnterScene("Wheel", Scenario.Dialogue);
-            }
-        }
+
+    private void OnDisable() {
+        //Teleport.TeleportToPoint.Disable();
     }
 
     private void RevealHotSpot(GameObject HotSpot) {
@@ -34,6 +28,7 @@ public class Exploration : MonoBehaviour
     void Update()
     {
         if (Scenario.TimeExplore <= 0) {
+            Teleport.TeleportToPoint.Disable();
             Scenario.EnterScene("Climbing", Scenario.Dialogue);
             Debug.Log("<color=red>Timeout</color>");
         }

@@ -24,7 +24,7 @@ public class HandGrabRope : MonoBehaviour
     }
 
     void OnTriggerStay(Collider other) {
-        Debug.Log("<bold>Collision</bold>");
+        //Debug.Log("<bold>Collision</bold>");
         NewClimbing.GrabMove(Hand);
     }
         

@@ -49,7 +49,8 @@ public class Scenario : MonoBehaviour
         switch (ActivityName) {
             case "Explore":
                 EnableActivity(ExploreActivity, true);
-               // EnableActivity(EndindActivity, false);
+                EnableActivity(WorkerActivity, false);
+                EnableActivity(WheelActivity, false);
                 break;
             case "Climbing":
                 EnableActivity(ClimbingActivity, true);
