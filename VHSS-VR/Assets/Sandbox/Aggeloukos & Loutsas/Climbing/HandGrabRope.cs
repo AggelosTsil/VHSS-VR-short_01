@@ -24,10 +24,20 @@ public class HandGrabRope : MonoBehaviour
     }
 
     void OnTriggerStay(Collider other) {
-        //Debug.Log("<bold>Collision</bold>");
+        Debug.Log("Collision");
+
+        if (Hand) {
+            NewClimbing.GrabRight.Enable();
+        }
+        else {
+            NewClimbing.GrabLeft.Enable();
+        }
+
         NewClimbing.GrabMove(Hand);
-    }
         
+    }
+
+
     // Update is called once per frame
     void Update()
     {

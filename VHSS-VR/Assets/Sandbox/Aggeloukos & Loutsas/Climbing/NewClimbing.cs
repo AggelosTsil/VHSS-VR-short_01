@@ -43,12 +43,7 @@ public class NewClimbing : MonoBehaviour {
     {
 
         Player.transform.position = ClimbingArea.transform.position;
-
-
-
-        //<<Enabling grab actions>>  THIS WILL CHANGE TO ENABLE ONLY ON CONTACT WITH THE ROPES
-        GrabRight.Enable();
-        GrabLeft.Enable();
+ 
 
         //<<initialising positions>>
         CurrentRHPosition = RPositionAction.action.ReadValue<Vector3>();
@@ -69,13 +64,22 @@ public class NewClimbing : MonoBehaviour {
     }
 
     public void GrabMove(bool Hand) { //true is right and false is left
+        Debug.Log("GrabMove");
         if (Hand) {
-            TravelPoint.Set(-CurrentRHPosition.x + PreviousRHPosition.x, -CurrentRHPosition.y + PreviousRHPosition.y, -CurrentRHPosition.z + PreviousRHPosition.z);
+            if (GrabRight.IsPressed()) {
+                TravelPoint.Set(-CurrentRHPosition.x + PreviousRHPosition.x, -CurrentRHPosition.y + PreviousRHPosition.y, -CurrentRHPosition.z + PreviousRHPosition.z);
+                Debug.Log("<color=red>right hand climbing</color>");
+                Player.Translate(TravelPoint * sensitivity, local ? Space.Self : Space.World);
+            }
         }
         else {
-            TravelPoint.Set(-CurrentLHPosition.x + PreviousLHPosition.x, -CurrentLHPosition.y + PreviousLHPosition.y, -CurrentLHPosition.z + PreviousLHPosition.z);
+            if (GrabLeft.IsPressed()) {
+                TravelPoint.Set(-CurrentLHPosition.x + PreviousLHPosition.x, -CurrentLHPosition.y + PreviousLHPosition.y, -CurrentLHPosition.z + PreviousLHPosition.z);
+                Debug.Log("<color=red>left hand climbing</color>");
+                Player.Translate(TravelPoint * sensitivity, local ? Space.Self : Space.World);
+            }
+
         }
-        Player.Translate(TravelPoint * sensitivity, local ? Space.Self : Space.World);
     }
 
     // Update is called once per frame
@@ -90,33 +94,6 @@ public class NewClimbing : MonoBehaviour {
         HangingCheckTimer -= Time.deltaTime;
         Scenario.TimeClimb -= Time.deltaTime;
 
-        //<<Grabbing magic>>
-       /* if (GrabRight.IsPressed()) {
-            if (GrabRight.IsPressed() && GrabLeft.IsPressed()) {
-                //both hands grabbing
-                Debug.Log("<color=green>BOTH HANDS GRABBING</color>");
-
-            }
-            else {
-                //RIGHT hand grabbing
-                GrabMove(true);
-                Debug.Log("<color=yellow>Right hand</color>");
-            }
-
-        }
-        else if (GrabLeft.IsPressed()) {
-            //LEFT hand grabbing
-            GrabMove(false); //dont be confused, GrabMove is active! false is to activate left hand
-            Debug.Log("<color=blue>Left hand</color>");
-
-        }
-        else if (HangingCheckTimer <= 0) {
-            //Caught lacking! 
-            Debug.Log("<color=red>No hands grabbing, falling down :c</color>");
-            Fall(FailPoint);
-            HangingCheckTimer = HangingCheck;
-        }
-       */
         //<<Restarting Timer>>
         if (HangingCheckTimer <= 0) {
             HangingCheckTimer = HangingCheck;
