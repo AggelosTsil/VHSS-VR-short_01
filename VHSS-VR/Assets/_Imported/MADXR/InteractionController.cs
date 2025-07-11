@@ -120,6 +120,7 @@ public class InteractionController: BaseMonoBehaviourCondition {
                 activeInteraction = true;
 
                 Debug.LogFormat("[InteractionController] Activate: Contact interactable activated: {0}", activeContactInteractable.name);
+                
 
                 activeContactInteractable.enabled = true;
 
@@ -128,6 +129,7 @@ public class InteractionController: BaseMonoBehaviourCondition {
                     Docker.interactionController = this;
                     Docker.dockable = myHand;
                     Docker.transform.parent.GetComponent<RotateContactInteractable>().SetNewPositionAction(positionAction);
+
                     contactInteractable.transform.GetChild(i).gameObject.SetActive(true);
                 }
 
@@ -274,7 +276,7 @@ public class InteractionController: BaseMonoBehaviourCondition {
      * 
      */
     public void OnActionPerformed(InputAction.CallbackContext iac) {
-         Debug.LogFormat("[InteractionController] OnActionPerformed {0}", iac.action.name);
+         //Debug.LogFormat("[InteractionController] OnActionPerformed {0}", iac.action.name);
     }
 
     /**
