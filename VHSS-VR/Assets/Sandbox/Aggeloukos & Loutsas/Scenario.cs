@@ -36,7 +36,7 @@ public class Scenario : MonoBehaviour
             Player.transform.rotation = new(0, 0, 0, 0);
         }*/
         //Player.transform.position = Flags[i].transform.position; //Teleports player to hotspot
-       /* if (Dialogue) {
+        /*if (Dialogue) {
             SeagullSpeaking.clip = Seagull_Dialogues[i]; //Sets correct dialogue for seagull
             SeagullSpeaking.Play(0); //Seagull starts yapping
         }*/
@@ -52,16 +52,16 @@ public class Scenario : MonoBehaviour
                 EnableActivity(WorkerActivity, false);
                 EnableActivity(WheelActivity, false);
                 break;
-            case "Climbing":
-                EnableActivity(ClimbingActivity, true);
-                EnableActivity(ExploreActivity, false);
-                break;
             case "Worker":
                 EnableActivity(WorkerActivity, true);
                 EnableActivity(ExploreActivity, false);
                 break;
             case "Wheel":
                 EnableActivity(WheelActivity, true);
+                EnableActivity(ExploreActivity, false);
+                break;
+            case "Climbing":
+                EnableActivity(ClimbingActivity, true);
                 EnableActivity(ExploreActivity, false);
                 break;
             case "Spotting":
