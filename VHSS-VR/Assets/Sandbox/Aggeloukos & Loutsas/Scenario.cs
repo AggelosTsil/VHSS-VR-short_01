@@ -48,7 +48,7 @@ public class Scenario : MonoBehaviour
                 EnableActivity(WorkerActivity, false);
                 EnableActivity(WheelActivity, false);
                 SeagullSpeaking.clip = Seagull_Dialogues[0]; //Sets correct dialogue for seagull
-                if (ExplorationDialogue)
+                if (ExplorationDialogue && Dialogue)
                 {
                     SeagullSpeaking.Play(0); //Seagull starts yapping
                     ExplorationDialogue = false;
@@ -58,7 +58,7 @@ public class Scenario : MonoBehaviour
                 EnableActivity(WorkerActivity, true);
                 EnableActivity(ExploreActivity, false);
                 SeagullSpeaking.clip = Seagull_Dialogues[1];
-                if (WorkerDialogue)
+                if (WorkerDialogue && Dialogue)
                 {
                     SeagullSpeaking.Play(0);
                     WorkerDialogue = false;
@@ -68,7 +68,7 @@ public class Scenario : MonoBehaviour
                 EnableActivity(WheelActivity, true);
                 EnableActivity(ExploreActivity, false);
                 SeagullSpeaking.clip = Seagull_Dialogues[2];
-                if (WheelDialogue)
+                if (WheelDialogue && Dialogue)
                 {
                     SeagullSpeaking.Play(0);
                     WheelDialogue = false;
@@ -78,20 +78,29 @@ public class Scenario : MonoBehaviour
                 EnableActivity(ClimbingActivity, true);
                 EnableActivity(ExploreActivity, false);
                 SeagullSpeaking.clip = Seagull_Dialogues[3];
-                SeagullSpeaking.Play(0);
+                if (Dialogue)
+                {
+                    SeagullSpeaking.Play(0);
+                }
                 break;
             case "Spotting":
                 EnableActivity(SpottingActivity, true);
                 EnableActivity(ClimbingActivity, false);
                 SeagullSpeaking.clip = Seagull_Dialogues[4];
-                SeagullSpeaking.Play(0);
+                if (Dialogue)
+                {
+                    SeagullSpeaking.Play(0);
+                }
                 break;
             case "Ending":
                 EnableActivity(EndindActivity, true);
                 Blurs.SetBool("End", true); //for the animation
                 EnableActivity(SpottingActivity, false);
                 SeagullSpeaking.clip = Seagull_Dialogues[5];
-                SeagullSpeaking.Play(0);
+                if (Dialogue)
+                {
+                    SeagullSpeaking.Play(0);
+                }
                 break;
         }
     }

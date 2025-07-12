@@ -58,6 +58,15 @@ public class Teleport : MonoBehaviour
                         case "Aux3":
                             player.transform.position = HS3.transform.position;
                             break;
+                        case "Aux4":
+                            player.transform.position = HS5.transform.position;
+                            break;
+                        case "Aux5":
+                            player.transform.position = HS1.transform.position;
+                            break;
+                        case "Aux6":
+                            player.transform.position = HS2.transform.position;
+                            break;
 
                     }
                     //player.transform.position = hit.transform.gameObject.transform.position;
