@@ -33,6 +33,7 @@ public class NewClimbing : MonoBehaviour {
     public float FallSensitivity;
     public Scenario Scenario;
     public GameObject ClimbingArea;
+    public GameObject HS;
 
     // Start is called before the first frame update
     private void Start() {
@@ -43,7 +44,7 @@ public class NewClimbing : MonoBehaviour {
     {
 
         Player.transform.position = ClimbingArea.transform.position;
- 
+        HS.SetActive(false);
 
         //<<initialising positions>>
         CurrentRHPosition = RPositionAction.action.ReadValue<Vector3>();
