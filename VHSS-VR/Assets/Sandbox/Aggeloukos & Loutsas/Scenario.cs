@@ -23,18 +23,14 @@ public class Scenario : MonoBehaviour
     public GameObject SpottingActivity;
     public GameObject EndindActivity;
     public Animator Blurs;
+    public bool ExplorationDialogue;
+    public bool WorkerDialogue;
+    public bool WheelDialogue;
 
     //<<End of Activity Scripts>>
-    
-     public void EnterScene(string SceneName, bool Dialogue) { //Initiallises next scene <<NOTE ADD i++>>
+
+    public void EnterScene(string SceneName, bool Dialogue) { //Initiallises next scene <<NOTE ADD i++>>
         Debug.Log("<color=yellow>Entered Scene </color>" + SceneName);
-        //TimeExplore = NextSceneTimer; //Initiallises/resets timer
-        /*if (i <= 3) {
-            Player.transform.rotation = new(0, 0, 0, 0); //Rotational changes are purely to fit the locations. change as neccesary 
-        }
-        else {
-            Player.transform.rotation = new(0, 0, 0, 0);
-        }*/
         //Player.transform.position = Flags[i].transform.position; //Teleports player to hotspot
         /*if (Dialogue) {
             SeagullSpeaking.clip = Seagull_Dialogues[i]; //Sets correct dialogue for seagull
@@ -51,27 +47,51 @@ public class Scenario : MonoBehaviour
                 EnableActivity(ExploreActivity, true);
                 EnableActivity(WorkerActivity, false);
                 EnableActivity(WheelActivity, false);
+                SeagullSpeaking.clip = Seagull_Dialogues[0]; //Sets correct dialogue for seagull
+                if (ExplorationDialogue)
+                {
+                    SeagullSpeaking.Play(0); //Seagull starts yapping
+                    ExplorationDialogue = false;
+                }
                 break;
             case "Worker":
                 EnableActivity(WorkerActivity, true);
                 EnableActivity(ExploreActivity, false);
+                SeagullSpeaking.clip = Seagull_Dialogues[1];
+                if (WorkerDialogue)
+                {
+                    SeagullSpeaking.Play(0);
+                    WorkerDialogue = false;
+                }
                 break;
             case "Wheel":
                 EnableActivity(WheelActivity, true);
                 EnableActivity(ExploreActivity, false);
+                SeagullSpeaking.clip = Seagull_Dialogues[2];
+                if (WheelDialogue)
+                {
+                    SeagullSpeaking.Play(0);
+                    WheelDialogue = false;
+                }
                 break;
             case "Climbing":
                 EnableActivity(ClimbingActivity, true);
                 EnableActivity(ExploreActivity, false);
+                SeagullSpeaking.clip = Seagull_Dialogues[3];
+                SeagullSpeaking.Play(0);
                 break;
             case "Spotting":
                 EnableActivity(SpottingActivity, true);
                 EnableActivity(ClimbingActivity, false);
+                SeagullSpeaking.clip = Seagull_Dialogues[4];
+                SeagullSpeaking.Play(0);
                 break;
             case "Ending":
                 EnableActivity(EndindActivity, true);
                 Blurs.SetBool("End", true); //for the animation
                 EnableActivity(SpottingActivity, false);
+                SeagullSpeaking.clip = Seagull_Dialogues[5];
+                SeagullSpeaking.Play(0);
                 break;
         }
     }
