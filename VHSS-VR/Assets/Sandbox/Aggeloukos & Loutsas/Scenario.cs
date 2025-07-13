@@ -26,6 +26,7 @@ public class Scenario : MonoBehaviour
     public bool ExplorationDialogue;
     public bool WorkerDialogue;
     public bool WheelDialogue;
+    public bool EndingHappened; //If the ending happended, will be used in the update to initiate the fade out
 
     //<<End of Activity Scripts>>
 
@@ -94,13 +95,14 @@ public class Scenario : MonoBehaviour
                 break;
             case "Ending":
                 EnableActivity(EndindActivity, true);
-                Blurs.SetBool("End", true); //for the animation
                 EnableActivity(SpottingActivity, false);
                 SeagullSpeaking.clip = Seagull_Dialogues[5];
                 if (Dialogue)
                 {
                     SeagullSpeaking.Play(0);
                 }
+                EndingHappened = true; //will be used in the update to initiate the fade out
+
                 break;
         }
     }
@@ -126,6 +128,13 @@ public class Scenario : MonoBehaviour
                 Debug.Log("<color=red>Timeout</color>");
             }
         }
+
+       
+        if (EndingHappened && !SeagullSpeaking.isPlaying) //For the fade out
+        {
+                Blurs.SetBool("End", true); 
+        }
+        
 
     }
 }
