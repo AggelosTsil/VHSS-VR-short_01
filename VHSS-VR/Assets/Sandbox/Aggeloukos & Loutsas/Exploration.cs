@@ -15,8 +15,8 @@ public class Exploration : MonoBehaviour
     {
         player.transform.position = ExploreArea.transform.position;
         Teleport.TeleportToPoint.Enable();
-        OutlineWorker.enabled = true;
-        OutlineWheel.enabled = true;
+        //OutlineWorker.enabled = true;
+       // OutlineWheel.enabled = true;
     }
 
 
