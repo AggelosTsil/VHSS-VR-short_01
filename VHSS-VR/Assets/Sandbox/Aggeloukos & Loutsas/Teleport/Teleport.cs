@@ -72,9 +72,6 @@ public class Teleport : MonoBehaviour
                 }
                 else if (hit.transform.gameObject.CompareTag("Auxiliary Hotspot")) 
                 {
-                    //Code that reveals highlights 
-                    
-                    Scenario.EnterScene("Explore", Scenario.Dialogue);
                         switch (hit.transform.gameObject.name) {
                             case "Aux1":
                                 //reveal highlights
@@ -82,6 +79,7 @@ public class Teleport : MonoBehaviour
                                 if (TeleportToPoint.IsPressed())
                                 {
                                 player.transform.position = HS6.transform.position;
+                                Scenario.EnterScene("Explore", Scenario.Dialogue);
                                 }
                                 break;
                             case "Aux2":
@@ -89,6 +87,7 @@ public class Teleport : MonoBehaviour
                                 if (TeleportToPoint.IsPressed())
                                 {
                                 player.transform.position = HS4.transform.position;
+                                Scenario.EnterScene("Explore", Scenario.Dialogue);
                                 }
                                 break;
                             case "Aux3":
@@ -96,6 +95,7 @@ public class Teleport : MonoBehaviour
                                 if (TeleportToPoint.IsPressed())
                                 {
                                 player.transform.position = HS3.transform.position;
+                                Scenario.EnterScene("Explore", Scenario.Dialogue);
                                 }
                                 break;
                             case "Aux4":
@@ -103,6 +103,7 @@ public class Teleport : MonoBehaviour
                                 if (TeleportToPoint.IsPressed())
                                 {
                                 player.transform.position = HS5.transform.position;
+                                Scenario.EnterScene("Explore", Scenario.Dialogue);
                                 }
                                 break;
                             case "Aux5":
@@ -110,6 +111,7 @@ public class Teleport : MonoBehaviour
                                 if (TeleportToPoint.IsPressed())
                                 {
                                 player.transform.position = HS1.transform.position;
+                                Scenario.EnterScene("Explore", Scenario.Dialogue);
                                 }
                                 break;
                             case "Aux6":
@@ -117,6 +119,7 @@ public class Teleport : MonoBehaviour
                                 if (TeleportToPoint.IsPressed())
                                 {
                                 player.transform.position = HS2.transform.position;
+                                Scenario.EnterScene("Explore", Scenario.Dialogue);
                                 }
                                 break;
                             Debug.Log("<color=red>Entered Auxiliary Hotspot</color>");
