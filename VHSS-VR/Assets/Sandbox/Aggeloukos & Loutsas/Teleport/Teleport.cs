@@ -22,6 +22,8 @@ public class Teleport : MonoBehaviour
     public GameObject HS4;
     public GameObject HS5;
     public GameObject HS6;
+    public GameObject HS7;
+    public GameObject HS8;
 
     //<<Aux HotSpot Bases>> we have the planning ahead skills of a goldfish
     public GameObject HS1Base;
@@ -30,6 +32,8 @@ public class Teleport : MonoBehaviour
     public GameObject HS4Base;
     public GameObject HS5Base;
     public GameObject HS6Base;
+    public GameObject HS7Base;
+    public GameObject HS8Base;
 
     //<<Hotspot Highlights>>
     public Outline OutlineWorker;
@@ -120,6 +124,22 @@ public class Teleport : MonoBehaviour
                                 Scenario.EnterScene("Explore", Scenario.Dialogue);
                                 }
                                 break;
+                            case "Aux7":
+                                HS7Base.GetComponent<MeshRenderer>().material = AuxActive;
+                                if (TeleportToPoint.IsPressed())
+                                {
+                                player.transform.position = HS7.transform.position;
+                                Scenario.EnterScene("Explore", Scenario.Dialogue);
+                                }
+                                break;
+                            case "Aux8":
+                                HS8Base.GetComponent<MeshRenderer>().material = AuxActive;
+                                if (TeleportToPoint.IsPressed())
+                                {
+                                player.transform.position = HS8.transform.position;
+                                Scenario.EnterScene("Explore", Scenario.Dialogue);
+                                }
+                                break;
                             Debug.Log("<color=red>Entered Auxiliary Hotspot</color>");
                         }
                     
@@ -134,6 +154,8 @@ public class Teleport : MonoBehaviour
                     HS4Base.GetComponent<MeshRenderer>().material = AuxInactive;
                     HS5Base.GetComponent<MeshRenderer>().material = AuxInactive;
                     HS6Base.GetComponent<MeshRenderer>().material = AuxInactive;
+                    HS7Base.GetComponent<MeshRenderer>().material = AuxInactive;
+                    HS8Base.GetComponent<MeshRenderer>().material = AuxInactive;
                     }
 
 
@@ -147,6 +169,8 @@ public class Teleport : MonoBehaviour
                 HS4Base.GetComponent<MeshRenderer>().material = AuxInactive;
                 HS5Base.GetComponent<MeshRenderer>().material = AuxInactive;
                 HS6Base.GetComponent<MeshRenderer>().material = AuxInactive;
+                HS7Base.GetComponent<MeshRenderer>().material = AuxInactive;
+                HS8Base.GetComponent<MeshRenderer>().material = AuxInactive;
                 }
             if (TeleportToPoint.IsPressed())
             {
