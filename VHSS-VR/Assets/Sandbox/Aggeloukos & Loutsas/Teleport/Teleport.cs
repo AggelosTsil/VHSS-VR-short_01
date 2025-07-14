@@ -37,18 +37,17 @@ public class Teleport : MonoBehaviour
     public Material AuxActive;
     public Material AuxInactive;
 
+    public AudioSource GunSound;
 
     // Start is called before the first frame update
     void Start()
     {
         Anchors = LayerMask.GetMask("Anchors");
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (TeleportToPoint.IsPressed()) {
             RaycastHit hit;
             Debug.Log("Raycast sending");
             //Debug.DrawRay(transform.position, transform.forward, Color.red, Mathf.Infinity);
@@ -56,7 +55,6 @@ public class Teleport : MonoBehaviour
             {
 
                 if (hit.transform.gameObject.CompareTag("Activity Area")) {
-                    //player.transform.position = hit.transform.gameObject.transform.position;
                     string goal = hit.transform.gameObject.name; //goal is used to define which of the two scenes is enabled
                     Debug.Log("GameObject name is " + goal);
                     if (goal == "Wheel"){
@@ -125,7 +123,6 @@ public class Teleport : MonoBehaviour
                             Debug.Log("<color=red>Entered Auxiliary Hotspot</color>");
                         }
                     
-                    //player.transform.position = hit.transform.gameObject.transform.position;
                     Debug.Log("Rayscast found solid target " + hit.transform.gameObject);
                 }else 
                     {//highlights closing
@@ -139,7 +136,6 @@ public class Teleport : MonoBehaviour
                     HS6Base.GetComponent<MeshRenderer>().material = AuxInactive;
                     }
 
-                    //player.transform.position = hit.transform.gameObject.transform.position;
 
                 }else 
                 {
@@ -152,6 +148,10 @@ public class Teleport : MonoBehaviour
                 HS5Base.GetComponent<MeshRenderer>().material = AuxInactive;
                 HS6Base.GetComponent<MeshRenderer>().material = AuxInactive;
                 }
-        //}
+            if (TeleportToPoint.IsPressed())
+            {
+                Debug.Log("GUNSOUND");
+                GunSound.Play();
+            }
     }
 }
