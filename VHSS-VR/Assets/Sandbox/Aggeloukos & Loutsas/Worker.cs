@@ -7,6 +7,7 @@ public class Worker : MonoBehaviour
     public GameObject player;
     public Scenario Scenario;
     public GameObject WorkerArea;
+    public Playthings Playthings;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,7 @@ public class Worker : MonoBehaviour
 
     private void OnEnable() {
         player.transform.position = WorkerArea.transform.position;
+        Playthings.BareHands();
     }
 
     // Update is called once per frame

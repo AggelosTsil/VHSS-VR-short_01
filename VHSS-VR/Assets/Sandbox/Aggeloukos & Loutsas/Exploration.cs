@@ -10,13 +10,15 @@ public class Exploration : MonoBehaviour
     public Teleport Teleport;
     public Outline OutlineWorker;
     public Outline OutlineWheel;
+    public Playthings Playthings;
     // Start is called before the first frame update
     void Start()
     {
         player.transform.position = ExploreArea.transform.position;
         Teleport.TeleportToPoint.Enable();
+        Playthings.BareHands();
         //OutlineWorker.enabled = true;
-       // OutlineWheel.enabled = true;
+        // OutlineWheel.enabled = true;
     }
 
 
@@ -24,10 +26,6 @@ public class Exploration : MonoBehaviour
         //Teleport.TeleportToPoint.Disable();
         OutlineWorker.enabled = false;
         OutlineWheel.enabled = false;
-    }
-
-    private void RevealHotSpot(GameObject HotSpot) {
-
     }
 
     // Update is called once per frame

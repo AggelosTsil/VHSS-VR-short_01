@@ -6,6 +6,9 @@ public class Wheel : MonoBehaviour {
     public GameObject player;
     public Scenario Scenario;
     public GameObject WheelArea;
+    public Playthings Playthings;
+
+
     // Start is called before the first frame update
     void Start() {
 
@@ -13,6 +16,7 @@ public class Wheel : MonoBehaviour {
 
     private void OnEnable() {
         player.transform.position = WheelArea.transform.position;
+        Playthings.BareHands();
     }
     // Update is called once per frame
     void Update() {

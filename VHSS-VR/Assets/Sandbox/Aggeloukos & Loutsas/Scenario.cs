@@ -27,6 +27,9 @@ public class Scenario : MonoBehaviour
     public bool WorkerDialogue;
     public bool WheelDialogue;
     public bool EndingHappened; //If the ending happended, will be used in the update to initiate the fade out
+    public bool ActivityHappened;
+   
+    public Playthings Playthings;
 
     //<<End of Activity Scripts>>
 
@@ -48,6 +51,7 @@ public class Scenario : MonoBehaviour
                 EnableActivity(ExploreActivity, true);
                 EnableActivity(WorkerActivity, false);
                 EnableActivity(WheelActivity, false);
+               
                 SeagullSpeaking.clip = Seagull_Dialogues[0]; //Sets correct dialogue for seagull
                 if (ExplorationDialogue && Dialogue)
                 {
@@ -58,6 +62,7 @@ public class Scenario : MonoBehaviour
             case "Worker":
                 EnableActivity(WorkerActivity, true);
                 EnableActivity(ExploreActivity, false);
+               
                 SeagullSpeaking.clip = Seagull_Dialogues[1];
                 if (WorkerDialogue && Dialogue)
                 {
@@ -68,6 +73,7 @@ public class Scenario : MonoBehaviour
             case "Wheel":
                 EnableActivity(WheelActivity, true);
                 EnableActivity(ExploreActivity, false);
+                
                 SeagullSpeaking.clip = Seagull_Dialogues[2];
                 if (WheelDialogue && Dialogue)
                 {
@@ -78,6 +84,7 @@ public class Scenario : MonoBehaviour
             case "Climbing":
                 EnableActivity(ClimbingActivity, true);
                 EnableActivity(ExploreActivity, false);
+                ActivityHappened = false;
                 SeagullSpeaking.clip = Seagull_Dialogues[3];
                 if (Dialogue)
                 {
@@ -135,6 +142,14 @@ public class Scenario : MonoBehaviour
                 Blurs.SetBool("End", true); 
         }
         
+        if (!SeagullSpeaking.isPlaying) {
+            if (Playthings.Toggle.IsPressed()) {
+                if (!Playthings.Pistol.active) {
+                    Playthings.PistolActive(true);
+                }
+            }
+        }
+
 
     }
 }
