@@ -16,7 +16,6 @@ public class Teleport : MonoBehaviour
     private LayerMask Anchors;
 
     GameObject AnchorObject;
-
     
     public GameObject[] HS;
     public GameObject currentHS;
@@ -26,7 +25,6 @@ public class Teleport : MonoBehaviour
     public float cooldowntimer = 0;
     public bool SecretFound;
     
-
     //<<Hotspot Highlights>>
     public Outline OutlineWorker;
     public Outline OutlineWheel;
@@ -34,8 +32,6 @@ public class Teleport : MonoBehaviour
     public Material AuxInactive;
 
     public AudioSource GunSound;
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -76,7 +72,7 @@ public class Teleport : MonoBehaviour
                     if (hit.transform.gameObject.name == $"Aux{i}") //checks if the player is pointing for Aux1, Aux2, etc 
                     {
                         HS[i].GetNamedChild("Teleport_Target").GetNamedChild("TT_Inactive").GetNamedChild("Base").GetComponent<MeshRenderer>().material = AuxActive;
-                        if (HS[i].GetNamedChild("stairs")) //if the HS has a stairs child then...
+                        if ((HS[i].GetNamedChild("stairs")) && (!currentHS == HS[2] || !currentHS == HS[11] || !currentHS == HS[15] || !currentHS == HS[9])) //if the HS has a stairs child (and is not on the top of the stairs) then...
                         {
                             HS[i].GetNamedChild("Arrow").SetActive(true); //turn on the Arrow 
                             HS[i].GetNamedChild("OutlineStairs").SetActive(true); //and turn on the Outline 
@@ -134,7 +130,6 @@ public class Teleport : MonoBehaviour
                      }
                  }
             }
-            
         }
     }
 }
