@@ -16,7 +16,9 @@ public class Playthings : MonoBehaviour
     //public InputAction TogglePistol;
 
     public InputAction Toggle;
+    
 
+        
     // Start is called before the first frame update
     void OnEnable()
     {

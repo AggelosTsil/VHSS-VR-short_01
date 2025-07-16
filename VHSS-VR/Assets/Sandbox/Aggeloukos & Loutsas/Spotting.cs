@@ -6,6 +6,7 @@ public class Spotting : MonoBehaviour {
     public GameObject player;
     public Scenario Scenario;
     public GameObject SpottingArea;
+    
     // Start is called before the first frame update
     void Start() {
 

@@ -5,6 +5,12 @@ using UnityEngine.InputSystem;
 
 public class Teleport : MonoBehaviour
 {
+
+    //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! CHANGE THIS WHOLE THING BEFORE OUR FUTURE EMPLOYERS SEE IT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    // TO DO: for i,
+    // currentHS,
+    // do it so the aux of the stairs1 tp raises when you are in the back 
+
     public InputAction TeleportToPoint; //gets enabled in Explore
     public GameObject player;
     public Scenario Scenario;
@@ -30,6 +36,7 @@ public class Teleport : MonoBehaviour
     public GameObject HS12;
     public GameObject HS13;
     public GameObject HS14;
+    public GameObject HS15;
 
     public GameObject HSSecret;
 
@@ -48,6 +55,7 @@ public class Teleport : MonoBehaviour
     public GameObject HS12Base;
     public GameObject HS13Base;
     public GameObject HS14Base;
+    public GameObject HS15Base;
 
     public GameObject HSSecretBase;
 
@@ -55,11 +63,14 @@ public class Teleport : MonoBehaviour
     //Misc
     public GameObject Arrow1;
     public GameObject Arrow2;
+    public GameObject Arrow3;
     public Outline OutlineStairs1;
     public Outline OutlineStairs2;
+    public Outline OutlineStairs3;
     public float timer = 0;
     public bool SecretFound;
     public bool Aux10;
+    
 
     //<<Hotspot Highlights>>
     public Outline OutlineWorker;
@@ -221,19 +232,31 @@ public class Teleport : MonoBehaviour
                                
                                 if (TeleportToPoint.IsPressed()) {
                                     player.transform.position = HS14.transform.position;
+                                    Scenario.EnterScene("Explore", Scenario.Dialogue); 
+                                }
+                                break;
+                            case "Aux15":
+                                HS15Base.GetComponent<MeshRenderer>().material = AuxActive;
+                                Arrow3.SetActive(true);
+                                OutlineStairs3.enabled = true;
+                                if (TeleportToPoint.IsPressed()) {
+                                    player.transform.position = HS15.transform.position;
                                     Scenario.EnterScene("Explore", Scenario.Dialogue);
-                                    
+                                    Arrow3.SetActive(false);
                                 }
                                 break;
 
-                           
-                        }
+
+                }
                     
                     Debug.Log("Rayscast found solid target " + hit.transform.gameObject);
-                }else 
-                    {//highlights closing
-                    
-            }
+                }else if (hit.transform.gameObject.CompareTag("Death") && TeleportToPoint.IsPressed())
+                {
+                Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+                    Rigidbody Rig = hit.transform.gameObject.GetComponent<Rigidbody>();
+                    Rig.useGravity = true;
+                Scenario.Dialogue = false;
+                    }
 
 
                 }else 
@@ -242,6 +265,7 @@ public class Teleport : MonoBehaviour
                 OutlineWorker.enabled = false;
                 OutlineStairs1.enabled = false;
                 OutlineStairs2.enabled = false;
+                OutlineStairs3.enabled = false;
 
                 HS1Base.GetComponent<MeshRenderer>().material = AuxInactive;
                 HS2Base.GetComponent<MeshRenderer>().material = AuxInactive;
@@ -257,6 +281,7 @@ public class Teleport : MonoBehaviour
                 HS12Base.GetComponent<MeshRenderer>().material = AuxInactive;
                 HS13Base.GetComponent<MeshRenderer>().material = AuxInactive;
                 HS14Base.GetComponent<MeshRenderer>().material = AuxInactive;
+                HS15Base.GetComponent<MeshRenderer>().material = AuxInactive;
                 HSSecretBase.GetComponent<MeshRenderer>().material = AuxInactive;
                 Arrow1.SetActive(false);
                 Arrow2.SetActive(false);
@@ -287,5 +312,6 @@ public class Teleport : MonoBehaviour
                 timer = 0;
             }
             }
+
     }
 }
