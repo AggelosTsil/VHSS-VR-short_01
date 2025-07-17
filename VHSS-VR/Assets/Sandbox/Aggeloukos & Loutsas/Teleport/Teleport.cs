@@ -19,11 +19,12 @@ public class Teleport : MonoBehaviour
     
     public GameObject[] HS;
     public GameObject currentHS;
+    public GameObject AimingAt;
     public GameObject HSSecret;
     public GameObject HSSecretBase;
     public float timer = 0;
     public float cooldowntimer = 0;
-    public bool SecretFound;
+    
     
     //<<Hotspot Highlights>>
     public Outline OutlineWorker;
@@ -71,65 +72,61 @@ public class Teleport : MonoBehaviour
                 {
                     if (hit.transform.gameObject.name == $"Aux{i}") //checks if the player is pointing for Aux1, Aux2, etc 
                     {
+                        AimingAt = HS[i];
                         HS[i].GetNamedChild("Teleport_Target").GetNamedChild("TT_Inactive").GetNamedChild("Base").GetComponent<MeshRenderer>().material = AuxActive;
-                        if ((HS[i].GetNamedChild("stairs")) && (!currentHS == HS[2] || !currentHS == HS[11] || !currentHS == HS[15] || !currentHS == HS[9])) //if the HS has a stairs child (and is not on the top of the stairs) then...
+                        if (HS[i].GetNamedChild("stairs") != null /*&&(!currentHS == HS[2] || !currentHS == HS[11] || !currentHS == HS[15] || !currentHS == HS[9])*/) //if the HS has a stairs child (and is not on the top of the stairs) then...
                         {
-                            HS[i].GetNamedChild("Arrow").SetActive(true); //turn on the Arrow 
-                            HS[i].GetNamedChild("OutlineStairs").SetActive(true); //and turn on the Outline 
+                            Debug.Log("STAIRSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS");
+                            HS[i].transform.GetChild(0).gameObject.SetActive(true); //turn on the Arrow 
+                            HS[i].transform.GetChild(5).gameObject.SetActive(true); //turn on the Arrow  //and turn on the Outline 
                         }
                         cooldowntimer += Time.deltaTime;
                         if (TeleportToPoint.IsPressed())
                         {
-                            if (cooldowntimer >= 1)
-                            {
+                           
                                 currentHS = HS[i]; //sets current hotspot
-                                player.transform.position = HS[i].GetNamedChild("Teleport_Target v.2").transform.position;
+                                player.transform.position = HS[i].GetNamedChild("Teleport_Target").transform.position;
                                 Scenario.EnterScene("Explore", Scenario.Dialogue);
                                 cooldowntimer = 0;
-                            }
+                            
                         }
                     }
                 }
                 Debug.Log("Rayscast found solid target " + hit.transform.gameObject);
             }
-            else //if he stops pointing or pointing at nothing
-            {
-                OutlineWheel.enabled = false;
-                OutlineWorker.enabled = false;
-                for (int i = 0; i <= HS.Count(); i++) //checks every hotspot and...
-                {
-                    HS[i].GetNamedChild("Teleport_Target").GetNamedChild("TT_Inactive").GetNamedChild("Base").GetComponent<MeshRenderer>().material = AuxInactive; //turns off their "glow"
-                    if (HS[i].GetNamedChild("stairs")) //if stairs existed 
-                    {
-                        HS[i].GetNamedChild("Arrow").SetActive(false);
-                        HS[i].GetNamedChild("OutlineStairs").SetActive(false);
-                    }
-                }
-            }
-            if (TeleportToPoint.IsPressed())
-            {
-                Debug.Log("GUNSOUND");
-                GunSound.Play();
-            }
-
             //secret room
             if (currentHS == HS[10]) {
                  if (hit.transform.gameObject.name == "AuxSecret") {
                      if (TeleportToPoint.IsPressed()) {
                          player.transform.position = HSSecret.transform.position;
                          Scenario.EnterScene("Explore", Scenario.Dialogue);
-                         SecretFound = true;
                          timer += Time.deltaTime;
                          if (timer >= 5f)
                          {
                             player.transform.position = HS[10].transform.position;
                             Scenario.EnterScene("Explore", Scenario.Dialogue);
-                            SecretFound = false;
                             timer = 0;
                          }
                      }
                  }
             }
+        }
+        else //if he stops pointing or pointing at nothing
+          {
+            OutlineWheel.enabled = false;
+            OutlineWorker.enabled = false;
+            
+                AimingAt.GetNamedChild("Teleport_Target").GetNamedChild("TT_Inactive").GetNamedChild("Base").GetComponent<MeshRenderer>().material = AuxInactive; //turns off their "glow"
+                if (AimingAt.GetNamedChild("stairs") != null) 
+                {
+                    AimingAt.transform.GetChild(0).gameObject.SetActive(false); //turn off the Arrow 
+                    AimingAt.transform.GetChild(5).gameObject.SetActive(false); //and turn off the Outline 
+                }
+            
+        }
+        if (TeleportToPoint.IsPressed()) {
+            Debug.Log("GUNSOUND");
+            GunSound.Play();
         }
     }
 }
