@@ -23,7 +23,7 @@ public class Worker : MonoBehaviour
     void Update()
     {
         if (Scenario.TimeExplore <= 0) {
-            Scenario.EnterScene("Climbing", Scenario.Dialogue);
+            Scenario.EnterScene("Explore", Scenario.Dialogue);
         }
     }
 }

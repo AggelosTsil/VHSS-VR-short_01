@@ -21,7 +21,7 @@ public class Wheel : MonoBehaviour {
     // Update is called once per frame
     void Update() {
         if (Scenario.TimeExplore <= 0) {
-            Scenario.EnterScene("Climbing", Scenario.Dialogue);
+            Scenario.EnterScene("Explore", Scenario.Dialogue);
         }
     }
 }

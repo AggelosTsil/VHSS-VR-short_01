@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.XR.CoreUtils;
+using System.Linq;
 
 public class Exploration : MonoBehaviour
 {
@@ -11,6 +13,9 @@ public class Exploration : MonoBehaviour
     public Outline OutlineWorker;
     public Outline OutlineWheel;
     public Playthings Playthings;
+
+    public GameObject[] Phase2HotSpots;
+    public GameObject[] Phase1HotSpots;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,8 +37,14 @@ public class Exploration : MonoBehaviour
     void Update()
     {
         if (Scenario.TimeExplore <= 0) {
-            Teleport.TeleportToPoint.Disable();
-            Scenario.EnterScene("Climbing", Scenario.Dialogue);
+            //Teleport.TeleportToPoint.Disable();
+            //Scenario.EnterScene("Climbing", Scenario.Dialogue);
+            for (int i = 0; i <= Phase1HotSpots.Count(); i++) {
+                Debug.Log("Deactivating " + Phase1HotSpots[i]);
+                Phase1HotSpots[i].SetActive(false);
+                Debug.Log("Activating " + Phase2HotSpots[i]);
+                Phase2HotSpots[i].SetActive(true);
+            }
             Debug.Log("<color=red>Timeout</color>");
         }
     }

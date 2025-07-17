@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Scenario : MonoBehaviour
-{
+public class Scenario : MonoBehaviour {
     public bool Timer; //Togles timer function  
     public float NextSceneTimer;//The time it takes for a scene to auto-skip
     public float TimeExplore;//The time left for the current scene
@@ -23,12 +22,12 @@ public class Scenario : MonoBehaviour
     public GameObject SpottingActivity;
     public GameObject EndindActivity;
     public Animator Blurs;
-    public bool ExplorationDialogue;
-    public bool WorkerDialogue;
-    public bool WheelDialogue;
+    public bool ExplorationDialogueHasntPlayed;
+    public bool WorkerDialogueHasntPlayed;
+    public bool WheelDialogueHasntPlayed;
     public bool EndingHappened; //If the ending happended, will be used in the update to initiate the fade out
-    public bool ActivityHappened;
-   
+    public bool nogun;
+
     public Playthings Playthings;
 
     //<<End of Activity Scripts>>
@@ -41,62 +40,59 @@ public class Scenario : MonoBehaviour
             SeagullSpeaking.Play(0); //Seagull starts yapping
         }*/
         SceneActivity(SceneName);
-        
+
     }
 
     public void SceneActivity(string ActivityName) { //Activates scripts related to each scene
-        
+
         switch (ActivityName) {
             case "Explore":
                 EnableActivity(ExploreActivity, true);
                 EnableActivity(WorkerActivity, false);
                 EnableActivity(WheelActivity, false);
-               
+
                 SeagullSpeaking.clip = Seagull_Dialogues[0]; //Sets correct dialogue for seagull
-                if (ExplorationDialogue && Dialogue)
-                {
+                if (ExplorationDialogueHasntPlayed && Dialogue) {
                     SeagullSpeaking.Play(0); //Seagull starts yapping
-                    ExplorationDialogue = false;
+                    ExplorationDialogueHasntPlayed = false;
                 }
                 break;
             case "Worker":
                 EnableActivity(WorkerActivity, true);
                 EnableActivity(ExploreActivity, false);
-               
+
                 SeagullSpeaking.clip = Seagull_Dialogues[1];
-                if (WorkerDialogue && Dialogue)
-                {
+                if (WorkerDialogueHasntPlayed && Dialogue) {
                     SeagullSpeaking.Play(0);
-                    WorkerDialogue = false;
+                    WorkerDialogueHasntPlayed = false;
                 }
                 break;
             case "Wheel":
                 EnableActivity(WheelActivity, true);
                 EnableActivity(ExploreActivity, false);
-                
+
                 SeagullSpeaking.clip = Seagull_Dialogues[2];
-                if (WheelDialogue && Dialogue)
-                {
+                if (WheelDialogueHasntPlayed && Dialogue) {
                     SeagullSpeaking.Play(0);
-                    WheelDialogue = false;
+                    WheelDialogueHasntPlayed = false;
                 }
                 break;
             case "Climbing":
                 EnableActivity(ClimbingActivity, true);
                 EnableActivity(ExploreActivity, false);
-                ActivityHappened = false;
+                nogun = true;
                 SeagullSpeaking.clip = Seagull_Dialogues[3];
-                if (Dialogue)
-                {
+                if (Dialogue) {
                     SeagullSpeaking.Play(0);
                 }
                 break;
             case "Spotting":
                 EnableActivity(SpottingActivity, true);
                 EnableActivity(ClimbingActivity, false);
+                EnableActivity(ExploreActivity, false);
+                nogun = true;
                 SeagullSpeaking.clip = Seagull_Dialogues[4];
-                if (Dialogue)
-                {
+                if (Dialogue) {
                     SeagullSpeaking.Play(0);
                 }
                 break;
@@ -104,8 +100,7 @@ public class Scenario : MonoBehaviour
                 EnableActivity(EndindActivity, true);
                 EnableActivity(SpottingActivity, false);
                 SeagullSpeaking.clip = Seagull_Dialogues[5];
-                if (Dialogue)
-                {
+                if (Dialogue) {
                     SeagullSpeaking.Play(0);
                 }
                 EndingHappened = true; //will be used in the update to initiate the fade out
@@ -116,40 +111,46 @@ public class Scenario : MonoBehaviour
 
     public void EnableActivity(GameObject ActivityObject, bool active) {
         ActivityObject.SetActive(active);
-        Debug.Log("<color=green>"+ ActivityObject.name + " active</color> <b>" + active + "</b>");
+        Debug.Log("<color=green>" + ActivityObject.name + " active</color> <b>" + active + "</b>");
     }
     //<<End of activities>>
-    void Start()
-    {
-        EnterScene(FirstScene,Dialogue);
+    void Start() {
+        EnterScene(FirstScene, Dialogue);
         Blurs.SetBool("End", false);
     }
-   
+
 
     // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         if (Timer && (TimeExplore > 0)) {
             TimeExplore -= Time.deltaTime;
             if (TimeExplore <= 0) {
                 Debug.Log("<color=red>Timeout</color>");
-            }
-        }
-
-       
-        if (EndingHappened && !SeagullSpeaking.isPlaying) //For the fade out
-        {
-                Blurs.SetBool("End", true); 
-        }
-        
-        if (!SeagullSpeaking.isPlaying) {
-            if (Playthings.Toggle.IsPressed()) {
-                if (!Playthings.Pistol.active) {
-                    Playthings.PistolActive(true);
+                //Seagull Exploration 2 dialogue
+                if (Timer && (TimeSpot > 0)) {
+                    TimeSpot -= Time.deltaTime;
                 }
             }
         }
 
+            if (EndingHappened && !SeagullSpeaking.isPlaying) //For the fade out
+            {
+                Blurs.SetBool("End", true);
+            }
 
+            if (!SeagullSpeaking.isPlaying) {
+                if (Playthings.Toggle.triggered) {
+                    Debug.Log("triggered toggle in scenario");
+                    if (!Playthings.Pistol.active) {
+                        Debug.Log("Pistol isnt active");
+                        Playthings.PistolActive(true);
+                        Debug.Log("Now it is");
+                    }
+                   
+                }
+            }
+
+
+        }
     }
-}
+

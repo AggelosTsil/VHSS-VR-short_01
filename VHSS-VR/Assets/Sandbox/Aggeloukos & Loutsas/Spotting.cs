@@ -6,14 +6,19 @@ public class Spotting : MonoBehaviour {
     public GameObject player;
     public Scenario Scenario;
     public GameObject SpottingArea;
+    public Playthings Playthings;
+    public HandGrabRope GrabbingRight;
+    public HandGrabRope GrabbingLeft;
     
     // Start is called before the first frame update
     void Start() {
-
+        Playthings.PistolActive(false);
+        Playthings.SpyglassActive(true);
+        GrabbingRight.enabled = false;
+        GrabbingLeft.enabled = false;
     }
 
     private void OnEnable() {
-        player.transform.position = SpottingArea.transform.position;
     }
     // Update is called once per frame
     void Update() {
@@ -24,6 +29,14 @@ public class Spotting : MonoBehaviour {
         if (Scenario.Timer) {
             if (Scenario.TimeSpot <= 0) {
                 Scenario.EnterScene("Ending", Scenario.Dialogue);
+            }
+        }
+        if (!Scenario.SeagullSpeaking.isPlaying) {
+            if (Playthings.Toggle.triggered) {
+                Debug.Log("Toggle Playthings");
+                Playthings.PistolActive(!Playthings.Pistol.active);
+                Playthings.SpyglassActive(!Playthings.Spyglass.active);
+
             }
         }
     }

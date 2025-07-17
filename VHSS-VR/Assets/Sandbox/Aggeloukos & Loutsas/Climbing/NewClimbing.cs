@@ -34,11 +34,14 @@ public class NewClimbing : MonoBehaviour {
     public Scenario Scenario;
     public GameObject ClimbingArea;
     public GameObject HS;
+    public GameObject SpottingArea;
+    public Playthings Playthings;
 
     // Start is called before the first frame update
     private void Start() {
         FailPoint = Player.position;
         Debug.Log("FailPoint set to " + FailPoint);
+        Playthings.BareHands();
     }
     void OnEnable() //Void OnEnable is a bit better blahblahblah-optimisation-blahblahblah
     {
@@ -54,6 +57,9 @@ public class NewClimbing : MonoBehaviour {
 
         //<<Timer>>
         HangingCheckTimer = HangingCheck;
+    }
+    private void OnDisable() {
+        
     }
 
 
@@ -107,6 +113,8 @@ public class NewClimbing : MonoBehaviour {
     
         if (Scenario.Timer) {
             if (Scenario.TimeClimb <= 0) {
+                Player.transform.position = SpottingArea.transform.position;
+
                 Debug.Log("<color=red>Timeout</color>");
                 Scenario.EnterScene("Spotting", Scenario.Dialogue);
             }

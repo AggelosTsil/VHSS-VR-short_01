@@ -12,7 +12,7 @@ public class Ending : MonoBehaviour {
     }
 
     private void OnEnable() {
-        player.transform.position = EndingArea.transform.position;
+        
     }
     // Update is called once per frame
     void Update() {

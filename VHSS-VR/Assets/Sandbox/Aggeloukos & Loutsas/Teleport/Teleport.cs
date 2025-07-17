@@ -29,6 +29,7 @@ public class Teleport : MonoBehaviour
     //<<Hotspot Highlights>>
     public Outline OutlineWorker;
     public Outline OutlineWheel;
+    public Outline OutlineClimbing;
     public Material AuxActive;
     public Material AuxInactive;
 
@@ -52,16 +53,23 @@ public class Teleport : MonoBehaviour
             {
                 string goal = hit.transform.gameObject.name; //goal is used to define which of the two scenes is enabled
                 Debug.Log("GameObject name is " + goal);
-                if (goal == "Wheel")
-                {
-                    OutlineWheel.enabled = true;
+                switch (goal) {
+                    case "Wheel":
+                        OutlineWheel.enabled = true;
+                        break;
+                    case "Worker":
+                        OutlineWorker.enabled = true;
+                        break;
+                    case "Climbing":
+                        OutlineClimbing.enabled = true;
+                        break;
                 }
-                else if (goal == "Worker")
+
+                if (TeleportToPoint.triggered)
                 {
-                    OutlineWorker.enabled = true;
-                }
-                if (TeleportToPoint.IsPressed())
-                {
+                    if (goal == "Spotting") {
+                        player.transform.position = hit.transform.gameObject.transform.position;
+                    }
                     Scenario.EnterScene(goal, Scenario.Dialogue);
                     Debug.Log("Found Activity Area " + hit.transform.gameObject);
                 }
@@ -76,12 +84,12 @@ public class Teleport : MonoBehaviour
                         HS[i].GetNamedChild("Teleport_Target").GetNamedChild("TT_Inactive").GetNamedChild("Base").GetComponent<MeshRenderer>().material = AuxActive;
                         if (HS[i].GetNamedChild("stairs") != null /*&&(!currentHS == HS[2] || !currentHS == HS[11] || !currentHS == HS[15] || !currentHS == HS[9])*/) //if the HS has a stairs child (and is not on the top of the stairs) then...
                         {
-                            Debug.Log("STAIRSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS");
+                            //Debug.Log("STAIRSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS");
                             HS[i].transform.GetChild(0).gameObject.SetActive(true); //turn on the Arrow 
                             HS[i].transform.GetChild(5).gameObject.SetActive(true); //turn on the Arrow  //and turn on the Outline 
                         }
                         cooldowntimer += Time.deltaTime;
-                        if (TeleportToPoint.IsPressed())
+                        if (TeleportToPoint.triggered)
                         {
                            
                                 currentHS = HS[i]; //sets current hotspot
@@ -115,16 +123,17 @@ public class Teleport : MonoBehaviour
           {
             OutlineWheel.enabled = false;
             OutlineWorker.enabled = false;
-            
-                AimingAt.GetNamedChild("Teleport_Target").GetNamedChild("TT_Inactive").GetNamedChild("Base").GetComponent<MeshRenderer>().material = AuxInactive; //turns off their "glow"
-                if (AimingAt.GetNamedChild("stairs") != null) 
-                {
-                    AimingAt.transform.GetChild(0).gameObject.SetActive(false); //turn off the Arrow 
-                    AimingAt.transform.GetChild(5).gameObject.SetActive(false); //and turn off the Outline 
-                }
+            OutlineClimbing.enabled = false;
+
+            AimingAt.GetNamedChild("Teleport_Target").GetNamedChild("TT_Inactive").GetNamedChild("Base").GetComponent<MeshRenderer>().material = AuxInactive; //turns off their "glow"
+            if (AimingAt.GetNamedChild("stairs") != null) 
+            {
+                AimingAt.transform.GetChild(0).gameObject.SetActive(false); //turn off the Arrow 
+                AimingAt.transform.GetChild(5).gameObject.SetActive(false); //and turn off the Outline 
+            }
             
         }
-        if (TeleportToPoint.IsPressed()) {
+        if (TeleportToPoint.triggered) {
             Debug.Log("GUNSOUND");
             GunSound.Play();
         }
