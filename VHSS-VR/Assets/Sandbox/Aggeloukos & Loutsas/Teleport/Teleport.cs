@@ -29,6 +29,7 @@ public class Teleport : MonoBehaviour
     //<<Hotspot Highlights>>
     public Outline OutlineWorker;
     public Outline OutlineWheel;
+    public Outline OutlineEscapeRopes;
     public Outline OutlineClimbing;
     public Material AuxActive;
     public Material AuxInactive;
@@ -88,15 +89,15 @@ public class Teleport : MonoBehaviour
                             HS[i].transform.GetChild(0).gameObject.SetActive(true); //turn on the Arrow 
                             HS[i].transform.GetChild(5).gameObject.SetActive(true); //turn on the Arrow  //and turn on the Outline 
                         }
-                        cooldowntimer += Time.deltaTime;
+                   
                         if (TeleportToPoint.triggered)
                         {
-                           
-                                currentHS = HS[i]; //sets current hotspot
-                                player.transform.position = HS[i].GetNamedChild("Teleport_Target").transform.position;
-                                Scenario.EnterScene("Explore", Scenario.Dialogue);
-                                cooldowntimer = 0;
-                            
+
+                            currentHS = HS[i]; //sets current hotspot
+                            player.transform.position = HS[i].GetNamedChild("Teleport_Target").transform.position;
+                            Scenario.EnterScene("Explore", Scenario.Dialogue);
+                          
+
                         }
                     }
                 }
@@ -104,19 +105,32 @@ public class Teleport : MonoBehaviour
             }
             //secret room
             if (currentHS == HS[10]) {
-                 if (hit.transform.gameObject.name == "AuxSecret") {
-                     if (TeleportToPoint.IsPressed()) {
-                         player.transform.position = HSSecret.transform.position;
-                         Scenario.EnterScene("Explore", Scenario.Dialogue);
-                         timer += Time.deltaTime;
-                         if (timer >= 5f)
-                         {
+                if (hit.transform.gameObject.name == "AuxSecret") {
+                    if (TeleportToPoint.IsPressed()) {
+                        player.transform.position = HSSecret.transform.position;
+                        Scenario.EnterScene("Explore", Scenario.Dialogue);
+                        timer += Time.deltaTime;
+                        if (timer >= 5f)
+                        {
                             player.transform.position = HS[10].transform.position;
                             Scenario.EnterScene("Explore", Scenario.Dialogue);
                             timer = 0;
-                         }
-                     }
-                 }
+                        }
+                    }
+                }
+            }
+
+            //EscapeRopes
+            if (hit.transform.gameObject.name == "Aux17")
+            {
+                OutlineEscapeRopes.enabled = true;
+                if (TeleportToPoint.IsPressed())
+                {
+                    currentHS = HS[4]; //sets current hotspot
+                    player.transform.position = HS[4].GetNamedChild("Teleport_Target").transform.position;
+                    Scenario.EnterScene("Explore", Scenario.Dialogue);
+                    
+                }
             }
         }
         else //if he stops pointing or pointing at nothing
@@ -124,6 +138,7 @@ public class Teleport : MonoBehaviour
             OutlineWheel.enabled = false;
             OutlineWorker.enabled = false;
             OutlineClimbing.enabled = false;
+            OutlineEscapeRopes.enabled = false;
 
             AimingAt.GetNamedChild("Teleport_Target").GetNamedChild("TT_Inactive").GetNamedChild("Base").GetComponent<MeshRenderer>().material = AuxInactive; //turns off their "glow"
             if (AimingAt.GetNamedChild("stairs") != null) 
