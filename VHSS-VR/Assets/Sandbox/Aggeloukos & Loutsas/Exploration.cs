@@ -36,16 +36,17 @@ public class Exploration : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Scenario.TimeExplore <= 0) {
-            //Teleport.TeleportToPoint.Disable();
-            //Scenario.EnterScene("Climbing", Scenario.Dialogue);
-            for (int i = 0; i <= Phase1HotSpots.Count(); i++) {
+       
+    }
+
+    public void Phase2()
+    {
+         for (int i = 0; i < Phase1HotSpots.Count(); i++) {
                 Debug.Log("Deactivating " + Phase1HotSpots[i]);
                 Phase1HotSpots[i].SetActive(false);
                 Debug.Log("Activating " + Phase2HotSpots[i]);
                 Phase2HotSpots[i].SetActive(true);
             }
             Debug.Log("<color=red>Timeout</color>");
-        }
     }
 }

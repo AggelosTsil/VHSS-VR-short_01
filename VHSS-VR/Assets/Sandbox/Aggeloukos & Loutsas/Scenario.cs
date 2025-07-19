@@ -27,8 +27,11 @@ public class Scenario : MonoBehaviour {
     public bool WheelDialogueHasntPlayed;
     public bool EndingHappened; //If the ending happended, will be used in the update to initiate the fade out
     public bool nogun;
+    public Exploration Exploration;
 
     public Playthings Playthings;
+
+    public Spotting Spotting;
 
     //<<End of Activity Scripts>>
 
@@ -125,6 +128,7 @@ public class Scenario : MonoBehaviour {
         if (Timer && (TimeExplore > 0)) {
             TimeExplore -= Time.deltaTime;
             if (TimeExplore <= 0) {
+                Exploration.Phase2();
                 Debug.Log("<color=red>Timeout</color>");
                 //Seagull Exploration 2 dialogue
                 if (Timer && (TimeSpot > 0)) {
@@ -141,11 +145,13 @@ public class Scenario : MonoBehaviour {
             if (!SeagullSpeaking.isPlaying) {
                 if (Playthings.Toggle.triggered) {
                     Debug.Log("triggered toggle in scenario");
-                    if (!Playthings.Pistol.active) {
-                        Debug.Log("Pistol isnt active");
-                        Playthings.PistolActive(true);
-                        Debug.Log("Now it is");
+                    if (Spotting.IsSpotting){
+                        Playthings.SpyglassActive(!Playthings.Spyglass.active);
+                        Playthings.PistolActive(!Playthings.Pistol.active);
+                    }else {
+                        Playthings.PistolActive(!Playthings.Pistol.active);
                     }
+                    
                    
                 }
             }

@@ -82,12 +82,13 @@ public class Teleport : MonoBehaviour
                     if (hit.transform.gameObject.name == $"Aux{i}") //checks if the player is pointing for Aux1, Aux2, etc 
                     {
                         AimingAt = HS[i];
-                        HS[i].GetNamedChild("Teleport_Target").GetNamedChild("TT_Inactive").GetNamedChild("Base").GetComponent<MeshRenderer>().material = AuxActive;
-                        if (HS[i].GetNamedChild("stairs") != null /*&&(!currentHS == HS[2] || !currentHS == HS[11] || !currentHS == HS[15] || !currentHS == HS[9])*/) //if the HS has a stairs child (and is not on the top of the stairs) then...
+                        HS[i].transform.GetChild(3).gameObject.SetActive(false);
+                        HS[i].transform.GetChild(4).gameObject.SetActive(true);
+                        if (HS[i].GetNamedChild("stairs") != null /*&& (!currentHS == HS[2] || !currentHS == HS[11] || !currentHS == HS[15] || !currentHS == HS[9])*/) //if the HS has a stairs child (and is not on the top of the stairs) then...
                         {
                             //Debug.Log("STAIRSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS");
                             HS[i].transform.GetChild(0).gameObject.SetActive(true); //turn on the Arrow 
-                            HS[i].transform.GetChild(5).gameObject.SetActive(true); //turn on the Arrow  //and turn on the Outline 
+                            HS[i].transform.GetChild(7).gameObject.SetActive(true); //turn on the Arrow  //and turn on the Outline 
                         }
                    
                         if (TeleportToPoint.triggered)
@@ -140,11 +141,12 @@ public class Teleport : MonoBehaviour
             OutlineClimbing.enabled = false;
             OutlineEscapeRopes.enabled = false;
 
-            AimingAt.GetNamedChild("Teleport_Target").GetNamedChild("TT_Inactive").GetNamedChild("Base").GetComponent<MeshRenderer>().material = AuxInactive; //turns off their "glow"
+            AimingAt.transform.GetChild(3).gameObject.SetActive(true);
+            AimingAt.transform.GetChild(4).gameObject.SetActive(false);
             if (AimingAt.GetNamedChild("stairs") != null) 
             {
                 AimingAt.transform.GetChild(0).gameObject.SetActive(false); //turn off the Arrow 
-                AimingAt.transform.GetChild(5).gameObject.SetActive(false); //and turn off the Outline 
+                AimingAt.transform.GetChild(7).gameObject.SetActive(false); //and turn off the Outline 
             }
             
         }

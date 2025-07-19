@@ -9,6 +9,8 @@ public class Spotting : MonoBehaviour {
     public Playthings Playthings;
     public HandGrabRope GrabbingRight;
     public HandGrabRope GrabbingLeft;
+
+    public bool IsSpotting;
     
     // Start is called before the first frame update
     void Start() {
@@ -19,6 +21,11 @@ public class Spotting : MonoBehaviour {
     }
 
     private void OnEnable() {
+        IsSpotting = true;
+    }
+
+    private void OnDisable(){
+        IsSpotting = false;
     }
     // Update is called once per frame
     void Update() {
@@ -31,13 +38,13 @@ public class Spotting : MonoBehaviour {
                 Scenario.EnterScene("Ending", Scenario.Dialogue);
             }
         }
-        if (!Scenario.SeagullSpeaking.isPlaying) {
+        /*if (!Scenario.SeagullSpeaking.isPlaying) {
             if (Playthings.Toggle.triggered) {
                 Debug.Log("Toggle Playthings");
                 Playthings.PistolActive(!Playthings.Pistol.active);
                 Playthings.SpyglassActive(!Playthings.Spyglass.active);
 
             }
-        }
+        }*/
     }
 }
