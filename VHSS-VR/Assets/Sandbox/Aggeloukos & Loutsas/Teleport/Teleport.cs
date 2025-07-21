@@ -73,6 +73,8 @@ public class Teleport : MonoBehaviour
                         player.transform.position = hit.transform.gameObject.transform.position;
                     }
                     Scenario.EnterScene(goal, Scenario.Dialogue);
+                    //currentHS = GameObject.Find(goal);
+                    //currentHS.SetActive(true);
                     Debug.Log("Found Activity Area " + hit.transform.gameObject);
                 }
                 currentHS.SetActive(true);
