@@ -53,6 +53,7 @@ public class Scenario : MonoBehaviour {
                 EnableActivity(ExploreActivity, true);
                 EnableActivity(WorkerActivity, false);
                 EnableActivity(WheelActivity, false);
+                EnableActivity(SpottingActivity, false);
 
                 SeagullSpeaking.clip = Seagull_Dialogues[0]; //Sets correct dialogue for seagull
                 if (ExplorationDialogueHasntPlayed && Dialogue) {

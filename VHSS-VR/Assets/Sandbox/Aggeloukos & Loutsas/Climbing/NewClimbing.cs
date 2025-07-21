@@ -33,7 +33,8 @@ public class NewClimbing : MonoBehaviour {
     public float FallSensitivity;
     public Scenario Scenario;
     public GameObject ClimbingArea;
-    public GameObject HS;
+    public Outline Outline;
+
     public GameObject SpottingArea;
     public Playthings Playthings;
 
@@ -47,7 +48,8 @@ public class NewClimbing : MonoBehaviour {
     {
 
         Player.transform.position = ClimbingArea.transform.position;
-        HS.SetActive(false);
+        Playthings.Toggle.Disable();
+        Outline.enabled = false;
 
         //<<initialising positions>>
         CurrentRHPosition = RPositionAction.action.ReadValue<Vector3>();
@@ -55,11 +57,12 @@ public class NewClimbing : MonoBehaviour {
         FailPoint = Player.position;
         Debug.Log("FailPoint set to " + FailPoint);
 
+
         //<<Timer>>
         HangingCheckTimer = HangingCheck;
     }
     private void OnDisable() {
-        
+        Playthings.Toggle.Enable();
     }
 
 

@@ -18,6 +18,7 @@ public class Teleport : MonoBehaviour
     GameObject AnchorObject;
     
     public GameObject[] HS;
+    public string currentAux;
     public GameObject currentHS;
     public GameObject AimingAt;
     public GameObject HSSecret;
@@ -84,7 +85,7 @@ public class Teleport : MonoBehaviour
                         AimingAt = HS[i];
                         HS[i].transform.GetChild(3).gameObject.SetActive(false);
                         HS[i].transform.GetChild(4).gameObject.SetActive(true);
-                        if (HS[i].GetNamedChild("stairs") != null /*&& (!currentHS == HS[2] || !currentHS == HS[11] || !currentHS == HS[15] || !currentHS == HS[9])*/) //if the HS has a stairs child (and is not on the top of the stairs) then...
+                        if (HS[i].GetNamedChild("stairs") != null) //if the HS has a stairs child (and is not on the top of the stairs) then...
                         {
                             //Debug.Log("STAIRSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS");
                             HS[i].transform.GetChild(0).gameObject.SetActive(true); //turn on the Arrow 
@@ -93,19 +94,25 @@ public class Teleport : MonoBehaviour
                    
                         if (TeleportToPoint.triggered)
                         {
-
-                            currentHS = HS[i]; //sets current hotspot
+                            currentHS.SetActive(true);
+                            currentHS.transform.GetChild(3).gameObject.SetActive(true);
+                            currentHS.transform.GetChild(4).gameObject.SetActive(false);
+                            currentAux = hit.transform.gameObject.name; //sets current hotspot
+                            currentHS = HS[i];
                             player.transform.position = HS[i].GetNamedChild("Teleport_Target").transform.position;
                             Scenario.EnterScene("Explore", Scenario.Dialogue);
-                          
+                            currentHS.SetActive(false);
+
 
                         }
+                        
+                        
                     }
                 }
                 Debug.Log("Rayscast found solid target " + hit.transform.gameObject);
             }
             //secret room
-            if (currentHS == HS[10]) {
+            if (currentAux == "Aux10") {
                 if (hit.transform.gameObject.name == "AuxSecret") {
                     if (TeleportToPoint.IsPressed()) {
                         player.transform.position = HSSecret.transform.position;
@@ -127,7 +134,7 @@ public class Teleport : MonoBehaviour
                 OutlineEscapeRopes.enabled = true;
                 if (TeleportToPoint.IsPressed())
                 {
-                    currentHS = HS[4]; //sets current hotspot
+                    currentAux = hit.transform.gameObject.name; //sets current hotspot
                     player.transform.position = HS[4].GetNamedChild("Teleport_Target").transform.position;
                     Scenario.EnterScene("Explore", Scenario.Dialogue);
                     
