@@ -75,6 +75,7 @@ public class Teleport : MonoBehaviour
                     Scenario.EnterScene(goal, Scenario.Dialogue);
                     Debug.Log("Found Activity Area " + hit.transform.gameObject);
                 }
+                currentHS.SetActive(true);
             }
             else if (hit.transform.gameObject.CompareTag("Auxiliary Hotspot"))
             {
