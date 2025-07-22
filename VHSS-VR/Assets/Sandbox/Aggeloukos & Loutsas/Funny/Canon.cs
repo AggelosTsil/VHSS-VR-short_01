@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 
 public class Canon : MonoBehaviour
@@ -19,7 +20,7 @@ public class Canon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+      
     }
 
     public void ShowOutline()
@@ -34,9 +35,11 @@ public class Canon : MonoBehaviour
     public void CanonEvent()
     {
         
-        //this.gameObject.transform.GetChild(4).gameObject.SetActive(true);
-        BoomSound.time = 0.15f;
-        BoomSound.Play();
-        Animator.SetTrigger("Event");
+            Outline.enabled = false;
+            this.gameObject.transform.GetChild(4).gameObject.SetActive(false);
+            BoomSound.time = 0.15f;
+            BoomSound.Play();
+            Animator.SetTrigger("Event");
+        
     }
 }

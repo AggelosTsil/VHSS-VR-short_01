@@ -41,6 +41,7 @@ public class Teleport : MonoBehaviour
 
     //Fun
     public Canon Canon;
+    public ParticleSystem Smoke;
 
     // Start is called before the first frame update
     void Start()
@@ -155,8 +156,9 @@ public class Teleport : MonoBehaviour
                 Canon.ShowOutline();
                 if (TeleportToPoint.IsPressed() ) 
                 {
+                    
                     Canon.CanonEvent();
-                    Canon.CloseOutline();
+                    
                 }
             }
             else { Canon.CloseOutline(); }
@@ -181,7 +183,8 @@ public class Teleport : MonoBehaviour
             Debug.Log("GUNSOUND");
             GunSound.Play();
             Recoil.SetTrigger("Shoot");
-           
+            Smoke.Play();
+            Canon.CanonEvent();
 
         }
     }
