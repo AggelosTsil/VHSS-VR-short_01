@@ -27,6 +27,7 @@ public class Scenario : MonoBehaviour {
     public bool WheelDialogueHasntPlayed;
     public bool EndingHappened; //If the ending happended, will be used in the update to initiate the fade out
     public bool nogun;
+    public GameObject HS;
     public Exploration Exploration;
 
     public Playthings Playthings;
@@ -149,15 +150,24 @@ public class Scenario : MonoBehaviour {
                     if (Spotting.IsSpotting){
                         Playthings.SpyglassActive(!Playthings.Spyglass.active);
                         Playthings.PistolActive(!Playthings.Pistol.active);
-                    }else {
+                    }
+                    else 
+                    {
                         Playthings.PistolActive(!Playthings.Pistol.active);
                     }
-                    
-                   
                 }
             }
+            if (!Playthings.Pistol.active)
+            {
+                HS.SetActive(false);
+            }
+            else
+            {
+                HS.SetActive(true);
+            }
+            
 
 
-        }
     }
+}
 

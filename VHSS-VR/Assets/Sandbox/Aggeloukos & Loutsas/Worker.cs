@@ -10,6 +10,7 @@ public class Worker : MonoBehaviour
     public Playthings Playthings;
     public GameObject HotspotRing;
     public GameObject Aux;
+    public Teleport Teleport;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,8 +25,11 @@ public class Worker : MonoBehaviour
     }
 
     private void OnDisable() {
-        HotspotRing.SetActive(true);
-        Aux.SetActive(true);
+        if (Scenario.TimeExplore >= 0)
+        {
+            HotspotRing.SetActive(true);
+            Aux.SetActive(true);
+        }
     }
 
     // Update is called once per frame

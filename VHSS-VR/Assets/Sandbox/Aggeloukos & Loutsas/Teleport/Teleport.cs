@@ -186,8 +186,7 @@ public class Teleport : MonoBehaviour
             GunSound.Play();
             Recoil.SetTrigger("Shoot");
             Smoke.Play();
-            //Canon.CanonEvent();
-            
+         
 
         }
     }
