@@ -47,7 +47,7 @@ public class Teleport : MonoBehaviour
     void Start()
     {
         Anchors = LayerMask.GetMask("Anchors");
-        Recoil = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
@@ -80,11 +80,10 @@ public class Teleport : MonoBehaviour
                         player.transform.position = hit.transform.gameObject.transform.position;
                     }
                     Scenario.EnterScene(goal, Scenario.Dialogue);
-                    //currentHS = GameObject.Find(goal);
-                    //currentHS.SetActive(true);
                     Debug.Log("Found Activity Area " + hit.transform.gameObject);
+                    currentHS.SetActive(true);
                 }
-                currentHS.SetActive(true);
+               
             }
             else if (hit.transform.gameObject.CompareTag("Auxiliary Hotspot"))
             {
@@ -154,11 +153,13 @@ public class Teleport : MonoBehaviour
             if (hit.transform.gameObject.CompareTag("Cannon"))
             {
                 Canon.ShowOutline();
-                if (TeleportToPoint.IsPressed() ) 
+                if (TeleportToPoint.triggered) 
                 {
                     
                     Canon.CanonEvent();
-                    
+                    Destroy(hit.transform.gameObject);
+
+
                 }
             }
             else { Canon.CloseOutline(); }
@@ -169,6 +170,7 @@ public class Teleport : MonoBehaviour
             OutlineWorker.enabled = false;
             OutlineClimbing.enabled = false;
             OutlineEscapeRopes.enabled = false;
+            Canon.CloseOutline();
 
             AimingAt.transform.GetChild(3).gameObject.SetActive(true);
             AimingAt.transform.GetChild(4).gameObject.SetActive(false);
@@ -184,7 +186,8 @@ public class Teleport : MonoBehaviour
             GunSound.Play();
             Recoil.SetTrigger("Shoot");
             Smoke.Play();
-            Canon.CanonEvent();
+            //Canon.CanonEvent();
+            
 
         }
     }
