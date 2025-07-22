@@ -34,13 +34,19 @@ public class Teleport : MonoBehaviour
     public Outline OutlineClimbing;
     public Material AuxActive;
     public Material AuxInactive;
-
+    
+    //Gun Stuff
     public AudioSource GunSound;
+    public Animator Recoil;
+
+    //Fun
+    public Canon Canon;
 
     // Start is called before the first frame update
     void Start()
     {
         Anchors = LayerMask.GetMask("Anchors");
+        Recoil = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -143,6 +149,17 @@ public class Teleport : MonoBehaviour
                     
                 }
             }
+            //cannon
+            if (hit.transform.gameObject.CompareTag("Cannon"))
+            {
+                Canon.ShowOutline();
+                if (TeleportToPoint.IsPressed() ) 
+                {
+                    Canon.CanonEvent();
+                    Canon.CloseOutline();
+                }
+            }
+            else { Canon.CloseOutline(); }
         }
         else //if he stops pointing or pointing at nothing
           {
@@ -163,6 +180,9 @@ public class Teleport : MonoBehaviour
         if (TeleportToPoint.triggered) {
             Debug.Log("GUNSOUND");
             GunSound.Play();
+            Recoil.SetTrigger("Shoot");
+           
+
         }
     }
 }
