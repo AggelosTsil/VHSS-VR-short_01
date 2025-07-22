@@ -34,13 +34,20 @@ public class Teleport : MonoBehaviour
     public Outline OutlineClimbing;
     public Material AuxActive;
     public Material AuxInactive;
-
+    
+    //Gun Stuff
     public AudioSource GunSound;
+    public Animator Recoil;
+
+    //Fun
+    public Canon Canon;
+    public ParticleSystem Smoke;
 
     // Start is called before the first frame update
     void Start()
     {
         Anchors = LayerMask.GetMask("Anchors");
+        
     }
 
     // Update is called once per frame
@@ -73,11 +80,10 @@ public class Teleport : MonoBehaviour
                         player.transform.position = hit.transform.gameObject.transform.position;
                     }
                     Scenario.EnterScene(goal, Scenario.Dialogue);
-                    //currentHS = GameObject.Find(goal);
-                    //currentHS.SetActive(true);
                     Debug.Log("Found Activity Area " + hit.transform.gameObject);
+                    currentHS.SetActive(true);
                 }
-                currentHS.SetActive(true);
+               
             }
             else if (hit.transform.gameObject.CompareTag("Auxiliary Hotspot"))
             {
@@ -143,6 +149,20 @@ public class Teleport : MonoBehaviour
                     
                 }
             }
+            //cannon
+            if (hit.transform.gameObject.CompareTag("Cannon"))
+            {
+                Canon.ShowOutline();
+                if (TeleportToPoint.triggered) 
+                {
+                    
+                    Canon.CanonEvent();
+                    Destroy(hit.transform.gameObject);
+
+
+                }
+            }
+            else { Canon.CloseOutline(); }
         }
         else //if he stops pointing or pointing at nothing
           {
@@ -150,6 +170,7 @@ public class Teleport : MonoBehaviour
             OutlineWorker.enabled = false;
             OutlineClimbing.enabled = false;
             OutlineEscapeRopes.enabled = false;
+            Canon.CloseOutline();
 
             AimingAt.transform.GetChild(3).gameObject.SetActive(true);
             AimingAt.transform.GetChild(4).gameObject.SetActive(false);
@@ -163,6 +184,11 @@ public class Teleport : MonoBehaviour
         if (TeleportToPoint.triggered) {
             Debug.Log("GUNSOUND");
             GunSound.Play();
+            Recoil.SetTrigger("Shoot");
+            Smoke.Play();
+            //Canon.CanonEvent();
+            
+
         }
     }
 }

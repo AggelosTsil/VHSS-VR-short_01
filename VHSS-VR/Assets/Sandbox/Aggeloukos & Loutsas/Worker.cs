@@ -8,6 +8,8 @@ public class Worker : MonoBehaviour
     public Scenario Scenario;
     public GameObject WorkerArea;
     public Playthings Playthings;
+    public GameObject HotspotRing;
+    public GameObject Aux;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +19,13 @@ public class Worker : MonoBehaviour
     private void OnEnable() {
         player.transform.position = WorkerArea.transform.position;
         Playthings.BareHands();
+        HotspotRing.SetActive(false);
+        Aux.SetActive(false);
+    }
+
+    private void OnDisable() {
+        HotspotRing.SetActive(true);
+        Aux.SetActive(true);
     }
 
     // Update is called once per frame
