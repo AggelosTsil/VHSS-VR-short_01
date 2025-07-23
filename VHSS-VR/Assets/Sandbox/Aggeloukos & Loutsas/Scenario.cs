@@ -144,7 +144,7 @@ public class Scenario : MonoBehaviour {
                 Blurs.SetBool("End", true);
             }
 
-            if (!SeagullSpeaking.isPlaying) {
+           if (!SeagullSpeaking.isPlaying) {
                 if (Playthings.Toggle.triggered) {
                     Debug.Log("triggered toggle in scenario");
                     if (Spotting.IsSpotting){
@@ -157,6 +157,7 @@ public class Scenario : MonoBehaviour {
                     }
                 }
             }
+           
             if (!Playthings.Pistol.active)
             {
                 HS.SetActive(false);

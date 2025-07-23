@@ -15,6 +15,8 @@ public class Playthings : MonoBehaviour
     public bool PistolVisible;
     //public InputAction TogglePistol;
 
+    
+
     public InputAction Toggle;
     
 
