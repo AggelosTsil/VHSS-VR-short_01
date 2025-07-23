@@ -16,7 +16,8 @@ public class Spotting : MonoBehaviour {
     
     // Start is called before the first frame update
     void Start() {
-        Playthings.PistolActive(false);
+        Playthings.RightPistolActive(false);
+        Playthings.LeftPistolActive(false);
         Playthings.SpyglassActive(true);
         GrabbingRight.enabled = false;
         GrabbingLeft.enabled = false;

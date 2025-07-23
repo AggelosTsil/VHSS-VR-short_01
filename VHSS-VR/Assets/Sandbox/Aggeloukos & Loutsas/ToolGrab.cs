@@ -6,6 +6,8 @@ public class ToolGrab : MonoBehaviour
 {
     public Playthings Playthings;
     private bool Hand;
+    public Outline Outline;
+    public GameObject Holster;
     
     // Start is called before the first frame update
     void Start()
@@ -25,15 +27,43 @@ public class ToolGrab : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!Playthings.PistolRight.activeSelf && !Playthings.PistolLeft.activeSelf) // If gun is not held, holster is available
+        {
+            Holster.SetActive(true);
+        }
     }
 
     public void OnTriggerStay(Collider other) {
         Debug.Log("Collision");
-        if (other.CompareTag("Gun") && Playthings.Toggle.triggered) 
+        if (other.CompareTag("Gun")) 
         {
-            Playthings.PistolActive(true);
+            Outline.enabled = true;
+
+            if (Playthings.Toggle.triggered && Holster)
+            {
+                if (Hand)
+                {
+                    Playthings.RightPistolActive(true);
+                }
+                else
+                {
+                    Playthings.LeftPistolActive(true);
+                }
+                Holster.SetActive(false);
+            }
+            else if (Playthings.Toggle.triggered && !Holster) 
+            {
+                if (Hand)
+                {
+                    Playthings.RightPistolActive(false);
+                }
+                else 
+                { 
+                    Playthings.LeftPistolActive(false);
+                }
+                Holster.SetActive(true);
+            }
         }
 
-        }
+    }
 }

@@ -148,17 +148,17 @@ public class Scenario : MonoBehaviour {
                 if (Playthings.Toggle.triggered) {
                     Debug.Log("triggered toggle in scenario");
                     if (Spotting.IsSpotting){
-                        Playthings.SpyglassActive(!Playthings.Spyglass.active);
-                        Playthings.PistolActive(!Playthings.Pistol.active);
+                        Playthings.SpyglassActive(!Playthings.Spyglass.activeSelf);
+                        Playthings.RightPistolActive(!Playthings.PistolRight.activeSelf);
                     }
                     else 
                     {
-                        Playthings.PistolActive(!Playthings.Pistol.active);
+                        Playthings.RightPistolActive(!Playthings.PistolRight.activeSelf);
                     }
                 }
             }
            
-            if (!Playthings.Pistol.active)
+            if (!Playthings.PistolRight.activeSelf || !Playthings.PistolLeft.activeSelf)
             {
                 HS.SetActive(false);
             }

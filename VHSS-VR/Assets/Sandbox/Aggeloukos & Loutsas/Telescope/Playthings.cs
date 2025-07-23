@@ -10,8 +10,10 @@ public class Playthings : MonoBehaviour
     public bool SpyglassVisible;
     //public InputAction ToggleSpyglass;
 
-    public GameObject Pistol;
-    public AudioSource PewSound;
+    public GameObject PistolRight;
+    public GameObject PistolLeft;
+    public AudioSource PewSoundRight;
+    public AudioSource PewSoundLeft;
     public bool PistolVisible;
     //public InputAction TogglePistol;
 
@@ -26,7 +28,8 @@ public class Playthings : MonoBehaviour
     {
         Toggle.Enable();
         Spyglass.SetActive(SpyglassVisible);
-        Pistol.SetActive(PistolVisible);
+        PistolRight.SetActive(PistolVisible);
+        PistolLeft.SetActive(PistolVisible);
         GetSound.time = 0.15f;
     }
 
@@ -34,9 +37,18 @@ public class Playthings : MonoBehaviour
         Toggle.Disable();
     }
 
-    public void PistolActive(bool Active) {
-        Pistol.SetActive(Active);
+    public void RightPistolActive(bool Active) {
+        PistolRight.SetActive(Active);
         if (Active) {
+            GetSound.Play();
+        }
+    }
+
+    public void LeftPistolActive(bool Active)
+    {
+        PistolLeft.SetActive(Active);
+        if (Active)
+        {
             GetSound.Play();
         }
     }
@@ -49,7 +61,8 @@ public class Playthings : MonoBehaviour
     }
 
     public void BareHands() {
-        Pistol.SetActive(false);
+        PistolRight.SetActive(false);
+        PistolLeft.SetActive(false);
         Spyglass.SetActive(false);
     }
 
