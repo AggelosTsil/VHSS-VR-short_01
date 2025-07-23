@@ -34,6 +34,8 @@ public class Scenario : MonoBehaviour {
 
     public Spotting Spotting;
 
+    public ToolGrab ToolGrab;
+
     //<<End of Activity Scripts>>
 
     public void EnterScene(string SceneName, bool Dialogue) { //Initiallises next scene <<NOTE ADD i++>>
@@ -139,33 +141,35 @@ public class Scenario : MonoBehaviour {
             }
         }
 
-            if (EndingHappened && !SeagullSpeaking.isPlaying) //For the fade out
-            {
-                Blurs.SetBool("End", true);
-            }
+        if (EndingHappened && !SeagullSpeaking.isPlaying) //For the fade out
+        {
+            Blurs.SetBool("End", true);
+        }
 
-           if (!SeagullSpeaking.isPlaying) {
-                if (Playthings.Toggle.triggered) {
-                    Debug.Log("triggered toggle in scenario");
-                    if (Spotting.IsSpotting){
-                        Playthings.SpyglassActive(!Playthings.Spyglass.activeSelf);
-                        Playthings.RightPistolActive(!Playthings.PistolRight.activeSelf);
-                    }
-                    else 
-                    {
-                        Playthings.RightPistolActive(!Playthings.PistolRight.activeSelf);
-                    }
+        if (!SeagullSpeaking.isPlaying) {
+            if (Playthings.Toggle.triggered && Spotting.IsSpotting) 
+            {
+                Debug.Log("triggered toggle in scenario");
+                Playthings.SpyglassActive(!Playthings.Spyglass.activeSelf);
+                if (ToolGrab.Hand)
+                {
+                    Playthings.RightPistolActive(!Playthings.PistolRight.activeSelf); //NEEDS TO CHANGE SO IT INCLUDES THE SPYGLASS
+                }
+                else 
+                { 
+                    Playthings.LeftPistolActive(!Playthings.PistolLeft.activeSelf);
                 }
             }
+        }
            
-            if (!Playthings.PistolRight.activeSelf || !Playthings.PistolLeft.activeSelf)
-            {
-                HS.SetActive(false);
-            }
-            else
-            {
-                HS.SetActive(true);
-            }
+        if (!Playthings.PistolRight.activeSelf || !Playthings.PistolLeft.activeSelf)
+        {
+            HS.SetActive(false);
+        }
+        else
+        {
+            HS.SetActive(true);
+        }
             
 
 

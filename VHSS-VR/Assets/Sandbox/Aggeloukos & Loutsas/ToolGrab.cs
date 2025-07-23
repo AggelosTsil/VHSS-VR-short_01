@@ -5,7 +5,7 @@ using UnityEngine;
 public class ToolGrab : MonoBehaviour
 {
     public Playthings Playthings;
-    private bool Hand;
+    public bool Hand;
     public Outline Outline;
     public GameObject Holster;
     
