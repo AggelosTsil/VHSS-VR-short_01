@@ -70,7 +70,7 @@ public class RotateContactInteractable: ContactInteractable {
         cp = positionAction.action.ReadValue<Vector3>();
         //cp = SecPositionAction.action.ReadValue<Vector3>(); //aggeloukos + Loutsas
 
-        dp.Set(lockPitch ? 0 : cp.y - pp.y, lockYaw ? 0 : -cp.x + pp.x, lockRoll ? 0 : cp.z - pp.z);
+        dp.Set(lockPitch ? 0 : cp.y - pp.y, lockYaw ? 0 : cp.z - pp.z, lockRoll ? 0 : cp.z - pp.z); //worker is not set to players X axis but on players Z axis
 
         // Debug.Log("[RotateContactInteractable] Update " + name + ", " + dp * sensitivity);
         // Debug.Log("[RotateContactInteractable] Update " + name + ", " + cp);
