@@ -40,13 +40,8 @@ public class Scenario : MonoBehaviour {
 
     public void EnterScene(string SceneName, bool Dialogue) { //Initiallises next scene <<NOTE ADD i++>>
         Debug.Log("<color=yellow>Entered Scene </color>" + SceneName);
-        //Player.transform.position = Flags[i].transform.position; //Teleports player to hotspot
-        /*if (Dialogue) {
-            SeagullSpeaking.clip = Seagull_Dialogues[i]; //Sets correct dialogue for seagull
-            SeagullSpeaking.Play(0); //Seagull starts yapping
-        }*/
+        
         SceneActivity(SceneName);
-
     }
 
     public void SceneActivity(string ActivityName) { //Activates scripts related to each scene
@@ -126,7 +121,6 @@ public class Scenario : MonoBehaviour {
         Blurs.SetBool("End", false);
     }
 
-
     // Update is called once per frame
     void Update() {
         if (Timer && (TimeExplore > 0)) {
@@ -162,13 +156,15 @@ public class Scenario : MonoBehaviour {
             }
         }
            
-        if (!Playthings.PistolRight.activeSelf || !Playthings.PistolLeft.activeSelf)
+        if (!Playthings.PistolRight.activeSelf && !Playthings.PistolLeft.activeSelf)
         {
             HS.SetActive(false);
+            Debug.Log("HS closed");
         }
-        else
+        else 
         {
             HS.SetActive(true);
+            Debug.Log("HS Open");
         }
             
 

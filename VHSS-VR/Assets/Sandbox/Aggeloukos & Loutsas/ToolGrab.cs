@@ -8,6 +8,8 @@ public class ToolGrab : MonoBehaviour
     public bool Hand;
     public Outline Outline;
     public GameObject Holster;
+    private bool RightHolsterOut;
+   
     
     // Start is called before the first frame update
     void Start()
@@ -22,6 +24,7 @@ public class ToolGrab : MonoBehaviour
                 Debug.Log("<color=blue>Left Hand ready to climb</color>");
                 break;
         }
+        RightHolsterOut = false;
     }
 
     // Update is called once per frame
@@ -39,31 +42,42 @@ public class ToolGrab : MonoBehaviour
         {
             Outline.enabled = true;
 
-            if (Playthings.Toggle.triggered && Holster)
+            if (Playthings.Toggle.triggered && !RightHolsterOut)
             {
                 if (Hand)
                 {
                     Playthings.RightPistolActive(true);
+                    RightHolsterOut = true;
+                    Debug.Log("Right Hand Took Weapon");
                 }
                 else
                 {
                     Playthings.LeftPistolActive(true);
+                    RightHolsterOut = true;
                 }
                 Holster.SetActive(false);
             }
-            else if (Playthings.Toggle.triggered && !Holster) 
+            else if (Playthings.Toggle.triggered && RightHolsterOut) 
             {
                 if (Hand)
                 {
                     Playthings.RightPistolActive(false);
+                    RightHolsterOut = false;
+                    Debug.Log("Right Hand Holstered Weapon");
                 }
                 else 
                 { 
                     Playthings.LeftPistolActive(false);
+                    RightHolsterOut = false;
                 }
                 Holster.SetActive(true);
             }
         }
 
+    }
+    private void OnTriggerExit(Collider other) {
+        if (other.CompareTag("Gun")) {
+            Outline.enabled = false;
+        }
     }
 }

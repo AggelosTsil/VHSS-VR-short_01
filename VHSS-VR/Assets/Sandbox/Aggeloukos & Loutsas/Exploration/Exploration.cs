@@ -9,7 +9,8 @@ public class Exploration : MonoBehaviour
     public GameObject player;
     public Scenario Scenario;
     public GameObject ExploreArea;
-    public Teleport Teleport;
+    public Teleport TeleportR;
+    public Teleport TeleportL;
     public Outline OutlineWorker;
     public Outline OutlineWheel;
     public Playthings Playthings;
@@ -20,7 +21,8 @@ public class Exploration : MonoBehaviour
     void Start()
     {
         player.transform.position = ExploreArea.transform.position;
-        Teleport.TeleportToPoint.Enable();
+        TeleportR.TeleportToPoint.Enable();
+        TeleportL.TeleportToPoint.Enable();
         Playthings.BareHands();
         //OutlineWorker.enabled = true;
         // OutlineWheel.enabled = true;

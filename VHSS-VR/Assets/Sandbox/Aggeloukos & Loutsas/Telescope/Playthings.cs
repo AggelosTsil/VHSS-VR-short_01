@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Linq;
 
 public class Playthings : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class Playthings : MonoBehaviour
     public bool PistolVisible;
     //public InputAction TogglePistol;
 
+    public GameObject[] grabbies;
     
 
     public InputAction Toggle;
@@ -68,7 +70,23 @@ public class Playthings : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-       
+        if (!PistolRight.active && !PistolLeft.active && !Spyglass.active) 
+        {
+            for (int i = 0; i <= 23; i++) 
+            {
+                grabbies[i].SetActive(true);
+            }
+           
+        }
+        else {
+            Debug.Log("IT HAS OPENED");
+
+            for (int i = 0; i <= 23; i++) 
+            {
+                grabbies[i].SetActive(false);
+            }
+            
+        }
     }
     public void OnToggle(InputAction.CallbackContext Context ) {
         Debug.Log("OnToggle");

@@ -22,7 +22,7 @@ public class HolsterPlacement : MonoBehaviour
         //transform.Rotate(NewRotation, Space.Self);
         transform.SetPositionAndRotation(NewPosition, NewRotation);
 
-        Debug.Log("Position is " + NewPosition + " and rotation is " + NewRotation);
+        //Debug.Log("Position is " + NewPosition + " and rotation is " + NewRotation);
 
     }
 }
