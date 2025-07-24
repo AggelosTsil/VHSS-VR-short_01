@@ -141,7 +141,7 @@ public class Scenario : MonoBehaviour {
         }
 
         if (!SeagullSpeaking.isPlaying) {
-            if (Playthings.Toggle.triggered && Spotting.IsSpotting) 
+            /*if (Playthings.Toggle.triggered && Spotting.IsSpotting) 
             {
                 Debug.Log("triggered toggle in scenario");
                 Playthings.SpyglassActive(!Playthings.Spyglass.activeSelf);
@@ -154,6 +154,7 @@ public class Scenario : MonoBehaviour {
                     Playthings.LeftPistolActive(!Playthings.PistolLeft.activeSelf);
                 }
             }
+            */
         }
            
         if (!Playthings.PistolRight.activeSelf && !Playthings.PistolLeft.activeSelf)

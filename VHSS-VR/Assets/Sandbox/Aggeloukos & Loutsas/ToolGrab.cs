@@ -41,37 +41,7 @@ public class ToolGrab : MonoBehaviour
         if (other.CompareTag("Gun")) 
         {
             Outline.enabled = true;
-
-            if (Playthings.Toggle.triggered && !RightHolsterOut)
-            {
-                if (Hand)
-                {
-                    Playthings.RightPistolActive(true);
-                    RightHolsterOut = true;
-                    Debug.Log("Right Hand Took Weapon");
-                }
-                else
-                {
-                    Playthings.LeftPistolActive(true);
-                    RightHolsterOut = true;
-                }
-                Holster.SetActive(false);
-            }
-            else if (Playthings.Toggle.triggered && RightHolsterOut) 
-            {
-                if (Hand)
-                {
-                    Playthings.RightPistolActive(false);
-                    RightHolsterOut = false;
-                    Debug.Log("Right Hand Holstered Weapon");
-                }
-                else 
-                { 
-                    Playthings.LeftPistolActive(false);
-                    RightHolsterOut = false;
-                }
-                Holster.SetActive(true);
-            }
+            Playthings.HandlePlaythings(Hand);
         }
 
     }

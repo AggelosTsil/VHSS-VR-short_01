@@ -16,16 +16,19 @@ public class Playthings : MonoBehaviour
     public AudioSource PewSoundRight;
     public AudioSource PewSoundLeft;
     public bool PistolVisible;
+    public bool RightHolsterOut = false;
+    public GameObject Holster;
     //public InputAction TogglePistol;
 
     public GameObject[] grabbies;
     
 
     public InputAction Toggle;
-    
 
-        
+
+
     // Start is called before the first frame update
+  
     void OnEnable()
     {
         Toggle.Enable();
@@ -90,5 +93,37 @@ public class Playthings : MonoBehaviour
     }
     public void OnToggle(InputAction.CallbackContext Context ) {
         Debug.Log("OnToggle");
+    }
+
+    public void HandlePlaythings(bool Hand) {
+   
+        if (Toggle.triggered && !RightHolsterOut) {
+            if (Hand && !PistolLeft.activeSelf) {
+                RightPistolActive(true);
+                Holster.SetActive(false);
+                RightHolsterOut = true;
+                Debug.Log("Right Hand Took Weapon");
+            }
+            else if (!Hand && !PistolRight.activeSelf) {
+                LeftPistolActive(true);
+                Holster.SetActive(false);
+                RightHolsterOut = true;
+            }
+           
+        }
+        else if (Toggle.triggered && RightHolsterOut) {
+            if (Hand && !PistolLeft.activeSelf) {
+                RightPistolActive(false);
+                Holster.SetActive(true);
+                RightHolsterOut = false;
+                Debug.Log("Right Hand Holstered Weapon");
+            }
+            else if (!Hand && !PistolRight.activeSelf) {
+                LeftPistolActive(false);
+                Holster.SetActive(true);
+                RightHolsterOut = false;
+            }
+            
+        }
     }
 }
