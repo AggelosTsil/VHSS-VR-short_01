@@ -27,23 +27,21 @@ public class Scenario : MonoBehaviour {
     public bool WheelDialogueHasntPlayed;
     public bool EndingHappened; //If the ending happended, will be used in the update to initiate the fade out
     public bool nogun;
+    public GameObject HS;
     public Exploration Exploration;
 
     public Playthings Playthings;
 
     public Spotting Spotting;
 
+    public ToolGrab ToolGrab;
+
     //<<End of Activity Scripts>>
 
     public void EnterScene(string SceneName, bool Dialogue) { //Initiallises next scene <<NOTE ADD i++>>
         Debug.Log("<color=yellow>Entered Scene </color>" + SceneName);
-        //Player.transform.position = Flags[i].transform.position; //Teleports player to hotspot
-        /*if (Dialogue) {
-            SeagullSpeaking.clip = Seagull_Dialogues[i]; //Sets correct dialogue for seagull
-            SeagullSpeaking.Play(0); //Seagull starts yapping
-        }*/
+        
         SceneActivity(SceneName);
-
     }
 
     public void SceneActivity(string ActivityName) { //Activates scripts related to each scene
@@ -123,7 +121,6 @@ public class Scenario : MonoBehaviour {
         Blurs.SetBool("End", false);
     }
 
-
     // Update is called once per frame
     void Update() {
         if (Timer && (TimeExplore > 0)) {
@@ -138,26 +135,41 @@ public class Scenario : MonoBehaviour {
             }
         }
 
-            if (EndingHappened && !SeagullSpeaking.isPlaying) //For the fade out
-            {
-                Blurs.SetBool("End", true);
-            }
+        if (EndingHappened && !SeagullSpeaking.isPlaying) //For the fade out
+        {
+            Blurs.SetBool("End", true);
+        }
 
-            if (!SeagullSpeaking.isPlaying) {
-                if (Playthings.Toggle.triggered) {
-                    Debug.Log("triggered toggle in scenario");
-                    if (Spotting.IsSpotting){
-                        Playthings.SpyglassActive(!Playthings.Spyglass.active);
-                        Playthings.PistolActive(!Playthings.Pistol.active);
-                    }else {
-                        Playthings.PistolActive(!Playthings.Pistol.active);
-                    }
-                    
-                   
+        if (!SeagullSpeaking.isPlaying) {
+            /*if (Playthings.Toggle.triggered && Spotting.IsSpotting) 
+            {
+                Debug.Log("triggered toggle in scenario");
+                Playthings.SpyglassActive(!Playthings.Spyglass.activeSelf);
+                if (ToolGrab.Hand)
+                {
+                    Playthings.RightPistolActive(!Playthings.PistolRight.activeSelf); //NEEDS TO CHANGE SO IT INCLUDES THE SPYGLASS
+                }
+                else 
+                { 
+                    Playthings.LeftPistolActive(!Playthings.PistolLeft.activeSelf);
                 }
             }
-
-
+            */
         }
+           
+        if (!Playthings.PistolRight.activeSelf && !Playthings.PistolLeft.activeSelf)
+        {
+            HS.SetActive(false);
+            Debug.Log("HS closed");
+        }
+        else 
+        {
+            HS.SetActive(true);
+            Debug.Log("HS Open");
+        }
+            
+
+
     }
+}
 

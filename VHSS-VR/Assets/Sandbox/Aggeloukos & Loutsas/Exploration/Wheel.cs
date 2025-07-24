@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wheel : MonoBehaviour {
+public class Wheel : MonoBehaviour 
+{
     public GameObject player;
     public Scenario Scenario;
     public GameObject WheelArea;
     public Playthings Playthings;
-
-
+    public GameObject HotspotRing;
+    public GameObject Aux;
+    public Teleport Teleport;
     // Start is called before the first frame update
     void Start() {
 
@@ -17,6 +19,17 @@ public class Wheel : MonoBehaviour {
     private void OnEnable() {
         player.transform.position = WheelArea.transform.position;
         Playthings.BareHands();
+        HotspotRing.SetActive(false);
+        Aux.SetActive(false);
+    }
+    private void OnDisable()
+    {
+        if (Scenario.TimeExplore >= 0)
+        {
+            HotspotRing.SetActive(true);
+            Aux.SetActive(true);
+        }
+
     }
     // Update is called once per frame
     void Update() {
