@@ -1,0 +1,93 @@
+{
+  "sprites": [
+    {
+      "fileName": "1.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "fileName": "10.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 800,
+      "y": 0
+    },
+    {
+      "fileName": "11.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 1600,
+      "y": 0
+    },
+    {
+      "fileName": "12.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 2400,
+      "y": 0
+    },
+    {
+      "fileName": "2.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 0,
+      "y": 554
+    },
+    {
+      "fileName": "3.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 800,
+      "y": 554
+    },
+    {
+      "fileName": "4.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 1600,
+      "y": 554
+    },
+    {
+      "fileName": "5.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 2400,
+      "y": 554
+    },
+    {
+      "fileName": "6.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 0,
+      "y": 1108
+    },
+    {
+      "fileName": "7.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 800,
+      "y": 1108
+    },
+    {
+      "fileName": "8.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 1600,
+      "y": 1108
+    },
+    {
+      "fileName": "9.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 2400,
+      "y": 1108
+    }
+  ],
+  "packMode": "grid",
+  "padding": 0,
+  "backgroundColor": "rgba(0, 0, 0, 0)",
+  "spriteSheetWidth": 3200,
+  "spriteSheetHeight": 1662
+}

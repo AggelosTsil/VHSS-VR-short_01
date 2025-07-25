@@ -13,7 +13,7 @@ public class Canon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        BoomSound = GetComponent<AudioSource>();
+      
         Animator = GetComponent<Animator>();
     }
 
@@ -36,8 +36,6 @@ public class Canon : MonoBehaviour
     {
         
             Outline.enabled = false;
-            this.gameObject.transform.GetChild(4).gameObject.SetActive(false);
-            BoomSound.time = 0.15f;
             BoomSound.Play();
             Animator.SetTrigger("Event");
         

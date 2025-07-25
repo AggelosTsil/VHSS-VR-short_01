@@ -1,0 +1,191 @@
+{
+  "sprites": [
+    {
+      "fileName": "billboard_spyglass1.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 0,
+      "y": 0
+    },
+    {
+      "fileName": "billboard_spyglass10.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 800,
+      "y": 0
+    },
+    {
+      "fileName": "billboard_spyglass11.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 1600,
+      "y": 0
+    },
+    {
+      "fileName": "billboard_spyglass12.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 2400,
+      "y": 0
+    },
+    {
+      "fileName": "billboard_spyglass13.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 3200,
+      "y": 0
+    },
+    {
+      "fileName": "billboard_spyglass14.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 4000,
+      "y": 0
+    },
+    {
+      "fileName": "billboard_spyglass15.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 0,
+      "y": 554
+    },
+    {
+      "fileName": "billboard_spyglass16.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 800,
+      "y": 554
+    },
+    {
+      "fileName": "billboard_spyglass17.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 1600,
+      "y": 554
+    },
+    {
+      "fileName": "billboard_spyglass18.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 2400,
+      "y": 554
+    },
+    {
+      "fileName": "billboard_spyglass19.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 3200,
+      "y": 554
+    },
+    {
+      "fileName": "billboard_spyglass2.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 4000,
+      "y": 554
+    },
+    {
+      "fileName": "billboard_spyglass20.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 0,
+      "y": 1108
+    },
+    {
+      "fileName": "billboard_spyglass21.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 800,
+      "y": 1108
+    },
+    {
+      "fileName": "billboard_spyglass22.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 1600,
+      "y": 1108
+    },
+    {
+      "fileName": "billboard_spyglass23.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 2400,
+      "y": 1108
+    },
+    {
+      "fileName": "billboard_spyglass24.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 3200,
+      "y": 1108
+    },
+    {
+      "fileName": "billboard_spyglass25.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 4000,
+      "y": 1108
+    },
+    {
+      "fileName": "billboard_spyglass26.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 0,
+      "y": 1662
+    },
+    {
+      "fileName": "billboard_spyglass3.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 800,
+      "y": 1662
+    },
+    {
+      "fileName": "billboard_spyglass4.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 1600,
+      "y": 1662
+    },
+    {
+      "fileName": "billboard_spyglass5.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 2400,
+      "y": 1662
+    },
+    {
+      "fileName": "billboard_spyglass6.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 3200,
+      "y": 1662
+    },
+    {
+      "fileName": "billboard_spyglass7.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 4000,
+      "y": 1662
+    },
+    {
+      "fileName": "billboard_spyglass8.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 0,
+      "y": 2216
+    },
+    {
+      "fileName": "billboard_spyglass9.jpg",
+      "width": 800,
+      "height": 554,
+      "x": 800,
+      "y": 2216
+    }
+  ],
+  "packMode": "grid",
+  "padding": 0,
+  "backgroundColor": "rgba(0, 0, 0, 0)",
+  "spriteSheetWidth": 4800,
+  "spriteSheetHeight": 2770
+}

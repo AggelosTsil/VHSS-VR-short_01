@@ -137,18 +137,7 @@ public class Teleport : MonoBehaviour
                 }
             }
 
-            //EscapeRopes
-            if (hit.transform.gameObject.name == "Aux17")
-            {
-                OutlineEscapeRopes.enabled = true;
-                if (TeleportToPoint.IsPressed())
-                {
-                    currentAux = hit.transform.gameObject.name; //sets current hotspot
-                    player.transform.position = HS[4].GetNamedChild("Teleport_Target").transform.position;
-                    Scenario.EnterScene("Explore", Scenario.Dialogue);
-                    
-                }
-            }
+         
             //cannon
             if (hit.transform.gameObject.CompareTag("Cannon"))
             {
