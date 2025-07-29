@@ -48,7 +48,7 @@ public class NewClimbing : MonoBehaviour {
     {
 
         Player.transform.position = ClimbingArea.transform.position;
-        Playthings.Toggle.Disable();
+        Playthings.ToggleRight.Disable();
         Outline.enabled = false;
 
         //<<initialising positions>>
@@ -62,7 +62,7 @@ public class NewClimbing : MonoBehaviour {
         HangingCheckTimer = HangingCheck;
     }
     private void OnDisable() {
-        Playthings.Toggle.Enable();
+        Playthings.ToggleRight.Enable();
     }
 
 

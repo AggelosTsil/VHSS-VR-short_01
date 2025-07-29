@@ -16,14 +16,16 @@ public class Playthings : MonoBehaviour
     public AudioSource PewSoundRight;
     public AudioSource PewSoundLeft;
     public bool PistolVisible;
-    public bool RightHolsterOut = false;
+    //public bool RightHolsterEmpty = false;
+    public GameObject RightHolster;
     public GameObject Holster;
     //public InputAction TogglePistol;
 
     public GameObject[] grabbies;
     
 
-    public InputAction Toggle;
+    public InputAction ToggleRight;
+    public InputAction ToggleLeft;
 
 
 
@@ -31,7 +33,8 @@ public class Playthings : MonoBehaviour
   
     void OnEnable()
     {
-        Toggle.Enable();
+        ToggleRight.Enable();
+        ToggleLeft.Enable();
         Spyglass.SetActive(SpyglassVisible);
         PistolRight.SetActive(PistolVisible);
         PistolLeft.SetActive(PistolVisible);
@@ -39,7 +42,8 @@ public class Playthings : MonoBehaviour
     }
 
     private void OnDisable() {
-        Toggle.Disable();
+        ToggleRight.Disable();
+        ToggleLeft.Disable();
     }
 
     public void RightPistolActive(bool Active) {
@@ -82,7 +86,7 @@ public class Playthings : MonoBehaviour
            
         }
         else {
-            Debug.Log("IT HAS OPENED");
+            //Debug.Log("IT HAS OPENED");
 
             for (int i = 0; i <= 23; i++) 
             {
@@ -95,33 +99,31 @@ public class Playthings : MonoBehaviour
         Debug.Log("OnToggle");
     }
 
-    public void HandlePlaythings(bool Hand) {
-   
-        if (Toggle.triggered && !RightHolsterOut) {
+    public void HandlePlaythings(bool Hand, Holster holster) {
+        
+        if (holster.PistolInHolster()) {
             if (Hand && !PistolLeft.activeSelf) {
                 RightPistolActive(true);
-                Holster.SetActive(false);
-                RightHolsterOut = true;
+                holster.Pistol.SetActive(false);
                 Debug.Log("Right Hand Took Weapon");
             }
             else if (!Hand && !PistolRight.activeSelf) {
                 LeftPistolActive(true);
-                Holster.SetActive(false);
-                RightHolsterOut = true;
+                holster.Pistol.SetActive(false);
+                Debug.Log("Left hand took weapon");
             }
            
         }
-        else if (Toggle.triggered && RightHolsterOut) {
-            if (Hand && !PistolLeft.activeSelf) {
+        else if (holster.HolsterIsEmpty()) {
+            if (Hand && !PistolLeft.activeSelf && PistolRight.activeSelf) {
                 RightPistolActive(false);
-                Holster.SetActive(true);
-                RightHolsterOut = false;
+                holster.Pistol.SetActive(true);
                 Debug.Log("Right Hand Holstered Weapon");
             }
-            else if (!Hand && !PistolRight.activeSelf) {
+            else if (!Hand && !PistolRight.activeSelf && PistolLeft.activeSelf) {
                 LeftPistolActive(false);
-                Holster.SetActive(true);
-                RightHolsterOut = false;
+                holster.Pistol.SetActive(true);
+                Debug.Log("Left hand holstered weapon");
             }
             
         }
