@@ -5,16 +5,18 @@ using UnityEngine;
 
 public class Canon : MonoBehaviour
 {
-
-    public Outline Outline;
-    public AudioSource BoomSound;
-    public Animator Animator;
+    public GameObject Cannon;
+    private Outline Outline;
+    private AudioSource BoomSound;
+    private Animator Animator;
 
     // Start is called before the first frame update
     void Start()
     {
       
-        Animator = GetComponent<Animator>();
+        Animator = Cannon.GetComponent<Animator>();
+        Outline = Cannon.GetComponent<Outline>();
+        BoomSound = Cannon.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -31,6 +33,7 @@ public class Canon : MonoBehaviour
     { 
         Outline.enabled = false;
     }
+    
 
     public void CanonEvent()
     {
@@ -40,4 +43,5 @@ public class Canon : MonoBehaviour
             Animator.SetTrigger("Event");
         
     }
+   
 }

@@ -40,7 +40,7 @@ public class Teleport : MonoBehaviour
     public Animator Recoil;
 
     //Fun
-    public Canon Canon;
+    public GameObject CannonAux;
     public ParticleSystem Smoke;
 
     // Start is called before the first frame update
@@ -141,17 +141,21 @@ public class Teleport : MonoBehaviour
             //cannon
             if (hit.transform.gameObject.CompareTag("Cannon"))
             {
-                Canon.ShowOutline();
+                CannonAux = hit.transform.gameObject;
+                CannonAux.GetComponent<Canon>().ShowOutline();
+                //Canon.GetComponent<Canon>().CloseOutline();
                 if (TeleportToPoint.triggered) 
                 {
-                    
-                    Canon.CanonEvent();
-                    Destroy(hit.transform.gameObject);
+
+                    CannonAux.GetComponent<Canon>().CanonEvent();
+                    Destroy(CannonAux);
 
 
                 }
-            }
-            else { Canon.CloseOutline(); }
+            }else if (CannonAux != null) {
+                CannonAux.GetComponent<Canon>().CloseOutline();
+            }   
+            
         }
         else //if he stops pointing or pointing at nothing
           {
@@ -159,7 +163,9 @@ public class Teleport : MonoBehaviour
             OutlineWorker.enabled = false;
             OutlineClimbing.enabled = false;
             OutlineEscapeRopes.enabled = false;
-            Canon.CloseOutline();
+            if (CannonAux != null) {
+                CannonAux.GetComponent<Canon>().CloseOutline();
+            }
 
             AimingAt.transform.GetChild(3).gameObject.SetActive(true);
             AimingAt.transform.GetChild(4).gameObject.SetActive(false);
