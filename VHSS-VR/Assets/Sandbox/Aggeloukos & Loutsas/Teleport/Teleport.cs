@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Serialization;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.HID;
 
 public class Teleport : MonoBehaviour
 {
@@ -26,11 +29,10 @@ public class Teleport : MonoBehaviour
     public float timer = 0;
     public float cooldowntimer = 0;
     
-    
     //<<Hotspot Highlights>>
     public Outline OutlineWorker;
     public Outline OutlineWheel;
-    public Outline OutlineEscapeRopes;
+    //public Outline OutlineEscapeRopes;
     public Outline OutlineClimbing;
     public Material AuxActive;
     public Material AuxInactive;
@@ -42,15 +44,12 @@ public class Teleport : MonoBehaviour
     //Fun
     public GameObject CannonAux;
     public ParticleSystem Smoke;
+    public GameObject[] Cannon;
 
-    // Start is called before the first frame update
     void Start()
     {
         Anchors = LayerMask.GetMask("Anchors");
-        
     }
-
-    // Update is called once per frame
     void Update()
     {
         RaycastHit hit;
@@ -64,13 +63,16 @@ public class Teleport : MonoBehaviour
                 Debug.Log("GameObject name is " + goal);
                 switch (goal) {
                     case "Wheel":
-                        OutlineWheel.enabled = true;
+                        ActivityOutline(OutlineWheel, 1);
+                        //OutlineWheel.enabled = true;
                         break;
                     case "Worker":
-                        OutlineWorker.enabled = true;
+                        ActivityOutline(OutlineWorker, 2);
+                        //OutlineWorker.enabled = true;
                         break;
                     case "Climbing":
-                        OutlineClimbing.enabled = true;
+                        ActivityOutline(OutlineClimbing, 3);
+                        //OutlineClimbing.enabled = true;
                         break;
                 }
 
@@ -83,7 +85,6 @@ public class Teleport : MonoBehaviour
                     Debug.Log("Found Activity Area " + hit.transform.gameObject);
                     currentHS.SetActive(true);
                 }
-               
             }
             else if (hit.transform.gameObject.CompareTag("Auxiliary Hotspot"))
             {
@@ -91,16 +92,9 @@ public class Teleport : MonoBehaviour
                 {
                     if (hit.transform.gameObject.name == $"Aux{i}") //checks if the player is pointing for Aux1, Aux2, etc 
                     {
+                        CloseAllOutlines(0 , i, 0);
                         AimingAt = HS[i];
-                        HS[i].transform.GetChild(3).gameObject.SetActive(false);
-                        HS[i].transform.GetChild(4).gameObject.SetActive(true);
-                        if (HS[i].GetNamedChild("stairs") != null) //if the HS has a stairs child (and is not on the top of the stairs) then...
-                        {
-                            //Debug.Log("STAIRSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS");
-                            HS[i].transform.GetChild(0).gameObject.SetActive(true); //turn on the Arrow 
-                            HS[i].transform.GetChild(7).gameObject.SetActive(true); //turn on the Arrow  //and turn on the Outline 
-                        }
-                   
+                        OpenHS();
                         if (TeleportToPoint.triggered)
                         {
                             currentHS.SetActive(true);
@@ -111,19 +105,36 @@ public class Teleport : MonoBehaviour
                             player.transform.position = HS[i].GetNamedChild("Teleport_Target").transform.position;
                             Scenario.EnterScene("Explore", Scenario.Dialogue);
                             currentHS.SetActive(false);
-
-
                         }
-                        
-                        
                     }
                 }
                 Debug.Log("Rayscast found solid target " + hit.transform.gameObject);
             }
+            //cannon
+            if (hit.transform.gameObject.CompareTag("Cannon"))
+            {
+                for (int i = 0; i <= Cannon.Count(); i++) //checks every 
+                {
+                    if (hit.transform.gameObject.name == $"CannonAux{i}") //checks if the player is pointing for Aux1, Aux2, etc 
+                    {
+                        CloseAllOutlines(0, 0, i);
+                        CannonAux = Cannon[i];
+                        CannonOutline(CannonAux);
+                        if (TeleportToPoint.triggered)
+                        { 
+                            CannonAux.GetComponent<Canon>().CanonEvent();
+                            CannonAux.SetActive(false);
+                        }
+                    }
+                }
+            }
             //secret room
-            if (currentAux == "Aux10") {
-                if (hit.transform.gameObject.name == "AuxSecret") {
-                    if (TeleportToPoint.IsPressed()) {
+            if (currentAux == "Aux10")
+            {
+                if (hit.transform.gameObject.name == "AuxSecret")
+                {
+                    if (TeleportToPoint.IsPressed())
+                    {
                         player.transform.position = HSSecret.transform.position;
                         Scenario.EnterScene("Explore", Scenario.Dialogue);
                         timer += Time.deltaTime;
@@ -137,53 +148,118 @@ public class Teleport : MonoBehaviour
                 }
             }
 
-         
-            //cannon
-            if (hit.transform.gameObject.CompareTag("Cannon"))
-            {
-                CannonAux = hit.transform.gameObject;
-                CannonAux.GetComponent<Canon>().ShowOutline();
-                //Canon.GetComponent<Canon>().CloseOutline();
-                if (TeleportToPoint.triggered) 
-                {
-
-                    CannonAux.GetComponent<Canon>().CanonEvent();
-                    Destroy(CannonAux);
-
-
-                }
-            }else if (CannonAux != null) {
-                CannonAux.GetComponent<Canon>().CloseOutline();
-            }   
-            
         }
         else //if he stops pointing or pointing at nothing
-          {
-            OutlineWheel.enabled = false;
-            OutlineWorker.enabled = false;
-            OutlineClimbing.enabled = false;
-            OutlineEscapeRopes.enabled = false;
-            if (CannonAux != null) {
-                CannonAux.GetComponent<Canon>().CloseOutline();
-            }
-
-            AimingAt.transform.GetChild(3).gameObject.SetActive(true);
-            AimingAt.transform.GetChild(4).gameObject.SetActive(false);
-            if (AimingAt.GetNamedChild("stairs") != null) 
-            {
-                AimingAt.transform.GetChild(0).gameObject.SetActive(false); //turn off the Arrow 
-                AimingAt.transform.GetChild(7).gameObject.SetActive(false); //and turn off the Outline 
-            }
-            
+        {
+            CloseAllOutlines();
         }
         if (TeleportToPoint.triggered) {
             Debug.Log("GUNSOUND");
             GunSound.Play();
             Recoil.SetTrigger("Shoot");
             Smoke.Play();
-         
+        }
+        
+    }
+    public void CloseAllOutlines(int ActivityNum = 0, int HotspotNum = 0, int CannonNum = 0) // 0 = null, 1 = Wheel, 2 = Worker, 3 = Climbing && 
+    {
+        CloseActivityOutline(ActivityNum);
+        CloseCannonOutline(CannonNum);
+        CloseHS(HotspotNum);
+    }
+
+    public void CloseHS(int HotspotNum)
+    {
+        for (int i = 0; i < HS.Count(); i++) //checks every Hotspot
+        {
+            if (HS[i] != HS[HotspotNum])
+            {
+                HS[i].transform.GetChild(3).gameObject.SetActive(true);
+                HS[i].transform.GetChild(4).gameObject.SetActive(false);
+                if (HS[i].GetNamedChild("stairs") != null)
+                {
+                    HS[i].transform.GetChild(0).gameObject.SetActive(false); //turn off the Arrow 
+                    HS[i].transform.GetChild(7).gameObject.SetActive(false); //and turn off the Outline 
+                }
+            }
+        }
+    }
+    public void OpenHS()
+    {
+        AimingAt.transform.GetChild(3).gameObject.SetActive(false);
+        AimingAt.transform.GetChild(4).gameObject.SetActive(true);
+        if (AimingAt.GetNamedChild("stairs") != null) //if the HS has a stairs child then...
+        {
+            AimingAt.transform.GetChild(0).gameObject.SetActive(true); //turn on the Arrow 
+            AimingAt.transform.GetChild(7).gameObject.SetActive(true); //and turn on the Outline 
+        }
+    }
+    public void CloseCannonOutline(int CannonNum)
+    {
+        for (int i = 0; i < Cannon.Count(); i++) //checks every Hotspot
+        {
+            if (CannonAux != null) {
+                if (Cannon[i] != Cannon[CannonNum])
+                {
+                        Debug.Log("Cannon Outline GONE" + i);
+                        Cannon[i].GetComponent<Canon>().CloseOutline();
+                }
+            }
+        }
+    }
+    public void CannonOutline(GameObject Cannon)
+    {
+        if (Cannon != null)
+        {
+            Cannon.GetComponent<Canon>().ShowOutline();
+        }
+    }
+    public void ActivityOutline(Outline currentOutline, int y = 0)
+    {
+        switch (y)
+        {
+            case 0:
+                CloseAllOutlines(y, 0, 0);
+                break;
+            case 1:
+                CloseAllOutlines(y, 0, 0);
+                break;
+            case 2:
+                CloseAllOutlines(y, 0, 0);
+                break;
+            case 3:
+                CloseAllOutlines(y, 0, 0);
+                break;
 
         }
+        if (currentOutline != null)
+        {
+            currentOutline.enabled = true;
+        }
+    }
+    public void CloseActivityOutline(int ActivityNum)
+    {
+        switch (ActivityNum)
+        {
+            case 0:
+                OutlineWheel.enabled = false;
+                OutlineWorker.enabled = false;
+                OutlineClimbing.enabled = false;
+                break;
+            case 1:
+                OutlineWorker.enabled = false;
+                OutlineClimbing.enabled = false;
+                break;
+            case 2:
+                OutlineWheel.enabled = false;
+                OutlineClimbing.enabled = false;
+                break;
+            case 3:
+                OutlineWheel.enabled = false;
+                OutlineWorker.enabled = false;
+                break;
+        }
+
     }
 }
     

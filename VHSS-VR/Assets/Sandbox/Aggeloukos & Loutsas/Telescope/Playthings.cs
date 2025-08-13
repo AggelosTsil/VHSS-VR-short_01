@@ -86,7 +86,7 @@ public class Playthings : MonoBehaviour
            
         }
         else {
-            //Debug.Log("IT HAS OPENED");
+          
 
             for (int i = 0; i <= 23; i++) 
             {
