@@ -55,24 +55,24 @@ public class Teleport : MonoBehaviour
         RaycastHit hit;
         Debug.Log("Raycast sending");
         //Debug.DrawRay(transform.position, transform.forward, Color.red, Mathf.Infinity);
+        //-------------IS IT LOOKING AT ACTIVITY, HS OR CANNON?--------------------------
         if (Physics.Raycast(transform.position, transform.forward, out hit, 8f, Anchors))
         {
+            //-------------------ACTIVITY-----------------------
             if (hit.transform.gameObject.CompareTag("Activity Area"))
             {
                 string goal = hit.transform.gameObject.name; //goal is used to define which of the two scenes is enabled
                 Debug.Log("GameObject name is " + goal);
-                switch (goal) {
+                switch (goal)
+                { //  0 = null, 1 = Wheel, 2 = Worker, 3 = Climbing
                     case "Wheel":
-                        ActivityOutline(OutlineWheel, 1);
-                        //OutlineWheel.enabled = true;
+                        ActivityOutline(1);
                         break;
                     case "Worker":
-                        ActivityOutline(OutlineWorker, 2);
-                        //OutlineWorker.enabled = true;
+                        ActivityOutline(2);
                         break;
                     case "Climbing":
-                        ActivityOutline(OutlineClimbing, 3);
-                        //OutlineClimbing.enabled = true;
+                        ActivityOutline(3);
                         break;
                 }
 
@@ -86,49 +86,50 @@ public class Teleport : MonoBehaviour
                     currentHS.SetActive(true);
                 }
             }
+            //-------------------HS-----------------------
             else if (hit.transform.gameObject.CompareTag("Auxiliary Hotspot"))
             {
                 for (int i = 0; i <= HS.Count(); i++) //checks every Hotspot
                 {
                     if (hit.transform.gameObject.name == $"Aux{i}") //checks if the player is pointing for Aux1, Aux2, etc 
                     {
-                        CloseAllOutlines(0 , i, 0);
+                        CloseAllOutlines(0 , i, 0); //closes everything else
                         AimingAt = HS[i];
-                        OpenHS();
+                        OpenHSOutline();
                         if (TeleportToPoint.triggered)
                         {
-                            currentHS.SetActive(true);
+                            currentHS.SetActive(true); //Enables the HS he was at previously 
                             currentHS.transform.GetChild(3).gameObject.SetActive(true);
                             currentHS.transform.GetChild(4).gameObject.SetActive(false);
                             currentAux = hit.transform.gameObject.name; //sets current hotspot
                             currentHS = HS[i];
-                            player.transform.position = HS[i].GetNamedChild("Teleport_Target").transform.position;
+                            player.transform.position = HS[i].GetNamedChild("Teleport_Target").transform.position; //teleports
                             Scenario.EnterScene("Explore", Scenario.Dialogue);
-                            currentHS.SetActive(false);
+                            currentHS.SetActive(false); //makes the HS he teleported to invisible
                         }
                     }
                 }
                 Debug.Log("Rayscast found solid target " + hit.transform.gameObject);
             }
-            //cannon
+            //-------------------CANNON-----------------------
             if (hit.transform.gameObject.CompareTag("Cannon"))
             {
-                for (int i = 0; i <= Cannon.Count(); i++) //checks every 
+                for (int i = 0; i <= Cannon.Count(); i++) //checks every Cannon in the list
                 {
-                    if (hit.transform.gameObject.name == $"CannonAux{i}") //checks if the player is pointing for Aux1, Aux2, etc 
+                    if (hit.transform.gameObject.name == $"CannonAux{i}") 
                     {
-                        CloseAllOutlines(0, 0, i);
+                        CloseAllOutlines(0, 0, i); //closes everything else
                         CannonAux = Cannon[i];
                         CannonOutline(CannonAux);
                         if (TeleportToPoint.triggered)
                         { 
                             CannonAux.GetComponent<Canon>().CanonEvent();
-                            CannonAux.SetActive(false);
+                            CannonAux.SetActive(false); //disables the GameObject so it can only shoot once
                         }
                     }
                 }
             }
-            //secret room
+            //-----------secret room-------------
             if (currentAux == "Aux10")
             {
                 if (hit.transform.gameObject.name == "AuxSecret")
@@ -149,11 +150,12 @@ public class Teleport : MonoBehaviour
             }
 
         }
+        //-----------NOTHING--------------------
         else //if he stops pointing or pointing at nothing
         {
             CloseAllOutlines();
         }
-        if (TeleportToPoint.triggered) {
+        if (TeleportToPoint.triggered) { //if he presses the the shoot button
             Debug.Log("GUNSOUND");
             GunSound.Play();
             Recoil.SetTrigger("Shoot");
@@ -161,22 +163,23 @@ public class Teleport : MonoBehaviour
         }
         
     }
-    public void CloseAllOutlines(int ActivityNum = 0, int HotspotNum = 0, int CannonNum = 0) // 0 = null, 1 = Wheel, 2 = Worker, 3 = Climbing && 
+    public void CloseAllOutlines(int ActivityNum = 0, int HotspotNum = 0, int CannonNum = 0) // Gets a number for an activity, hs or cannon, that number is the exception. If it is 0, it means close everything
     {
-        CloseActivityOutline(ActivityNum);
-        CloseCannonOutline(CannonNum);
-        CloseHS(HotspotNum);
+        CloseActivityOutline(ActivityNum); // for example, if ActivityNum was '1', it will run CloseActivityOutline that will then close all Activities except the Wheel
+        CloseHSOutline(HotspotNum); //for example, if HotspotNum was '5', it will run CloseHSOutline that will then close all HS's except HS5
+        CloseCannonOutline(CannonNum); //for example, if CannonNum was '3', it will run CloseCannonOutline that will then close all Cannon's except CannonAux3
+        //if any of those were 0, it would mean "no exception"
     }
 
-    public void CloseHS(int HotspotNum)
+    public void CloseHSOutline(int HotspotNum)
     {
-        for (int i = 0; i < HS.Count(); i++) //checks every Hotspot
+        for (int i = 0; i < HS.Count(); i++) 
         {
             if (HS[i] != HS[HotspotNum])
             {
-                HS[i].transform.GetChild(3).gameObject.SetActive(true);
+                HS[i].transform.GetChild(3).gameObject.SetActive(true); //Turns off the orange glow and goes to blue
                 HS[i].transform.GetChild(4).gameObject.SetActive(false);
-                if (HS[i].GetNamedChild("stairs") != null)
+                if (HS[i].GetNamedChild("stairs") != null) //if the HS has a stairs child then...
                 {
                     HS[i].transform.GetChild(0).gameObject.SetActive(false); //turn off the Arrow 
                     HS[i].transform.GetChild(7).gameObject.SetActive(false); //and turn off the Outline 
@@ -184,9 +187,9 @@ public class Teleport : MonoBehaviour
             }
         }
     }
-    public void OpenHS()
+    public void OpenHSOutline()
     {
-        AimingAt.transform.GetChild(3).gameObject.SetActive(false);
+        AimingAt.transform.GetChild(3).gameObject.SetActive(false); //Turns off the blue and goes to orange glow
         AimingAt.transform.GetChild(4).gameObject.SetActive(true);
         if (AimingAt.GetNamedChild("stairs") != null) //if the HS has a stairs child then...
         {
@@ -196,7 +199,7 @@ public class Teleport : MonoBehaviour
     }
     public void CloseCannonOutline(int CannonNum)
     {
-        for (int i = 0; i < Cannon.Count(); i++) //checks every Hotspot
+        for (int i = 0; i < Cannon.Count(); i++) //same logic as the HS's
         {
             if (CannonAux != null) {
                 if (Cannon[i] != Cannon[CannonNum])
@@ -214,28 +217,28 @@ public class Teleport : MonoBehaviour
             Cannon.GetComponent<Canon>().ShowOutline();
         }
     }
-    public void ActivityOutline(Outline currentOutline, int y = 0)
+    public void ActivityOutline(int ActivityNum = 0)
     {
-        switch (y)
+        switch (ActivityNum)
         {
             case 0:
-                CloseAllOutlines(y, 0, 0);
+                CloseAllOutlines(ActivityNum, 0, 0);
                 break;
             case 1:
-                CloseAllOutlines(y, 0, 0);
+                CloseAllOutlines(ActivityNum, 0, 0);
+                OutlineWheel.enabled = true;
                 break;
             case 2:
-                CloseAllOutlines(y, 0, 0);
+                CloseAllOutlines(ActivityNum, 0, 0);
+                OutlineWorker.enabled = true;
                 break;
             case 3:
-                CloseAllOutlines(y, 0, 0);
+                CloseAllOutlines(ActivityNum, 0, 0);
+                OutlineClimbing.enabled = true;
                 break;
 
         }
-        if (currentOutline != null)
-        {
-            currentOutline.enabled = true;
-        }
+       
     }
     public void CloseActivityOutline(int ActivityNum)
     {
