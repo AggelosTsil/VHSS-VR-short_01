@@ -214,6 +214,7 @@ public class Teleport : MonoBehaviour
     {
         if (Cannon != null)
         {
+            Debug.Log("Showing the outline of " + CannonAux);
             Cannon.GetComponent<Canon>().ShowOutline();
         }
     }

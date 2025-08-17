@@ -19,7 +19,7 @@ public class Worker : MonoBehaviour
 
     private void OnEnable() {
         player.transform.position = WorkerArea.transform.position;
-        Playthings.BareHands();
+        Playthings.Holstered("full");
         HotspotRing.SetActive(false);
         Aux.SetActive(false);
     }
