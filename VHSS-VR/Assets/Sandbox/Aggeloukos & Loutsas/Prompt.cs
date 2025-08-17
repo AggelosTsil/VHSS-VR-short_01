@@ -14,7 +14,11 @@ public class Prompt : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {  
+        if (prompt == null)
+        {
+            Destroy(this.gameObject);
+        }
         
     }
 
