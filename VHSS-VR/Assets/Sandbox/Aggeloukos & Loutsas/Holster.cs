@@ -9,6 +9,7 @@ public class Holster : MonoBehaviour
     public GameObject Spyglass;
     private Outline GunOutline;
     private Outline SpyglassOutline;
+    public GameObject Empty; //it is used in playthings
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,7 @@ public class Holster : MonoBehaviour
     // Update is called once per frame
     void Update() 
     {
-       
+
     }
 
     public void GunOutlineON() {
@@ -52,6 +53,20 @@ public class Holster : MonoBehaviour
     }
 
     public bool HolsterHasTool() {
-        return (Pistol.activeSelf && Spyglass.activeSelf);
+        return (Pistol.activeSelf || Spyglass.activeSelf);
     }
+
+    public bool SpyglassTag()
+    {
+        if (this.tag == "Spy")
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+   
 }

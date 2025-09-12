@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.XR.Interaction;
 
 public class Spotting : MonoBehaviour {
     public GameObject player;
@@ -12,24 +13,31 @@ public class Spotting : MonoBehaviour {
     public GameObject[] HotspotRing;
     public GameObject[] Aux;
 
+    public GameObject SpyglassPromt;
+    public bool destroyed = false;
+
     public bool IsSpotting;
     
     // Start is called before the first frame update
     void Start() {
-        Playthings.RightPistolActive(false);
-        Playthings.LeftPistolActive(false);
-        Playthings.SpyglassActive(true);
+        Playthings.Holstered("full");
         GrabbingRight.enabled = false;
         GrabbingLeft.enabled = false;
 
+        
     }
 
     private void OnEnable() {
         IsSpotting = true;
-        HotspotRing[0].SetActive(false);
+        HotspotRing[1].SetActive(false);
         Aux[0].SetActive(false);
         HotspotRing[1].SetActive(false);
         Aux[1].SetActive(false);
+
+        if (SpyglassPromt != null && !destroyed)
+        {
+            SpyglassPromt.SetActive(true);
+        }
     }
 
     private void OnDisable(){
@@ -41,6 +49,14 @@ public class Spotting : MonoBehaviour {
     }
     // Update is called once per frame
     void Update() {
+
+       
+            if (SpyglassPromt != null && !SpyglassPromt.activeSelf)
+            {
+                Destroy(SpyglassPromt);
+                destroyed = true;
+            }
+        
 
         //<<update timer>>
         Scenario.TimeSpot -= Time.deltaTime;

@@ -18,7 +18,7 @@ public class Wheel : MonoBehaviour
 
     private void OnEnable() {
         player.transform.position = WheelArea.transform.position;
-        Playthings.BareHands();
+        Playthings.Holstered("full");
         HotspotRing.SetActive(false);
         Aux.SetActive(false);
     }
