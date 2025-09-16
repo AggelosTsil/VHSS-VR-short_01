@@ -25,6 +25,11 @@ public class Scenario : MonoBehaviour {
     public bool ExplorationDialogueHasntPlayed;
     public bool WorkerDialogueHasntPlayed;
     public bool WheelDialogueHasntPlayed;
+    public bool SpottingDialogueHasntPlayed;
+    public bool ClimbingDialogueHasntPlayed;
+    public bool promptHasntPlayed;
+    public bool gunHasntPlayed;
+    public bool FregataHasntPlayed;
     public bool EndingHappened; //If the ending happended, will be used in the update to initiate the fade out
     public bool nogun;
     public GameObject HS;
@@ -53,7 +58,7 @@ public class Scenario : MonoBehaviour {
                 EnableActivity(WheelActivity, false);
                 EnableActivity(SpottingActivity, false);
 
-                SeagullSpeaking.clip = Seagull_Dialogues[0]; //Sets correct dialogue for seagull
+                SeagullSpeaking.clip = Seagull_Dialogues[6]; //Sets correct dialogue for seagull
                 if (ExplorationDialogueHasntPlayed && Dialogue) {
                     SeagullSpeaking.Play(0); //Seagull starts yapping
                     ExplorationDialogueHasntPlayed = false;
@@ -84,8 +89,9 @@ public class Scenario : MonoBehaviour {
                 EnableActivity(ExploreActivity, false);
                 nogun = true;
                 SeagullSpeaking.clip = Seagull_Dialogues[3];
-                if (Dialogue) {
+                if (ClimbingDialogueHasntPlayed && Dialogue) {
                     SeagullSpeaking.Play(0);
+                    ClimbingDialogueHasntPlayed = false;
                 }
                 break;
             case "Spotting":
@@ -94,8 +100,9 @@ public class Scenario : MonoBehaviour {
                 EnableActivity(ExploreActivity, false);
                 nogun = true;
                 SeagullSpeaking.clip = Seagull_Dialogues[4];
-                if (Dialogue) {
+                if (SpottingDialogueHasntPlayed && Dialogue) {
                     SeagullSpeaking.Play(0);
+                    SpottingDialogueHasntPlayed = false;
                 }
                 break;
             case "Ending":
@@ -169,6 +176,37 @@ public class Scenario : MonoBehaviour {
         }
             
 
+
+    }
+
+    public void PromptVoiceclip()
+    {
+        SeagullSpeaking.clip = Seagull_Dialogues[8];
+        if (promptHasntPlayed && Dialogue)
+        {
+            SeagullSpeaking.Play(0);
+            promptHasntPlayed = false;
+        }
+    }
+
+    public void GunVoiceclip()
+    {
+        SeagullSpeaking.clip = Seagull_Dialogues[7];
+        if (gunHasntPlayed && Dialogue)
+        {
+            SeagullSpeaking.Play(0);
+            gunHasntPlayed = false;
+        }
+    }
+
+    public void FregataVC()
+    {
+        SeagullSpeaking.clip = Seagull_Dialogues[9];
+        if (FregataHasntPlayed && Dialogue)
+        {
+            SeagullSpeaking.Play(0);
+            FregataHasntPlayed = false;
+        }
 
     }
 }

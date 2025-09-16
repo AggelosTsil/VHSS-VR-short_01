@@ -6,6 +6,7 @@ public class ToolGrab : MonoBehaviour
 {
     public Playthings Playthings;
     public bool Hand;
+    public Scenario scenario;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +38,7 @@ public class ToolGrab : MonoBehaviour
                 if ((Hand && Playthings.ToggleRight.triggered) || (!Hand && Playthings.ToggleLeft.triggered))
                 {
                     Playthings.HandlePlaythings(Hand, holster);
+                    scenario.GunVoiceclip();
                 }
             } else if (holster.SpyglassInHolster())
             {
@@ -44,6 +46,7 @@ public class ToolGrab : MonoBehaviour
                 if ((Hand && Playthings.ToggleRight.triggered) || (!Hand && Playthings.ToggleLeft.triggered))
                 {
                     Playthings.HandlePlaythings(Hand, holster);
+                    scenario.GunVoiceclip();
                 }
             }
             else if (holster.HolsterIsEmpty()) 
@@ -51,6 +54,7 @@ public class ToolGrab : MonoBehaviour
                 if ((Hand && Playthings.ToggleRight.triggered) || (!Hand && Playthings.ToggleLeft.triggered))
                 {
                     Playthings.HandlePlaythings(Hand, holster);
+                    scenario.GunVoiceclip();
                 }
             }
         }
@@ -66,6 +70,7 @@ public class ToolGrab : MonoBehaviour
                     Playthings.Holstered("full");
                 }
                 Playthings.SpyglassRight.SetActive(true);
+                scenario.PromptVoiceclip();
             }
             else if (!Hand && Playthings.ToggleLeft.triggered)
             {
@@ -75,6 +80,7 @@ public class ToolGrab : MonoBehaviour
                     Playthings.Holstered("full");
                 }
                 Playthings.SpyglassLeft.SetActive(true);
+                scenario.PromptVoiceclip();
             }
 
 
