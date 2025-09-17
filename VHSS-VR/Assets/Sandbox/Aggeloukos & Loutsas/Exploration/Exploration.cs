@@ -25,7 +25,7 @@ public class Exploration : MonoBehaviour
         TeleportL.TeleportToPoint.Enable();
         Playthings.BareHands();
         //OutlineWorker.enabled = true;
-        // OutlineWheel.enabled = true;
+        //OutlineWheel.enabled = true;
     }
 
 

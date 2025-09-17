@@ -20,9 +20,8 @@ public class Spotting : MonoBehaviour {
     
     // Start is called before the first frame update
     void Start() {
-        Playthings.Holstered("full");
-        GrabbingRight.enabled = false;
-        GrabbingLeft.enabled = false;
+        Playthings.SpottingSetUp();
+        
 
         
     }
@@ -38,6 +37,9 @@ public class Spotting : MonoBehaviour {
         {
             SpyglassPromt.SetActive(true);
         }
+
+        GrabbingRight.enabled = false;
+        GrabbingLeft.enabled = false;
     }
 
     private void OnDisable(){
@@ -59,13 +61,13 @@ public class Spotting : MonoBehaviour {
         
 
         //<<update timer>>
-        Scenario.TimeSpot -= Time.deltaTime;
+       // Scenario.TimeSpot -= Time.deltaTime;
 
-        if (Scenario.Timer) {
-            if (Scenario.TimeSpot <= 0) {
-                Scenario.EnterScene("Ending", Scenario.Dialogue);
-            }
-        }
+        //if (Scenario.Timer) {
+           // if (Scenario.TimeSpot <= 0) {
+           //     Scenario.EnterScene("Ending", Scenario.Dialogue);
+           // }
+       // }
         /*if (!Scenario.SeagullSpeaking.isPlaying) {
             if (Playthings.Toggle.triggered) {
                 Debug.Log("Toggle Playthings");

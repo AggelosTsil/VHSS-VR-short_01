@@ -24,8 +24,8 @@ public class Playthings : MonoBehaviour
     //public InputAction TogglePistol;
 
     public GameObject[] grabbies;
-    
 
+    public GameObject prompt;
     public InputAction ToggleRight;
     public InputAction ToggleLeft;
 
@@ -242,6 +242,7 @@ public class Playthings : MonoBehaviour
         }
    
         RightHolster.GetComponent<Holster>().Pistol.SetActive(true);
+        
 
     }
 
@@ -250,6 +251,13 @@ public class Playthings : MonoBehaviour
     public void SpottingSetUp()
     {
         BareHands();
+        RightHolster.GetComponent<Holster>().Pistol.SetActive(true);
+        if (prompt = null) 
+        {
+            LeftHolster.GetComponent<Holster>().Spyglass.SetActive(true);
+        }
+
+        
 
     }
 }

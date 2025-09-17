@@ -39,7 +39,7 @@ public class Scenario : MonoBehaviour {
 
     public Spotting Spotting;
 
-    public ToolGrab ToolGrab;
+   
 
     //<<End of Activity Scripts>>
 
@@ -110,6 +110,7 @@ public class Scenario : MonoBehaviour {
                 EnableActivity(SpottingActivity, false);
                 SeagullSpeaking.clip = Seagull_Dialogues[5];
                 if (Dialogue) {
+                    Debug.Log("Ending is speaking");
                     SeagullSpeaking.Play(0);
                 }
                 EndingHappened = true; //will be used in the update to initiate the fade out
@@ -132,37 +133,25 @@ public class Scenario : MonoBehaviour {
     void Update() {
         if (Timer && (TimeExplore > 0)) {
             TimeExplore -= Time.deltaTime;
-            if (TimeExplore <= 0) {
-                Exploration.Phase2();
-                Debug.Log("<color=red>Timeout</color>");
-                //Seagull Exploration 2 dialogue
-                if (Timer && (TimeSpot > 0)) {
-                    TimeSpot -= Time.deltaTime;
-                }
-            }
         }
+        else if (TimeExplore <= 0) {
+            Exploration.Phase2();
+        }
+            Debug.Log("<color=red>Timeout</color>");
+            //Seagull Exploration 2 dialogue
+            if (Timer && (TimeExplore <= 0) && (TimeSpot > 0)) {
+                TimeSpot -= Time.deltaTime;
+            } else if (Timer && (TimeExplore <= 0) && (TimeSpot <= 0) && !EndingHappened) {
+                EnterScene("Ending", Dialogue);
+            }
 
         if (EndingHappened && !SeagullSpeaking.isPlaying) //For the fade out
         {
+            Debug.Log("Ending Happening wow 2");
             Blurs.SetBool("End", true);
         }
 
-        if (!SeagullSpeaking.isPlaying) {
-            /*if (Playthings.Toggle.triggered && Spotting.IsSpotting) 
-            {
-                Debug.Log("triggered toggle in scenario");
-                Playthings.SpyglassActive(!Playthings.Spyglass.activeSelf);
-                if (ToolGrab.Hand)
-                {
-                    Playthings.RightPistolActive(!Playthings.PistolRight.activeSelf); //NEEDS TO CHANGE SO IT INCLUDES THE SPYGLASS
-                }
-                else 
-                { 
-                    Playthings.LeftPistolActive(!Playthings.PistolLeft.activeSelf);
-                }
-            }
-            */
-        }
+        
            
         if (!Playthings.PistolRight.activeSelf && !Playthings.PistolLeft.activeSelf)
         {
