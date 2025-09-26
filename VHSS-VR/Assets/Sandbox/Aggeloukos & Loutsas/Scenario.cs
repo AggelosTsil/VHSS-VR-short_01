@@ -39,6 +39,8 @@ public class Scenario : MonoBehaviour {
 
     public Spotting Spotting;
 
+    public GameObject credits; 
+
    
 
     //<<End of Activity Scripts>>
@@ -149,6 +151,7 @@ public class Scenario : MonoBehaviour {
         {
             Debug.Log("Ending Happening wow 2");
             Blurs.SetBool("End", true);
+            credits.SetActive(true);
         }
 
         
