@@ -15,6 +15,7 @@ public class Scenario : MonoBehaviour {
     public AudioClip[] Seagull_Dialogues; //The different things the seagull says
     public bool Dialogue;//Shuts up the seagull
     //<<Activity Scripts>>
+    public GameObject IntroActivity;
     public GameObject ExploreActivity;
     public GameObject WorkerActivity;
     public GameObject WheelActivity;
@@ -54,7 +55,21 @@ public class Scenario : MonoBehaviour {
     public void SceneActivity(string ActivityName) { //Activates scripts related to each scene
 
         switch (ActivityName) {
+            case "Intro":
+                EnableActivity(IntroActivity, true);
+                EnableActivity(ExploreActivity, false);
+                EnableActivity(WorkerActivity, false);
+                EnableActivity(WheelActivity, false);
+                EnableActivity(SpottingActivity, false);
+                SeagullSpeaking.clip = Seagull_Dialogues[10]; //Sets correct dialogue for seagull
+                if (ExplorationDialogueHasntPlayed && Dialogue)
+                {
+                    SeagullSpeaking.Play(0); //Seagull starts yapping
+                    
+                }
+                break;
             case "Explore":
+                EnableActivity(IntroActivity, false);
                 EnableActivity(ExploreActivity, true);
                 EnableActivity(WorkerActivity, false);
                 EnableActivity(WheelActivity, false);
