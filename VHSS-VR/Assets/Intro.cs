@@ -8,11 +8,13 @@ public class Intro : MonoBehaviour
     public Scenario Scenario;
     public GameObject IntroArea;
     public Playthings Playthings;
+    public GameObject gun;
     // Start is called before the first frame update
     void Start()
     {
         player.transform.position = IntroArea.transform.position;
         Playthings.BareHands(); 
+        gun.SetActive(false);
     }
 
     // Update is called once per frame
@@ -22,6 +24,7 @@ public class Intro : MonoBehaviour
         if (!Scenario.SeagullSpeaking.isPlaying)
         {
             Scenario.EnterScene("Explore", Scenario.Dialogue);
+            gun.SetActive(true);
         }
     }
 }
