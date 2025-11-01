@@ -46,6 +46,10 @@ public class Teleport : MonoBehaviour
     public ParticleSystem Smoke;
     public GameObject[] Cannon;
 
+    public Collider holsterCollider1;
+    public Collider holsterCollider2;
+    public bool shootable = true;
+
     void Start()
     {
         Anchors = LayerMask.GetMask("Anchors");
@@ -155,7 +159,7 @@ public class Teleport : MonoBehaviour
         {
             CloseAllOutlines();
         }
-        if (TeleportToPoint.triggered) { //if he presses the the shoot button
+        if (TeleportToPoint.triggered && shootable) { //if he presses the the shoot button
             Debug.Log("GUNSOUND");
             GunSound.Play();
             Recoil.SetTrigger("Shoot");
@@ -163,6 +167,24 @@ public class Teleport : MonoBehaviour
         }
         
     }
+
+    //--------Don't shoot if the gun is in the holster area--------------
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other == holsterCollider1 || other == holsterCollider2)
+        {
+            shootable = false;
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other == holsterCollider1 || other == holsterCollider2)
+        {
+            shootable = true;
+        }
+    }
+
     public void CloseAllOutlines(int ActivityNum = 0, int HotspotNum = 0, int CannonNum = 0) // Gets a number for an activity, hs or cannon, that number is the exception. If it is 0, it means close everything
     {
         CloseActivityOutline(ActivityNum); // for example, if ActivityNum was '1', it will run CloseActivityOutline that will then close all Activities except the Wheel
