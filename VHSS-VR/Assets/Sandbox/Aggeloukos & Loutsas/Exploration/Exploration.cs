@@ -14,6 +14,7 @@ public class Exploration : MonoBehaviour
     public Outline OutlineWorker;
     public Outline OutlineWheel;
     public Playthings Playthings;
+    
 
     public GameObject[] Phase2HotSpots;
     public GameObject[] Phase1HotSpots;
@@ -50,5 +51,6 @@ public class Exploration : MonoBehaviour
                 Phase2HotSpots[i].SetActive(true);
             }
             Debug.Log("<color=red>Timeout</color>");
+        
     }
 }

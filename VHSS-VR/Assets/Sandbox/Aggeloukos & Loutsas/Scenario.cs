@@ -40,9 +40,11 @@ public class Scenario : MonoBehaviour {
 
     public Spotting Spotting;
 
-    public GameObject credits; 
+    public GameObject credits;
 
-   
+    public MusicManager MusicManager;
+
+
 
     //<<End of Activity Scripts>>
 
@@ -153,6 +155,7 @@ public class Scenario : MonoBehaviour {
         }
         else if (TimeExplore <= 0) {
             Exploration.Phase2();
+            MusicManager.playphase2();
         }
             Debug.Log("<color=red>Timeout</color>");
             //Seagull Exploration 2 dialogue
@@ -160,7 +163,8 @@ public class Scenario : MonoBehaviour {
                 TimeSpot -= Time.deltaTime;
             } else if (Timer && (TimeExplore <= 0) && (TimeSpot <= 0) && !EndingHappened) {
                 EnterScene("Ending", Dialogue);
-            }
+                StartCoroutine(MusicManager.FadeOut(MusicManager.AS ,1f));
+        }
 
         if (EndingHappened && !SeagullSpeaking.isPlaying) //For the fade out
         {
