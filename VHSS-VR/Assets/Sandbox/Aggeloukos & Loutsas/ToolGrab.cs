@@ -46,7 +46,7 @@ public class ToolGrab : MonoBehaviour
                 if ((Hand && Playthings.ToggleRight.triggered) || (!Hand && Playthings.ToggleLeft.triggered))
                 {
                     Playthings.HandlePlaythings(Hand, holster);
-                    scenario.GunVoiceclip();
+                    //scenario.GunVoiceclip();
                 }
             }
             else if (holster.HolsterIsEmpty()) 
@@ -54,7 +54,7 @@ public class ToolGrab : MonoBehaviour
                 if ((Hand && Playthings.ToggleRight.triggered) || (!Hand && Playthings.ToggleLeft.triggered))
                 {
                     Playthings.HandlePlaythings(Hand, holster);
-                    scenario.GunVoiceclip();
+                    //scenario.GunVoiceclip();
                 }
             }
         }

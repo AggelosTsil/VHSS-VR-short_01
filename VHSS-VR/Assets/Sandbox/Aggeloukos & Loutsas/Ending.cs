@@ -13,7 +13,7 @@ public class Ending : MonoBehaviour {
     }
 
     private void OnEnable() {
-        ClimbingArrow.SetActive(false);
+        Destroy(ClimbingArrow);
     }
     // Update is called once per frame
     void Update() {
