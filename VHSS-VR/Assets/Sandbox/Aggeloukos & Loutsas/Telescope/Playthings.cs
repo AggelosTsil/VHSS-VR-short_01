@@ -259,7 +259,6 @@ public class Playthings : MonoBehaviour
         RightHolster.GetComponent<Holster>().Pistol.SetActive(true);
         if (prompt == null) 
         {
-            Debug.Log("qqqqqqqqqqqqqqq");
             LeftHolster.GetComponent<Holster>().Spyglass.SetActive(true);
         }
 

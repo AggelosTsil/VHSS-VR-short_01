@@ -44,6 +44,7 @@ public class Scenario : MonoBehaviour {
 
     public MusicManager MusicManager;
 
+    public bool Phase2VC;
 
 
     //<<End of Activity Scripts>>
@@ -159,6 +160,7 @@ public class Scenario : MonoBehaviour {
         else if (TimeExplore <= 0) {
             Exploration.Phase2();
             MusicManager.playphase2();
+            StavVC();
         }
             Debug.Log("<color=red>Timeout</color>");
             //Seagull Exploration 2 dialogue
@@ -225,6 +227,16 @@ public class Scenario : MonoBehaviour {
         {
             SeagullSpeaking.Play(0);
             FregataHasntPlayed = false;
+        }
+
+    }
+
+    public void StavVC() {
+
+        if (Phase2VC && Dialogue) {
+            SeagullSpeaking.clip = Seagull_Dialogues[11];
+            SeagullSpeaking.Play(0);
+            Phase2VC = false;
         }
 
     }
