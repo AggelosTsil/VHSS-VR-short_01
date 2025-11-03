@@ -251,9 +251,15 @@ public class Playthings : MonoBehaviour
     public void SpottingSetUp()
     {
         BareHands();
+        RightHolster.GetComponent<Holster>().Pistol.SetActive(false);
+        LeftHolster.GetComponent<Holster>().Pistol.SetActive(false);
+        RightHolster.GetComponent<Holster>().Spyglass.SetActive(false);
+        LeftHolster.GetComponent<Holster>().Spyglass.SetActive(false);
+
         RightHolster.GetComponent<Holster>().Pistol.SetActive(true);
-        if (prompt = null) 
+        if (prompt == null) 
         {
+            Debug.Log("qqqqqqqqqqqqqqq");
             LeftHolster.GetComponent<Holster>().Spyglass.SetActive(true);
         }
 

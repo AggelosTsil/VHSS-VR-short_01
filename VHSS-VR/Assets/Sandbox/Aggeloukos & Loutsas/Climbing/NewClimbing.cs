@@ -42,7 +42,7 @@ public class NewClimbing : MonoBehaviour {
     private void Start() {
         FailPoint = Player.position;
         Debug.Log("FailPoint set to " + FailPoint);
-        Playthings.BareHands();
+        
     }
     void OnEnable() //Void OnEnable is a bit better blahblahblah-optimisation-blahblahblah
     {
@@ -50,7 +50,7 @@ public class NewClimbing : MonoBehaviour {
         Player.transform.position = ClimbingArea.transform.position;
         Playthings.ToggleRight.Disable();
         Outline.enabled = false;
-
+        Playthings.SpottingSetUp();
         //<<initialising positions>>
         CurrentRHPosition = RPositionAction.action.ReadValue<Vector3>();
         CurrentLHPosition = LPositionAction.action.ReadValue<Vector3>();

@@ -28,7 +28,7 @@ public class Spotting : MonoBehaviour {
 
     private void OnEnable() {
         IsSpotting = true;
-        HotspotRing[1].SetActive(false);
+        HotspotRing[0].SetActive(false);
         Aux[0].SetActive(false);
         HotspotRing[1].SetActive(false);
         Aux[1].SetActive(false);
