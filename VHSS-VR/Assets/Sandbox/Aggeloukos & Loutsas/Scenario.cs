@@ -127,6 +127,8 @@ public class Scenario : MonoBehaviour {
             case "Ending":
                 EnableActivity(EndindActivity, true);
                 EnableActivity(SpottingActivity, false);
+                EnableActivity(ExploreActivity, false);
+                EnableActivity(ClimbingActivity, false);
                 SeagullSpeaking.clip = Seagull_Dialogues[5];
                 if (Dialogue) {
                     Debug.Log("Ending is speaking");
