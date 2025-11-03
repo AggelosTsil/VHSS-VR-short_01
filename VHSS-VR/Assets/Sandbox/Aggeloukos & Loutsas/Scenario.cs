@@ -155,6 +155,7 @@ public class Scenario : MonoBehaviour {
         if (Timer && (TimeExplore > 0)) {
             TimeExplore -= Time.deltaTime;
         }
+        
         else if (TimeExplore <= 0) {
             Exploration.Phase2();
             MusicManager.playphase2();
@@ -168,12 +169,7 @@ public class Scenario : MonoBehaviour {
                 StartCoroutine(MusicManager.FadeOut(MusicManager.AS ,1f));
         }
 
-        if (EndingHappened && !SeagullSpeaking.isPlaying) //For the fade out
-        {
-            Debug.Log("Ending Happening wow 2");
-            Blurs.SetBool("End", true);
-            credits.SetActive(true);
-        }
+        
 
         
            
@@ -190,6 +186,16 @@ public class Scenario : MonoBehaviour {
             
 
 
+    }
+
+    private void LateUpdate() {
+
+        if (EndingHappened && !SeagullSpeaking.isPlaying) //For the fade out
+        {
+            Debug.Log("Ending Happening wow 2");
+            Blurs.SetBool("End", true);
+            credits.SetActive(true);
+        }
     }
 
     public void PromptVoiceclip()
