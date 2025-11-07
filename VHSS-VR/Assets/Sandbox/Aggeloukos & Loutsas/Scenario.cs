@@ -160,7 +160,7 @@ public class Scenario : MonoBehaviour {
         else if (TimeExplore <= 0) {
             Exploration.Phase2();
             MusicManager.playphase2();
-            StavVC();
+            Phase2IntroVC();
         }
             Debug.Log("<color=red>Timeout</color>");
             //Seagull Exploration 2 dialogue
@@ -231,7 +231,7 @@ public class Scenario : MonoBehaviour {
 
     }
 
-    public void StavVC() {
+    public void Phase2IntroVC() {
 
         if (Phase2VC && Dialogue) {
             SeagullSpeaking.clip = Seagull_Dialogues[11];
