@@ -18,6 +18,7 @@ public class Exploration : MonoBehaviour
 
     public GameObject[] Phase2HotSpots;
     public GameObject[] Phase1HotSpots;
+    public GameObject Bill;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,4 +54,15 @@ public class Exploration : MonoBehaviour
             Debug.Log("<color=red>Timeout</color>");
         
     }
+
+    public void BillboardON()
+    {
+        Bill.SetActive(true);
+    }
+    public void BillboardOFF() 
+    { 
+        Bill.SetActive(false); 
+
+    }
+
 }

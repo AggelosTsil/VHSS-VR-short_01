@@ -30,7 +30,6 @@ public class Scenario : MonoBehaviour {
     public bool ClimbingDialogueHasntPlayed;
     public bool promptHasntPlayed;
     public bool gunHasntPlayed;
-    public bool FregataHasntPlayed;
     public bool EndingHappened; //If the ending happended, will be used in the update to initiate the fade out
     public bool nogun;
     public GameObject HS;
@@ -45,6 +44,8 @@ public class Scenario : MonoBehaviour {
     public MusicManager MusicManager;
 
     public bool Phase2VC;
+    public GameObject[] ships;
+    
 
 
     //<<End of Activity Scripts>>
@@ -78,8 +79,8 @@ public class Scenario : MonoBehaviour {
                 EnableActivity(WheelActivity, false);
                 EnableActivity(SpottingActivity, false);
 
-                SeagullSpeaking.clip = Seagull_Dialogues[6]; //Sets correct dialogue for seagull
                 if (ExplorationDialogueHasntPlayed && Dialogue) {
+                    SeagullSpeaking.clip = Seagull_Dialogues[6]; //Sets correct dialogue for seagull
                     SeagullSpeaking.Play(0); //Seagull starts yapping
                     ExplorationDialogueHasntPlayed = false;
                 }
@@ -162,19 +163,15 @@ public class Scenario : MonoBehaviour {
             MusicManager.playphase2();
             Phase2IntroVC();
         }
-            Debug.Log("<color=red>Timeout</color>");
-            //Seagull Exploration 2 dialogue
-            if (Timer && (TimeExplore <= 0) && (TimeSpot > 0)) {
-                TimeSpot -= Time.deltaTime;
-            } else if (Timer && (TimeExplore <= 0) && (TimeSpot <= 0) && !EndingHappened) {
-                EnterScene("Ending", Dialogue);
-                StartCoroutine(MusicManager.FadeOut(MusicManager.AS ,1f));
+        Debug.Log("<color=red>Timeout</color>");
+        //Seagull Exploration 2 dialogue
+        if (Timer && (TimeExplore <= 0) && (TimeSpot > 0)) {
+            TimeSpot -= Time.deltaTime;
+        } else if (Timer && (TimeExplore <= 0) && (TimeSpot <= 0) && !EndingHappened) {
+            EnterScene("Ending", Dialogue);
+            StartCoroutine(MusicManager.FadeOut(MusicManager.AS ,1f));
         }
 
-        
-
-        
-           
         if (!Playthings.PistolRight.activeSelf && !Playthings.PistolLeft.activeSelf)
         {
             HS.SetActive(false);
@@ -184,8 +181,34 @@ public class Scenario : MonoBehaviour {
         {
             HS.SetActive(true);
             Debug.Log("HS Open");
-        }
+            if (Exploration.Bill.activeSelf)
+            {
+                Exploration.BillboardOFF();
+            }
             
+        }
+
+        if (SeagullSpeaking.clip == Seagull_Dialogues[6] && !SeagullSpeaking.isPlaying)
+        {
+            SeagullSpeaking.clip = Seagull_Dialogues[0];
+            if (Dialogue)
+            {
+                SeagullSpeaking.Play(0);
+            }
+            Exploration.BillboardON();
+
+        }
+
+        //All ships spotted (don't judge, I had a long day)
+        if (!ships[0].activeSelf && !ships[1].activeSelf && !ships[2].activeSelf && !SeagullSpeaking.isPlaying && !Phase2VC)
+        {
+            SeagullSpeaking.clip = Seagull_Dialogues[14];
+            if (Dialogue)
+            {
+                SeagullSpeaking.Play(0);
+            }
+        }
+
 
 
     }
@@ -223,10 +246,30 @@ public class Scenario : MonoBehaviour {
     public void FregataVC()
     {
         SeagullSpeaking.clip = Seagull_Dialogues[9];
-        if (FregataHasntPlayed && Dialogue)
+        if (Dialogue)
         {
             SeagullSpeaking.Play(0);
-            FregataHasntPlayed = false;
+           
+        }
+
+    }
+    public void BrigiVC()
+    {
+        SeagullSpeaking.clip = Seagull_Dialogues[13];
+        if (Dialogue)
+        {
+            SeagullSpeaking.Play(0);
+           
+        }
+
+    }
+    public void PyrpolikoVC()
+    {
+        SeagullSpeaking.clip = Seagull_Dialogues[12];
+        if (Dialogue)
+        {
+            SeagullSpeaking.Play(0);
+          
         }
 
     }

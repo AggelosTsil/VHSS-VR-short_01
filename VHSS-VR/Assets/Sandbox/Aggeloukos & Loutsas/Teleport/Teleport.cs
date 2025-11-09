@@ -108,7 +108,10 @@ public class Teleport : MonoBehaviour
                             currentAux = hit.transform.gameObject.name; //sets current hotspot
                             currentHS = HS[i];
                             player.transform.position = HS[i].GetNamedChild("Teleport_Target").transform.position; //teleports
-                            Scenario.EnterScene("Explore", Scenario.Dialogue);
+                            if (!Scenario.ExploreActivity.activeSelf)
+                            {
+                                Scenario.EnterScene("Explore", Scenario.Dialogue);
+                            }
                             currentHS.SetActive(false); //makes the HS he teleported to invisible
                         }
                     }

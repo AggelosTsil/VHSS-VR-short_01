@@ -26,6 +26,6 @@ public class HelperPlacement : MonoBehaviour
             yield return null;
         }
         yield return new WaitForSeconds(disableDelay);
-        gameObject.SetActive(false);
+        
     }
 }
