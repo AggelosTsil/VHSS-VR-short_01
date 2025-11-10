@@ -64,7 +64,8 @@ public class ToolGrab : MonoBehaviour
             other.transform.gameObject.GetComponent<Prompt>().PromptOutlineON();
             if (Hand && Playthings.ToggleRight.triggered)
             {
-                other.transform.gameObject.GetComponent<Prompt>().prompt.transform.parent.gameObject.SetActive(false);
+                Destroy(other.transform.gameObject.GetComponent<Prompt>().prompt.transform.parent.gameObject);
+                
                 if (Playthings.PistolRight.activeSelf)
                 {
                     Playthings.Holstered("full");

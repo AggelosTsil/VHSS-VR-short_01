@@ -33,10 +33,10 @@ public class Spotting : MonoBehaviour {
         HotspotRing[1].SetActive(false);
         Aux[1].SetActive(false);
 
-        if (SpyglassPromt != null && !destroyed)
+        /*if (SpyglassPromt != null && !destroyed)
         {
             SpyglassPromt.SetActive(true);
-        }
+        }*/
 
         GrabbingRight.enabled = false;
         GrabbingLeft.enabled = false;

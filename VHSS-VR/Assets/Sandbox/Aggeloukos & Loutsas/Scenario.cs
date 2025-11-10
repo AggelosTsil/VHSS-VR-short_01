@@ -32,6 +32,7 @@ public class Scenario : MonoBehaviour {
     public bool gunHasntPlayed;
     public bool EndingHappened; //If the ending happended, will be used in the update to initiate the fade out
     public bool nogun;
+    public bool OofPlayed;
     public GameObject HS;
     public Exploration Exploration;
 
@@ -159,9 +160,13 @@ public class Scenario : MonoBehaviour {
         }
         
         else if (TimeExplore <= 0) {
-            Exploration.Phase2();
-            MusicManager.playphase2();
-            Phase2IntroVC();
+            if (!Exploration.Phase2bool) {
+                MusicManager.playphase2();
+                Phase2IntroVC();
+                Exploration.Phase2();
+            }
+           
+           
         }
         Debug.Log("<color=red>Timeout</color>");
         //Seagull Exploration 2 dialogue
@@ -200,13 +205,9 @@ public class Scenario : MonoBehaviour {
         }
 
         //All ships spotted (don't judge, I had a long day)
-        if (!ships[0].activeSelf && !ships[1].activeSelf && !ships[2].activeSelf && !SeagullSpeaking.isPlaying && !Phase2VC)
+        if (!ships[0].activeSelf && !ships[1].activeSelf && !ships[2].activeSelf && !SeagullSpeaking.isPlaying && !Phase2VC && !OofPlayed)
         {
-            SeagullSpeaking.clip = Seagull_Dialogues[14];
-            if (Dialogue)
-            {
-                SeagullSpeaking.Play(0);
-            }
+            OofVC();
         }
 
 
@@ -235,9 +236,10 @@ public class Scenario : MonoBehaviour {
 
     public void GunVoiceclip()
     {
-        SeagullSpeaking.clip = Seagull_Dialogues[7];
+        
         if (gunHasntPlayed && Dialogue)
         {
+            SeagullSpeaking.clip = Seagull_Dialogues[7];
             SeagullSpeaking.Play(0);
             gunHasntPlayed = false;
         }
@@ -282,6 +284,15 @@ public class Scenario : MonoBehaviour {
             Phase2VC = false;
         }
 
+    }
+
+    public void OofVC() {
+
+        SeagullSpeaking.clip = Seagull_Dialogues[14];
+        if (Dialogue) {
+            SeagullSpeaking.Play(0);
+        }
+        OofPlayed = true;
     }
 }
 
