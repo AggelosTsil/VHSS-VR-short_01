@@ -290,7 +290,7 @@ public class Scenario : MonoBehaviour {
 
         SeagullSpeaking.clip = Seagull_Dialogues[14];
         if (Dialogue) {
-            SeagullSpeaking.Play(0);
+            SeagullSpeaking.Play(44100);
         }
         OofPlayed = true;
     }
