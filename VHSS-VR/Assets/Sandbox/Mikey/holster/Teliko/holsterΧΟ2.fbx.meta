@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cfe1778e3d5eab34cb961219a7b8e204
+guid: 680560293568a3444b4eb8a7878fb8ef
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -8,17 +8,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: keftes
-    second: {fileID: 2100000, guid: bba4d94e10c3b7a479a3f6037fd79638, type: 2}
+    second: {fileID: 2100000, guid: adb03dcdfeef83c4594988fa940f764c, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: leather
-    second: {fileID: 2100000, guid: 84d9f91eff3cecc40ae3d73f073d003d, type: 2}
+    second: {fileID: 2100000, guid: 479be9ee8dd9ba34b9e46fd0a7c24801, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: metal
-    second: {fileID: 2100000, guid: 03b8887ad1696f74f9b80032b99831d3, type: 2}
+    second: {fileID: 2100000, guid: f80ca005f564679448c3f5267d1c10e1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
