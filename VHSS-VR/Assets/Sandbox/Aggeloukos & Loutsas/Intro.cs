@@ -9,6 +9,8 @@ public class Intro : MonoBehaviour
     public GameObject IntroArea;
     public Playthings Playthings;
     public GameObject gun;
+
+    public float Time; //don't touch it is perfectly timed 
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,7 @@ public class Intro : MonoBehaviour
     void Update()
     {
         player.transform.position = IntroArea.transform.position;
-        if (!Scenario.SeagullSpeaking.isPlaying)
+        if (Scenario.TimeExplore <= 120 - Time)
         {
             Scenario.EnterScene("Explore", Scenario.Dialogue);
             gun.SetActive(true);
