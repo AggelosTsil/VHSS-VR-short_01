@@ -24,7 +24,7 @@ public class LangManager : MonoBehaviour {
     void Update() {
         if (Keyboard.current[Key.D].wasPressedThisFrame) {
             
-            //StartApp();
+            StartApp();
         }
     }
 

@@ -12,7 +12,7 @@ public abstract class Hotspot : MonoBehaviour {
     private float exploreTimeout = 40;
     private float lastItemOpenedTimeout = 5;
     private float navigateTimeout = 30;
-    private float interactTimeout = 400; //used to be 40
+    private float interactTimeout = 40; //used to be 40
     public Hotspot() {
         
     }

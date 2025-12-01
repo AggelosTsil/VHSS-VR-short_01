@@ -276,9 +276,9 @@ public class InteractionController: BaseMonoBehaviourCondition {
      * 
      */
     public void OnActionPerformed(InputAction.CallbackContext iac) {
-         //Debug.LogFormat("[InteractionController] OnActionPerformed {0}", iac.action.name);
+         Debug.LogFormat("[InteractionController] OnActionPerformed {0}", iac.action.name);
     }
-
+    
     /**
      * 
      */
