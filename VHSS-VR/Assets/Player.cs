@@ -50,8 +50,8 @@ public class Player: MonoBehaviour {
                 navigationController.SetGameObjectActiveatable(1, false);
                 interactionController.SetPointBehaviourActiveatable(false);
                 interactionController.SetContactBehaviourActiveatable(true);
-                //lefthandInteractionController.SetPointBehaviourActiveatable(false);
-                //lefthandInteractionController.SetContactBehaviourActiveatable(true);
+                lefthandInteractionController.SetPointBehaviourActiveatable(false);
+                lefthandInteractionController.SetContactBehaviourActiveatable(true);
                 break;
 
             case State.EXPLORE:
@@ -59,8 +59,8 @@ public class Player: MonoBehaviour {
                 navigationController.SetGameObjectActiveatable(1, false);
                 interactionController.SetPointBehaviourActiveatable(true);
                 interactionController.SetContactBehaviourActiveatable(false);
-                //lefthandInteractionController.SetPointBehaviourActiveatable(true);
-                //lefthandInteractionController.SetContactBehaviourActiveatable(false);
+                lefthandInteractionController.SetPointBehaviourActiveatable(true);
+                lefthandInteractionController.SetContactBehaviourActiveatable(false);
                 break;
 
             case State.NAVIGATE:
@@ -68,8 +68,8 @@ public class Player: MonoBehaviour {
                 navigationController.SetGameObjectActiveatable(1, true);
                 interactionController.SetPointBehaviourActiveatable(false);
                 interactionController.SetContactBehaviourActiveatable(false);
-                //lefthandInteractionController.SetPointBehaviourActiveatable(false);
-                //lefthandInteractionController.SetContactBehaviourActiveatable(false);
+                lefthandInteractionController.SetPointBehaviourActiveatable(false);
+                lefthandInteractionController.SetContactBehaviourActiveatable(false);
 
                 break;
 
@@ -78,8 +78,8 @@ public class Player: MonoBehaviour {
                 navigationController.SetGameObjectActiveatable(1, false);
                 interactionController.SetPointBehaviourActiveatable(false);
                 interactionController.SetContactBehaviourActiveatable(true);
-                //lefthandInteractionController.SetPointBehaviourActiveatable(false);
-                //lefthandInteractionController.SetContactBehaviourActiveatable(true);
+                lefthandInteractionController.SetPointBehaviourActiveatable(false);
+                lefthandInteractionController.SetContactBehaviourActiveatable(true);
                 break;
         }
 

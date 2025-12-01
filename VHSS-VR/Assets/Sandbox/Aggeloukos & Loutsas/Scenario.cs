@@ -15,6 +15,7 @@ public class Scenario : MonoBehaviour {
     public AudioClip[] Seagull_Dialogues; //The different things the seagull says
     public bool Dialogue;//Shuts up the seagull
     //<<Activity Scripts>>
+    public GameObject LangActivity;
     public GameObject IntroActivity;
     public GameObject ExploreActivity;
     public GameObject WorkerActivity;
@@ -60,7 +61,16 @@ public class Scenario : MonoBehaviour {
     public void SceneActivity(string ActivityName) { //Activates scripts related to each scene
 
         switch (ActivityName) {
+            case "Lang":
+                EnableActivity(LangActivity, true);
+                EnableActivity(IntroActivity, false);
+                EnableActivity(ExploreActivity, false);
+                EnableActivity(WorkerActivity, false);
+                EnableActivity(WheelActivity, false);
+                EnableActivity(SpottingActivity, false);
+                break;
             case "Intro":
+                EnableActivity(LangActivity, false);
                 EnableActivity(IntroActivity, true);
                 EnableActivity(ExploreActivity, false);
                 EnableActivity(WorkerActivity, false);
@@ -155,7 +165,7 @@ public class Scenario : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (Timer && (TimeExplore > 0)) {
+        if (Timer && (TimeExplore > 0) && !LangActivity.activeSelf) {
             TimeExplore -= Time.deltaTime;
         }
         

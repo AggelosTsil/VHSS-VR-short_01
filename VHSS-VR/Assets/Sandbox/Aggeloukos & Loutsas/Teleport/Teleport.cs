@@ -50,6 +50,8 @@ public class Teleport : MonoBehaviour
     public Collider holsterCollider2;
     public bool shootable = true;
 
+    public Lang Lang;
+
     void Start()
     {
         Anchors = LayerMask.GetMask("Anchors");
@@ -156,11 +158,27 @@ public class Teleport : MonoBehaviour
                 }
             }
 
+            //----------------language---------------
+            if (hit.transform.gameObject.CompareTag("Gre")) {
+                Lang.GreekOutline();
+                if (TeleportToPoint.IsPressed()) {
+                    Lang.Greek();
+                }
+            }
+            if (hit.transform.gameObject.CompareTag("Eng")) {
+                Lang.EnglishOutline();
+                if (TeleportToPoint.IsPressed()) {
+                    Lang.English();
+                }
+            }
+
         }
         //-----------NOTHING--------------------
         else //if he stops pointing or pointing at nothing
         {
             CloseAllOutlines();
+            Lang.GreekOutlineOFF();
+            Lang.EnglishOutlineOFF();
         }
         if (TeleportToPoint.triggered && shootable) { //if he presses the the shoot button
             Debug.Log("GUNSOUND");

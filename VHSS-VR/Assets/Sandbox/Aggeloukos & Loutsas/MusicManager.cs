@@ -9,6 +9,7 @@ public class MusicManager : MonoBehaviour
     public AudioSource AS;
     public bool Phase2 = true;
     public bool Phase1 = true;
+    public Scenario Scenario;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,7 @@ public class MusicManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Phase1)
+        if (Phase1 && !Scenario.LangActivity.activeSelf)
         {
             playphase1();
         }
