@@ -89,7 +89,7 @@ public class Scenario : MonoBehaviour {
                 if (ExplorationDialogueHasntPlayed && Dialogue) {
                     SeagullSpeaking.clip = Seagull_Dialogues[0]; //Sets correct dialogue for seagull
                     Exploration.BillboardON();
-                    SeagullSpeaking.Play(0); //Seagull starts yapping
+                    SeagullSpeaking.Play(44100); //Seagull starts yapping
                     ExplorationDialogueHasntPlayed = false;
                 }
                 break;
