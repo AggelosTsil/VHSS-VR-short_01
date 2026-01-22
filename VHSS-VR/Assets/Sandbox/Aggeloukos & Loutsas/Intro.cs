@@ -23,8 +23,14 @@ public class Intro : MonoBehaviour
     void Update()
     {
         player.transform.position = IntroArea.transform.position;
-        if (Scenario.TimeExplore <= 120 - Time)
+        if (Scenario.TimeExplore >= 120 - Time)
         {
+            //Scenario.EnterScene("Explore", Scenario.Dialogue);
+            //Debug.Log("Enterted Explore via Intro timer");
+            //gun.SetActive(true);
+            Scenario.SeagullSpeaking.Play(0);
+        }
+        else if (!Scenario.SeagullSpeaking.isPlaying) {
             Scenario.EnterScene("Explore", Scenario.Dialogue);
             gun.SetActive(true);
         }

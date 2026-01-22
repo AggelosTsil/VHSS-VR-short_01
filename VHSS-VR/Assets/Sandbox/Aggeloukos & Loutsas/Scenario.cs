@@ -76,11 +76,8 @@ public class Scenario : MonoBehaviour {
                 EnableActivity(WorkerActivity, false);
                 EnableActivity(WheelActivity, false);
                 EnableActivity(SpottingActivity, false);
-                SeagullSpeaking.clip = Seagull_Dialogues[10]; //Sets correct dialogue for seagull
-                if (ExplorationDialogueHasntPlayed && Dialogue)
-                {
-                    SeagullSpeaking.Play(0); //Seagull starts yapping 
-                }
+                SeagullSpeaking.clip = Seagull_Dialogues[5]; //Sets correct dialogue for seagull
+                
                 break;
             case "Explore":
                 EnableActivity(IntroActivity, false);
@@ -90,7 +87,8 @@ public class Scenario : MonoBehaviour {
                 EnableActivity(SpottingActivity, false);
 
                 if (ExplorationDialogueHasntPlayed && Dialogue) {
-                    SeagullSpeaking.clip = Seagull_Dialogues[6]; //Sets correct dialogue for seagull
+                    SeagullSpeaking.clip = Seagull_Dialogues[0]; //Sets correct dialogue for seagull
+                    Exploration.BillboardON();
                     SeagullSpeaking.Play(0); //Seagull starts yapping
                     ExplorationDialogueHasntPlayed = false;
                 }
@@ -130,7 +128,7 @@ public class Scenario : MonoBehaviour {
                 EnableActivity(ClimbingActivity, false);
                 EnableActivity(ExploreActivity, false);
                 nogun = true;
-                SeagullSpeaking.clip = Seagull_Dialogues[4];
+                SeagullSpeaking.clip = Seagull_Dialogues[7];
                 if (SpottingDialogueHasntPlayed && Dialogue) {
                     SeagullSpeaking.Play(0);
                     SpottingDialogueHasntPlayed = false;
@@ -141,7 +139,7 @@ public class Scenario : MonoBehaviour {
                 EnableActivity(SpottingActivity, false);
                 EnableActivity(ExploreActivity, false);
                 EnableActivity(ClimbingActivity, false);
-                SeagullSpeaking.clip = Seagull_Dialogues[5];
+                SeagullSpeaking.clip = Seagull_Dialogues[4];
                 if (Dialogue) {
                     Debug.Log("Ending is speaking");
                     SeagullSpeaking.Play(0);
@@ -195,23 +193,13 @@ public class Scenario : MonoBehaviour {
         {
             HS.SetActive(true);
             Debug.Log("HS Open");
-            if (Exploration.Bill.activeSelf)
+            if (Exploration.Bill.activeSelf) //closes pick up pistol billboard
             {
                 Exploration.BillboardOFF();
             }
             
         }
 
-        if (SeagullSpeaking.clip == Seagull_Dialogues[6] && !SeagullSpeaking.isPlaying)
-        {
-            SeagullSpeaking.clip = Seagull_Dialogues[0];
-            if (Dialogue)
-            {
-                SeagullSpeaking.Play(0);
-            }
-            Exploration.BillboardON();
-
-        }
 
         //All ships spotted (don't judge, I had a long day)
         if (!ships[0].activeSelf && !ships[1].activeSelf && !ships[2].activeSelf && !SeagullSpeaking.isPlaying && !Phase2VC && !OofPlayed)
@@ -235,7 +223,7 @@ public class Scenario : MonoBehaviour {
 
     public void PromptVoiceclip()
     {
-        SeagullSpeaking.clip = Seagull_Dialogues[8];
+        SeagullSpeaking.clip = Seagull_Dialogues[7];
         if (promptHasntPlayed && Dialogue)
         {
             SeagullSpeaking.Play(0);
@@ -248,15 +236,17 @@ public class Scenario : MonoBehaviour {
         
         if (gunHasntPlayed && Dialogue)
         {
-            SeagullSpeaking.clip = Seagull_Dialogues[7];
+            
+            SeagullSpeaking.clip = Seagull_Dialogues[6];
             SeagullSpeaking.Play(0);
             gunHasntPlayed = false;
+            
         }
     }
 
     public void FregataVC()
     {
-        SeagullSpeaking.clip = Seagull_Dialogues[9];
+        SeagullSpeaking.clip = Seagull_Dialogues[8];
         if (Dialogue)
         {
             SeagullSpeaking.Play(0);
@@ -266,7 +256,7 @@ public class Scenario : MonoBehaviour {
     }
     public void BrigiVC()
     {
-        SeagullSpeaking.clip = Seagull_Dialogues[13];
+        SeagullSpeaking.clip = Seagull_Dialogues[11];
         if (Dialogue)
         {
             SeagullSpeaking.Play(0);
@@ -276,7 +266,7 @@ public class Scenario : MonoBehaviour {
     }
     public void PyrpolikoVC()
     {
-        SeagullSpeaking.clip = Seagull_Dialogues[12];
+        SeagullSpeaking.clip = Seagull_Dialogues[10];
         if (Dialogue)
         {
             SeagullSpeaking.Play(0);
@@ -288,7 +278,7 @@ public class Scenario : MonoBehaviour {
     public void Phase2IntroVC() {
 
         if (Phase2VC && Dialogue) {
-            SeagullSpeaking.clip = Seagull_Dialogues[11];
+            SeagullSpeaking.clip = Seagull_Dialogues[9];
             SeagullSpeaking.Play(0);
             Phase2VC = false;
         }
@@ -297,7 +287,7 @@ public class Scenario : MonoBehaviour {
 
     public void OofVC() {
 
-        SeagullSpeaking.clip = Seagull_Dialogues[14];
+        SeagullSpeaking.clip = Seagull_Dialogues[12];
         if (Dialogue) {
             SeagullSpeaking.Play(44100);
         }
