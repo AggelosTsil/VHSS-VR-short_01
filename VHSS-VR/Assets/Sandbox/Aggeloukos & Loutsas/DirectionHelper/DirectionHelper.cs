@@ -65,9 +65,9 @@ public class DirectionHelper : MonoBehaviour
         Debug.Log("removed Goal " + target + "goals are now " + Goals);
     }
 
-    public void StartTiming()
+    public void StartTiming(float cutTime = 0)
     {
-        timer = 0;
+        timer = cutTime;
         active = true;
         Debug.Log("helper started timing");
     }
@@ -75,6 +75,8 @@ public class DirectionHelper : MonoBehaviour
     public void GoalMet()
     {
         active = false;
+        lineRenderer.startWidth = 0;
+        lineRenderer.endWidth = 0;
         Debug.Log("goal met");
     }
 

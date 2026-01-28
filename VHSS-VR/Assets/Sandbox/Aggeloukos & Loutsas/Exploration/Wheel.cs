@@ -5,6 +5,7 @@ using UnityEngine;
 public class Wheel : MonoBehaviour 
 {
     public GameObject player;
+    public float CallHelperTime;
     public Transform pistol;
     public Scenario Scenario;
     public GameObject WheelArea;
@@ -25,9 +26,10 @@ public class Wheel : MonoBehaviour
         HotspotRing.SetActive(false);
         Aux.SetActive(false);
 
+        Scenario.directionHelper.GoalMet();
         Scenario.directionHelper.CleanGoals(); //sets up helper
         Scenario.directionHelper.AddGoal(pistol);
-        Scenario.directionHelper.StartTiming();
+        Scenario.directionHelper.StartTiming(CallHelperTime);
     }
     private void OnDisable()
     {

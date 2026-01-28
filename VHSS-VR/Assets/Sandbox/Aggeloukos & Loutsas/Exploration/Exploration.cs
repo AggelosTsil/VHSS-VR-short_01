@@ -7,6 +7,11 @@ using System.Linq;
 public class Exploration : MonoBehaviour
 {
     public GameObject player;
+    public Transform Worker;
+    public Transform Wheel;
+    public Transform SpyglassFront;
+    public Transform SpyglassBack;
+    public Transform SpyglassTop;
     public Scenario Scenario;
     public GameObject ExploreArea;
     public Teleport TeleportR;
@@ -42,7 +47,23 @@ public class Exploration : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+      
+    }
+    void OnEnable()
+    {
+        Scenario.directionHelper.StartTiming();
+        //DirectionHelper finding activites relevant to the phase
+        if (!Phase2bool) 
+        {
+            Scenario.directionHelper.AddGoal(Worker);
+            Scenario.directionHelper.AddGoal(Wheel);
+        }
+        else
+        {
+            Scenario.directionHelper.AddGoal(SpyglassBack);
+            Scenario.directionHelper.AddGoal(SpyglassTop);
+            Scenario.directionHelper.AddGoal(SpyglassFront);
+        }
     }
 
     public void Phase2()
@@ -55,6 +76,8 @@ public class Exploration : MonoBehaviour
             }
             Debug.Log("<color=red>Timeout</color>");
         Phase2bool = true;
+        //clean up directionhelper
+        Scenario.directionHelper.CleanGoals();
     }
 
     public void BillboardON()
