@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Scenario : MonoBehaviour {
-    public bool Timer; //Togles timer function  
+    public bool Timer; //Toggles timer function  
+    public DirectionHelper directionHelper;
     public float NextSceneTimer;//The time it takes for a scene to auto-skip
     public float TimeExplore;//The time left for the current scene
     public float TimeClimb;
@@ -47,6 +48,7 @@ public class Scenario : MonoBehaviour {
 
     public bool Phase2VC;
     public GameObject[] ships;
+
     
 
 

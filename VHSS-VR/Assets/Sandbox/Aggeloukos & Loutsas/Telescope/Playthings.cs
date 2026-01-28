@@ -77,7 +77,7 @@ public class Playthings : MonoBehaviour
         SpyglassLeft.SetActive(Active);
         if (Active)
         {
-            //GetSound.Play();
+            GetSound.Play();
         }
     }
 

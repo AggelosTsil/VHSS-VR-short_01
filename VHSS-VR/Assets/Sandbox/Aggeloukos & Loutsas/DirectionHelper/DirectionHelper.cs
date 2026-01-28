@@ -6,8 +6,10 @@ using Unity;
 public class DirectionHelper : MonoBehaviour
 {
     private LineRenderer lineRenderer;
+    public bool active;
+    public float LineWidth; //change it from here and not the line renderer
     public Transform Guide;
-    public Transform[] Goals;
+    public List<Transform> Goals;
     public float CallAfter; //time untill the Direction helper kicks in
     private float timer;
 
@@ -22,20 +24,61 @@ public class DirectionHelper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timer < CallAfter)
+        if (active)
         {
-            timer += Time.deltaTime;
+            if (timer < CallAfter)
+            {
+                timer += Time.deltaTime;
+            }
+            else if (Goals.Count > 0) //if there are goals in the list then it draws between the guidepoint and the closest goal
+            {
+                lineRenderer.startWidth =LineWidth;
+                lineRenderer.endWidth = LineWidth;
+                Debug.Log("DirectionHelper Active");
+                lineRenderer.SetPosition(0, Guide.position);
+                lineRenderer.SetPosition(1, ClosestGoal(Goals).position);
+                Debug.Log("DirectionHelper guiding towards " + ClosestGoal(Goals));
+            }
         }
-        else
-        {
-            Debug.Log("DirectionHelper Active");
-            lineRenderer.SetPosition(0, Guide.position);
-            lineRenderer.SetPosition(1, ClosestGoal(Goals).position);
-            Debug.Log("DirectionHelper guiding towards " + ClosestGoal(Goals));
-        }
+        else 
+            {
+                lineRenderer.startWidth = 0;
+                lineRenderer.endWidth = 0;
+            }
     }
 
-    Transform ClosestGoal(Transform[] Goals)  //https://discussions.unity.com/t/clean-est-way-to-find-nearest-object-of-many-c/409917/2
+    public void CleanGoals()
+    {
+        Goals.Clear();
+        Debug.Log("cleaned Goals");
+    }
+
+    public void AddGoal(Transform goal)
+    {
+        Goals.Add(goal); 
+        Debug.Log("added Goal " + goal);
+    }
+
+    public void RemoveGoal(Transform target)
+    {
+        Goals.Remove(target);
+        Debug.Log("removed Goal " + target + "goals are now " + Goals);
+    }
+
+    public void StartTiming()
+    {
+        timer = 0;
+        active = true;
+        Debug.Log("helper started timing");
+    }
+
+    public void GoalMet()
+    {
+        active = false;
+        Debug.Log("goal met");
+    }
+
+    Transform ClosestGoal(List<Transform> Goals)  //https://discussions.unity.com/t/clean-est-way-to-find-nearest-object-of-many-c/409917/2
     {
         Transform tMin = null;
         float minDist = Mathf.Infinity;
