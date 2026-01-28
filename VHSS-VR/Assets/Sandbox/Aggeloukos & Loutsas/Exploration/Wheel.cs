@@ -5,12 +5,15 @@ using UnityEngine;
 public class Wheel : MonoBehaviour 
 {
     public GameObject player;
+    public Transform pistol;
     public Scenario Scenario;
     public GameObject WheelArea;
     public Playthings Playthings;
     public GameObject HotspotRing;
     public GameObject Aux;
     public Teleport Teleport;
+    public GameObject gunR;//gunR and gunL are to check if the player has activated the pistol
+    public GameObject gunL;
     // Start is called before the first frame update
     void Start() {
 
@@ -21,6 +24,10 @@ public class Wheel : MonoBehaviour
         Playthings.Holstered("full");
         HotspotRing.SetActive(false);
         Aux.SetActive(false);
+
+        Scenario.directionHelper.CleanGoals(); //sets up helper
+        Scenario.directionHelper.AddGoal(pistol);
+        Scenario.directionHelper.StartTiming();
     }
     private void OnDisable()
     {
@@ -36,5 +43,10 @@ public class Wheel : MonoBehaviour
         if (Scenario.TimeExplore <= 0) {
             Scenario.EnterScene("Explore", Scenario.Dialogue);
         }
+        if (gunL.activeSelf || gunR.activeSelf) //cleans the helper when player has found the pistol
+        {
+            Scenario.directionHelper.RemoveGoal(pistol);
+            Scenario.directionHelper.GoalMet();
+        } 
     }
 }
