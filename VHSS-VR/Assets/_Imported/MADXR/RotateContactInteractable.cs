@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class RotateContactInteractable: ContactInteractable {
 
+    private SceneChanger SceneChangerScript;
 
     private Vector3 cp, pp, dp;
     private bool left;
@@ -61,6 +62,7 @@ public class RotateContactInteractable: ContactInteractable {
 
         pp = cp = positionAction.action.ReadValue<Vector3>();
         //pp = cp = SecPositionAction.action.ReadValue<Vector3>(); //aggeloukos +Loutsas
+        SceneChangerScript = GameObject.Find("SceneChanger").GetComponent<SceneChanger>();
     }
         
     public void Update() {
@@ -70,7 +72,11 @@ public class RotateContactInteractable: ContactInteractable {
         cp = positionAction.action.ReadValue<Vector3>();
         //cp = SecPositionAction.action.ReadValue<Vector3>(); //aggeloukos + Loutsas
 
-        dp.Set(lockPitch ? 0 : cp.y - pp.y, lockYaw ? 0 : pp.x - cp.x, lockRoll ? 0 : cp.z - pp.z); //worker is not set to players X axis but on players Z axis
+        if (SceneChangerScript.currentScene == "LotsasKaiAggeloukos") {
+            dp.Set(lockPitch ? 0 : cp.y - pp.y, lockYaw ? 0 : pp.x - cp.x, lockRoll ? 0 : cp.x - pp.x); //worker is not set to players X axis but on players Z axis
+        }
+        else
+            dp.Set(lockPitch ? 0 : cp.y - pp.y, lockYaw ? 0 : cp.z - pp.z, lockRoll ? 0 : cp.z - pp.z);
 
         // Debug.Log("[RotateContactInteractable] Update " + name + ", " + dp * sensitivity);
         // Debug.Log("[RotateContactInteractable] Update " + name + ", " + cp);

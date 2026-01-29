@@ -49,6 +49,9 @@ public class GameObjectDocker : MonoBehaviour {
             dockable.parent = null;
             follower = dockable.gameObject.AddComponent<Follower>();
             follower.target = target;
+            if (dockable.gameObject.name.StartsWith("Right")) //THA TO ALLAXO
+                follower.translationOffset = adjustPosition;
+            else follower.translationOffset = adjustPositionLeft;
             // follower.orientationOffset = adjustRotation;
 
             dockable.localPosition = Vector3.zero;

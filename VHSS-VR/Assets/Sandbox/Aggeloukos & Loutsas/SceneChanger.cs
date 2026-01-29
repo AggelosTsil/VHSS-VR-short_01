@@ -9,7 +9,7 @@ public class SceneChanger : MonoBehaviour
     public InputAction holdbutton;
     public string targetScene;
     public float holdDuration = 5f;
-
+    public string currentScene;
     private float holdTimer = 0f;
 
     public void OnEnable()
