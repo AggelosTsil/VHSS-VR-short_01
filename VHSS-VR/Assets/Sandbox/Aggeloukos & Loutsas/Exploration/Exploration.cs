@@ -78,6 +78,10 @@ public class Exploration : MonoBehaviour
         Phase2bool = true;
         //clean up directionhelper
         Scenario.directionHelper.CleanGoals();
+        //set up Phase2 goals
+        Scenario.directionHelper.AddGoal(SpyglassBack);
+        Scenario.directionHelper.AddGoal(SpyglassTop);
+        Scenario.directionHelper.AddGoal(SpyglassFront);
     }
 
     public void BillboardON()
