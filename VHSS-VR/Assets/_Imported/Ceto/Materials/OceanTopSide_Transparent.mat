@@ -26,7 +26,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _CullFace: 1
+    - _CullFace: 2
     - _EdgeFade: 4.23
     - _EdgeFadeStr: 0.2
     m_Colors: []
