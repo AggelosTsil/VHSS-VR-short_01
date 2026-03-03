@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class NewClimbing : MonoBehaviour {
+    //<<DirectionHelper>>
+    public Transform pistol;
+    public float CallHelperTime;
+    public Transform LeaveArrow;
+    
     //<<Actions>>
     public InputAction GrabRight;
     public InputAction GrabLeft;
@@ -60,9 +65,19 @@ public class NewClimbing : MonoBehaviour {
 
         //<<Timer>>
         HangingCheckTimer = HangingCheck;
+
+
+
+        Scenario.directionHelper.GoalMet();
+        Scenario.directionHelper.CleanGoals(); //sets up helper
+        //Scenario.directionHelper.AddGoal(pistol);
+        //Scenario.directionHelper.StartTiming(CallHelperTime);
     }
     private void OnDisable() {
         Playthings.ToggleRight.Enable();
+
+        Scenario.directionHelper.AddGoal(LeaveArrow);
+        Scenario.directionHelper.StartTiming(CallHelperTime);
     }
 
 

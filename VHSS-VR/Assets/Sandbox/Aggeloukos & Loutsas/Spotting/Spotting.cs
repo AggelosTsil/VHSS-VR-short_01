@@ -5,6 +5,7 @@ using UnityEngine.Experimental.XR.Interaction;
 
 public class Spotting : MonoBehaviour {
     public GameObject player;
+    public float CallHelperTime;
     public Scenario Scenario;
     public GameObject SpottingArea;
     public Playthings Playthings;
@@ -12,6 +13,8 @@ public class Spotting : MonoBehaviour {
     public HandGrabRope GrabbingLeft;
     public GameObject[] HotspotRing;
     public GameObject[] Aux;
+    public Transform pistol;
+    
 
     public GameObject SpyglassPromt;
     public bool destroyed = false;
@@ -40,6 +43,11 @@ public class Spotting : MonoBehaviour {
 
         GrabbingRight.enabled = false;
         GrabbingLeft.enabled = false;
+
+
+        Scenario.directionHelper.GoalMet();
+        //Scenario.directionHelper.CleanGoals(); //sets up helper
+        Scenario.directionHelper.StartTiming(CallHelperTime);
     }
 
     private void OnDisable(){
@@ -48,6 +56,9 @@ public class Spotting : MonoBehaviour {
         Aux[0].SetActive(true);
         HotspotRing[1].SetActive(true);
         Aux[1].SetActive(true);
+
+        Scenario.directionHelper.GoalMet();
+        Scenario.directionHelper.CleanGoals();
     }
     // Update is called once per frame
     void Update() {
