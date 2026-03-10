@@ -39,8 +39,9 @@ public class Lang : MonoBehaviour {
     }
 
     public void Greek() {
+        Scenario.english = false;
+        Scenario.LangSelection();
         Scenario.EnterScene("Intro", Scenario.Dialogue);
-        Gre = true;
         ShipMesh.SetActive(true);
         Auxes[0].SetActive(false);
         Auxes[1].SetActive(false);
@@ -51,8 +52,9 @@ public class Lang : MonoBehaviour {
     }
 
     public void English() {
+        Scenario.english = true;
+        Scenario.LangSelection();
         Scenario.EnterScene("Intro", Scenario.Dialogue);
-        Gre = false;
         ShipMesh.SetActive(true);
         Auxes[0].SetActive(false);
         Auxes[1].SetActive(false);

@@ -13,6 +13,9 @@ public class Scenario : MonoBehaviour {
     public GameObject[] Flags;//Teleport hotspots
     public string FirstScene;
     public AudioSource SeagullSpeaking; //The source from where you hear the seagul speak
+    public bool english = false;
+    public AudioClip[] Seagull_Diaologues_Greek;
+    public AudioClip[] Seagull_Diaologues_English;
     public AudioClip[] Seagull_Dialogues; //The different things the seagull says
     public bool Dialogue;//Shuts up the seagull
     //<<Activity Scripts>>
@@ -223,6 +226,19 @@ public class Scenario : MonoBehaviour {
         }
     }
 
+    public void LangSelection() {
+        if (!english) {
+            for (int i = 0; i < Seagull_Dialogues.Length; i++) {
+                Seagull_Dialogues[i] = Seagull_Diaologues_Greek[i];
+            }
+        }
+        else {
+            for (int i = 0; i < Seagull_Dialogues.Length; i++) {
+                Seagull_Dialogues[i] = Seagull_Diaologues_English[i];
+
+            }
+        }
+    }
     public void PromptVoiceclip()
     {
         SeagullSpeaking.clip = Seagull_Dialogues[7];
