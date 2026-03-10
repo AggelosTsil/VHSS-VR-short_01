@@ -80,6 +80,10 @@ public class DirectionHelper : MonoBehaviour
         Debug.Log("goal met");
     }
 
+    public bool SpottingArrowOnly() {
+        return ((Goals.Count == 1) && (Goals[0].name == "LeaveArrow"));
+    }
+
     Transform ClosestGoal(List<Transform> Goals)  //https://discussions.unity.com/t/clean-est-way-to-find-nearest-object-of-many-c/409917/2
     {
         Transform tMin = null;

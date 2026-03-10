@@ -42,6 +42,13 @@ public class Exploration : MonoBehaviour
         //Teleport.TeleportToPoint.Disable();
         OutlineWorker.enabled = false;
         OutlineWheel.enabled = false;
+
+        if (Phase2bool) {
+            Scenario.directionHelper.RemoveGoal(SpyglassBack);
+            Scenario.directionHelper.RemoveGoal(SpyglassTop);
+            Scenario.directionHelper.RemoveGoal(SpyglassFront);
+        }
+        
     }
 
     // Update is called once per frame

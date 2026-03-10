@@ -46,8 +46,11 @@ public class Spotting : MonoBehaviour {
 
 
         Scenario.directionHelper.GoalMet();
+
         //Scenario.directionHelper.CleanGoals(); //sets up helper
-        Scenario.directionHelper.StartTiming(CallHelperTime);
+        if (Scenario.directionHelper.SpottingArrowOnly()) { //If the only goal left is the arrow used to leave from spotting on the mast
+            Scenario.directionHelper.StartTiming(CallHelperTime); 
+        }
     }
 
     private void OnDisable(){
