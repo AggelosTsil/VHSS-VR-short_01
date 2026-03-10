@@ -22,6 +22,12 @@ public class SceneChanger : MonoBehaviour
         holdbutton.Disable();
     }
 
+    public void ChangeScene(InputAction.CallbackContext context) {
+        if (!context.performed) return;
+
+        SceneManager.LoadScene(targetScene);
+    }
+
     void Update()
     {
         
