@@ -31,15 +31,17 @@ public class Spotting : MonoBehaviour {
 
     private void OnEnable() {
         IsSpotting = true;
+
+        //setup Hotspots
         HotspotRing[0].SetActive(false);
         Aux[0].SetActive(false);
         HotspotRing[1].SetActive(false);
         Aux[1].SetActive(false);
 
-        /*if (SpyglassPromt != null && !destroyed)
+        if (SpyglassPromt != null && !destroyed)
         {
             SpyglassPromt.SetActive(true);
-        }*/
+        }
 
         GrabbingRight.enabled = false;
         GrabbingLeft.enabled = false;
@@ -54,6 +56,7 @@ public class Spotting : MonoBehaviour {
     }
 
     private void OnDisable(){
+        //setup Hotspots
         IsSpotting = false;
         HotspotRing[0].SetActive(true);
         Aux[0].SetActive(true);

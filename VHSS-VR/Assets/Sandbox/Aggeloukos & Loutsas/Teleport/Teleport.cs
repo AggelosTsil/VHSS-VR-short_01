@@ -78,7 +78,10 @@ public class Teleport : MonoBehaviour
                         ActivityOutline(2);
                         break;
                     case "Climbing":
-                        ActivityOutline(3);
+                        if (Scenario.Exploration.Phase2bool) {
+                            ActivityOutline(3);
+                        }
+                        
                         break;
                 }
 
