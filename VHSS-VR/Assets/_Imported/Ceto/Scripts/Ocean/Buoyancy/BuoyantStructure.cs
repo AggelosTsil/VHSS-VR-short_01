@@ -6,6 +6,7 @@ namespace Ceto
 {
 
 	[AddComponentMenu("Ceto/Buoyancy/BuoyantStructure")]
+	[RequireComponent(typeof(Rigidbody))]
 	public class BuoyantStructure : MonoBehaviour 
 	{
 

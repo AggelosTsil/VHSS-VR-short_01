@@ -44,7 +44,7 @@ public class Spotting : MonoBehaviour {
         GrabbingRight.enabled = false;
         GrabbingLeft.enabled = false;
 
-
+        //DirectionHelper
         Scenario.directionHelper.GoalMet();
 
         //Scenario.directionHelper.CleanGoals(); //sets up helper
@@ -60,6 +60,8 @@ public class Spotting : MonoBehaviour {
         HotspotRing[1].SetActive(true);
         Aux[1].SetActive(true);
 
+
+        //DirectionHelper
         Scenario.directionHelper.GoalMet();
         Scenario.directionHelper.CleanGoals();
     }
