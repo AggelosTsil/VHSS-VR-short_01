@@ -16,9 +16,16 @@ public class Lang : MonoBehaviour {
     public Exploration exploration;
     public GameObject Holster1;
     public GameObject Holster2;
+    public Rigidbody RigidbodyShip;
+
     public bool Gre;
     // Start is called before the first frame update
     void Start() {
+ 
+    }
+
+    private void OnEnable() {
+        RigidbodyShip.freezeRotation = true;
         //ShipMesh.SetActive(false);
         Anchors = LayerMask.GetMask("Anchors");
         player.transform.position = Area.transform.position;
@@ -32,12 +39,9 @@ public class Lang : MonoBehaviour {
         Holster2.SetActive(false);
 
     }
-
-    // Update is called once per frame
-    void Update() {
-
+    private void OnDisable() {
+        RigidbodyShip.freezeRotation = false;
     }
-
     public void Greek() {
         Scenario.english = false;
         Scenario.LangSelection();

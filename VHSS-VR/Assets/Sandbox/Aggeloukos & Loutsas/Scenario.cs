@@ -189,7 +189,7 @@ public class Scenario : MonoBehaviour {
             StartCoroutine(MusicManager.FadeOut(MusicManager.AS ,1f));
         }
 
-        if (!Playthings.PistolRight.activeSelf && !Playthings.PistolLeft.activeSelf)
+        if ((!Playthings.PistolRight.activeSelf && !Playthings.PistolLeft.activeSelf) || LangActivity.activeSelf)
         {
             HS.SetActive(false);
             Debug.Log("HS closed");
