@@ -71,7 +71,7 @@ public class ToolGrab : MonoBehaviour
                     Playthings.Holstered("full");
                 }
                 Playthings.SpyglassRight.SetActive(true);
-                scenario.PromptVoiceclip();
+                //scenario.PromptVoiceclip();
             }
             else if (!Hand && Playthings.ToggleLeft.triggered)
             {
@@ -81,7 +81,7 @@ public class ToolGrab : MonoBehaviour
                     Playthings.Holstered("full");
                 }
                 Playthings.SpyglassLeft.SetActive(true);
-                scenario.PromptVoiceclip();
+                //scenario.PromptVoiceclip();
             }
 
 
