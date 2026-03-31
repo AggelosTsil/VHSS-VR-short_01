@@ -10,7 +10,7 @@ namespace Ceto
 	/// Dont use this script. I have no idea what I am doing.
 	/// </summary>
 	[AddComponentMenu("Ceto/Buoyancy/Buoyancy")]
-	[RequireComponent(typeof(Rigidbody))]
+	//[RequireComponent(typeof(Rigidbody))]
 	public class Buoyancy : MonoBehaviour 
 	{
 
